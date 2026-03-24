@@ -98,9 +98,30 @@
 <a class="text-slate-600 hover:text-sky-900 transition-colors font-label" href="../index.html#how-it-works">How it Works</a>
 <a class="text-slate-600 hover:text-sky-900 transition-colors font-label" href="ai-planner.html">AI Planner</a>
 </div>
-<button class="bg-primary hover:bg-primary-container text-white px-6 py-2 rounded-lg font-medium transition-all scale-95 active:scale-90">
-  Sign In
+<div class="flex items-center gap-3">
+<button class="bg-primary hover:bg-primary-container text-white px-6 py-2 rounded-lg font-medium transition-all scale-95 active:scale-90">Sign In</button>
+<button id="mobile-menu-btn" class="md:hidden flex items-center justify-center w-10 h-10 rounded-lg text-primary hover:bg-surface-container-low transition-colors" aria-label="Open menu">
+<span class="material-symbols-outlined text-2xl">menu</span>
 </button>
+</div>
+</div>
+<!-- Mobile Menu Drawer -->
+<div id="mobile-menu" class="fixed inset-0 z-[60] hidden">
+<div id="mobile-menu-backdrop" class="absolute inset-0 bg-sky-950/60 backdrop-blur-sm"></div>
+<div class="absolute top-0 right-0 w-72 h-full bg-white shadow-xl flex flex-col">
+<div class="flex items-center justify-between px-6 py-5 border-b border-outline-variant/20">
+<span class="text-xl font-bold tracking-tighter text-sky-900 font-headline">Marencello</span>
+<button id="mobile-menu-close" class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-surface-container-low transition-colors" aria-label="Close menu">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<nav class="flex flex-col px-6 py-6 gap-1">
+<a class="text-on-surface hover:text-primary hover:bg-surface-container-low px-4 py-3 rounded-lg transition-colors font-label" href="destinations.html">Destinations</a>
+<a class="text-on-surface hover:text-primary hover:bg-surface-container-low px-4 py-3 rounded-lg transition-colors font-label" href="search.html">Yachts</a>
+<a class="text-on-surface hover:text-primary hover:bg-surface-container-low px-4 py-3 rounded-lg transition-colors font-label" href="../index.html#how-it-works">How it Works</a>
+<a class="text-on-surface hover:text-primary hover:bg-surface-container-low px-4 py-3 rounded-lg transition-colors font-label" href="ai-planner.html">AI Planner</a>
+</nav>
+</div>
 </div>
 </nav>
 
@@ -622,9 +643,9 @@
   </div>
 
   <!-- Reserve Button -->
-  <button class="w-full bg-primary hover:bg-primary-container text-white py-4 rounded-lg font-semibold text-base transition-all mb-3">
+  <a href="checkout-step1.html" class="w-full bg-primary hover:bg-primary-container text-white py-4 rounded-lg font-semibold text-base transition-all mb-3 block text-center">
     Reserve This Yacht
-  </button>
+  </a>
   <p class="text-center text-xs text-on-surface-variant mb-6">Split payment available &middot; 50% now, 50% before departure</p>
 
   <!-- Add-Ons -->
@@ -680,9 +701,8 @@
   Boat Art Meets the Sea. Curating the world's most exceptional maritime experiences with modern precision and timeless elegance.
 </p>
 <div class="flex gap-4">
-<a class="text-white hover:text-sky-200 transition-colors" href="#"><span class="material-symbols-outlined">social_leaderboard</span></a>
-<a class="text-white hover:text-sky-200 transition-colors" href="#"><span class="material-symbols-outlined">photo_camera</span></a>
-<a class="text-white hover:text-sky-200 transition-colors" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+<a class="text-white hover:text-sky-200 transition-colors" href="https://instagram.com" target="_blank" rel="noopener" title="Instagram"><span class="material-symbols-outlined">photo_camera</span></a>
+<a class="text-white hover:text-sky-200 transition-colors" href="https://x.com" target="_blank" rel="noopener" title="X / Twitter"><span class="material-symbols-outlined">alternate_email</span></a>
 </div>
 </div>
 <!-- Col 2 -->
@@ -699,9 +719,9 @@
 <div>
 <h4 class="font-display text-lg mb-6">Company</h4>
 <ul class="space-y-3 font-body text-sm">
-<li><a class="text-sky-200/70 hover:text-white transition-colors" href="#">About Marencello</a></li>
+<li><a class="text-sky-200/70 hover:text-white transition-colors" href="../index.html#about">About Marencello</a></li>
 <li><a class="text-sky-200/70 hover:text-white transition-colors" href="search.html">Our Fleet</a></li>
-<li><a class="text-sky-200/70 hover:text-white transition-colors" href="#">Blog</a></li>
+<li><a class="text-sky-200/70 hover:text-white transition-colors" href="../index.html#blog">Blog</a></li>
 <li><a class="text-sky-200/70 hover:text-white transition-colors" href="ai-planner.html">AI Planner</a></li>
 </ul>
 </div>
@@ -709,27 +729,41 @@
 <div>
 <h4 class="font-display text-lg mb-6">Support</h4>
 <ul class="space-y-3 font-body text-sm">
-<li><a class="text-sky-200/70 hover:text-white transition-colors" href="#">Help Centre</a></li>
-<li><a class="text-sky-200/70 hover:text-white transition-colors" href="#">Cancellation Policy</a></li>
-<li><a class="text-sky-200/70 hover:text-white transition-colors" href="#">Safety Guidelines</a></li>
-<li><a class="text-sky-200/70 hover:text-white transition-colors" href="#">Contact Us</a></li>
+<li><a class="text-sky-200/70 hover:text-white transition-colors" href="../index.html#help">Help Centre</a></li>
+<li><a class="text-sky-200/70 hover:text-white transition-colors" href="../index.html#cancellation">Cancellation Policy</a></li>
+<li><a class="text-sky-200/70 hover:text-white transition-colors" href="../index.html#safety">Safety Guidelines</a></li>
+<li><a class="text-sky-200/70 hover:text-white transition-colors" href="../index.html#contact">Contact Us</a></li>
 </ul>
 </div>
 </div>
 <!-- Bottom Bar -->
 <div class="max-w-7xl mx-auto px-8 mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
-<p class="text-sky-200/50 text-xs font-body">&copy; 2024 Marencello. All rights reserved.</p>
+<p class="text-sky-200/50 text-xs font-body">&copy; 2026 Marencello. All rights reserved.</p>
 <div class="flex gap-6 items-center">
 <span class="material-symbols-outlined text-sky-200/30">credit_card</span>
 <span class="material-symbols-outlined text-sky-200/30">payments</span>
 <span class="material-symbols-outlined text-sky-200/30">account_balance</span>
 </div>
 <div class="flex gap-6 font-body text-xs text-sky-200/50">
-<a class="hover:text-white" href="#">Privacy Policy</a>
-<a class="hover:text-white" href="#">Terms of Service</a>
+<a class="hover:text-white" href="../index.html#privacy">Privacy Policy</a>
+<a class="hover:text-white" href="../index.html#terms">Terms of Service</a>
 </div>
 </div>
 </footer>
+
+<script>
+(function(){
+  var btn=document.getElementById('mobile-menu-btn'),
+      menu=document.getElementById('mobile-menu'),
+      close=document.getElementById('mobile-menu-close'),
+      backdrop=document.getElementById('mobile-menu-backdrop');
+  function open(){menu.classList.remove('hidden');}
+  function shut(){menu.classList.add('hidden');}
+  if(btn){btn.addEventListener('click',open);}
+  if(close){close.addEventListener('click',shut);}
+  if(backdrop){backdrop.addEventListener('click',shut);}
+})();
+</script>
 
 <!-- Firebase Auth SDK -->
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>

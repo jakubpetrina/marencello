@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Checkout: Your Details — Marencello</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "surface-dim":"#d6dae2","on-primary-fixed-variant":"#00497c","surface-bright":"#f7f9ff","on-surface":"#171c22","surface-container-high":"#e4e8f0","on-error":"#ffffff","background":"#f7f9ff","on-primary-container":"#a2ccff","error":"#ba1a1a","on-surface-variant":"#414750","surface-variant":"#dee3ea","on-error-container":"#93000a","surface-tint":"#19619d","outline":"#717781","on-tertiary-container":"#a0cdff","on-secondary-fixed-variant":"#164973","on-primary-fixed":"#001d36","on-tertiary":"#ffffff","tertiary":"#00406a","surface-container":"#eaeef6","outline-variant":"#c1c7d1","tertiary-container":"#00588f","on-secondary-container":"#285782","tertiary-fixed":"#d0e4ff","inverse-primary":"#9dcaff","surface-container-lowest":"#ffffff","tertiary-fixed-dim":"#9acbff","secondary-container":"#a1cdfe","inverse-surface":"#2c3137","primary-container":"#005792","primary":"#003f6c","surface-container-highest":"#dee3ea","error-container":"#ffdad6","secondary":"#34618c","primary-fixed-dim":"#9dcaff","surface":"#f7f9ff","on-background":"#171c22","primary-fixed":"#d1e4ff","on-tertiary-fixed":"#001d34","on-secondary":"#ffffff","on-tertiary-fixed-variant":"#004a79","on-primary":"#ffffff","inverse-on-surface":"#edf1f9","surface-container-low":"#eff4fc","on-secondary-fixed":"#001d34","secondary-fixed":"#d0e4ff","secondary-fixed-dim":"#9fcafb"
+      },
+      fontFamily: {"headline":["Noto Serif"],"display":["Playfair Display"],"body":["Inter"],"label":["Inter"]},
+      borderRadius: {"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},
+    },
+  },
+}
+</script>
+<style>
+.material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+.glass-nav { background: rgba(255,255,255,0.8); backdrop-filter: blur(12px); }
+.editorial-shadow { box-shadow: 0 12px 40px rgba(0,63,108,0.06); }
+</style>
+</head>
+<body class="bg-surface font-body text-on-surface">
+
+<!-- NAV -->
+<nav class="fixed top-0 w-full z-50 glass-nav shadow-[0_12px_40px_rgba(0,63,108,0.06)]">
+  <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+    <a href="../index.html" class="text-2xl font-bold tracking-tighter text-sky-900 font-headline">Marencello</a>
+    <div class="hidden md:flex items-center space-x-10">
+      <a class="text-slate-600 hover:text-sky-900 transition-colors font-label" href="destinations.html">Destinations</a>
+      <a class="text-slate-600 hover:text-sky-900 transition-colors font-label" href="search.html">Yachts</a>
+      <a class="text-slate-600 hover:text-sky-900 transition-colors font-label" href="../index.html#how-it-works">How it Works</a>
+      <a class="text-slate-600 hover:text-sky-900 transition-colors font-label" href="ai-planner.html">AI Planner</a>
+    </div>
+    <a href="search.html" class="bg-primary hover:bg-primary-container text-white px-6 py-2 rounded-lg font-medium transition-all">Sign In</a>
+  </div>
+</nav>
+
+<!-- PROGRESS BAR -->
+<div class="fixed top-[72px] w-full z-40 bg-surface/95 backdrop-blur-sm">
+  <div class="max-w-2xl mx-auto px-6 py-5">
+    <div class="flex items-center justify-between">
+      <!-- Step 1 - Completed -->
+      <div class="flex items-center">
+        <div class="w-9 h-9 rounded-full bg-primary text-white flex items-center justify-center">
+          <span class="material-symbols-outlined text-[20px]">check</span>
+        </div>
+        <span class="ml-3 text-sm font-medium text-primary hidden sm:inline">Your Trip</span>
+      </div>
+      <div class="flex-1 h-[2px] mx-4 bg-primary"></div>
+      <!-- Step 2 - Active -->
+      <div class="flex items-center">
+        <div class="w-9 h-9 rounded-full bg-primary text-white flex items-center justify-center text-sm font-semibold">2</div>
+        <span class="ml-3 text-sm font-semibold text-primary hidden sm:inline">Your Details</span>
+      </div>
+      <div class="flex-1 h-[2px] mx-4 bg-outline-variant/30"></div>
+      <!-- Step 3 - Pending -->
+      <div class="flex items-center">
+        <div class="w-9 h-9 rounded-full bg-outline-variant/30 text-on-surface-variant flex items-center justify-center text-sm font-semibold">3</div>
+        <span class="ml-3 text-sm text-on-surface-variant hidden sm:inline">Payment</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<main class="max-w-7xl mx-auto grid lg:grid-cols-[1fr_380px] gap-12 pt-[180px] pb-24 px-6">
+
+  <!-- LEFT COLUMN -->
+  <div>
+
+    <!-- Section 1: Personal Information -->
+    <section class="bg-surface-container-lowest rounded-2xl editorial-shadow p-8 mb-8">
+      <h2 class="font-display text-2xl mb-6 text-on-surface">Personal Information</h2>
+      <div class="grid sm:grid-cols-2 gap-5 mb-5">
+        <div>
+          <label class="block text-sm font-medium text-on-surface-variant mb-2 font-label">First Name</label>
+          <input type="text" placeholder="Martin" class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-xl px-4 py-3 text-on-surface focus:border-primary/50 focus:shadow-[0_0_0_3px_rgba(0,63,108,0.08)] transition-all outline-none" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-on-surface-variant mb-2 font-label">Last Name</label>
+          <input type="text" placeholder="Kowalski" class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-xl px-4 py-3 text-on-surface focus:border-primary/50 focus:shadow-[0_0_0_3px_rgba(0,63,108,0.08)] transition-all outline-none" />
+        </div>
+      </div>
+      <div class="mb-5">
+        <label class="block text-sm font-medium text-on-surface-variant mb-2 font-label">Email</label>
+        <input type="email" placeholder="martin@example.com" class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-xl px-4 py-3 text-on-surface focus:border-primary/50 focus:shadow-[0_0_0_3px_rgba(0,63,108,0.08)] transition-all outline-none" />
+      </div>
+      <div class="mb-5">
+        <label class="block text-sm font-medium text-on-surface-variant mb-2 font-label">Phone</label>
+        <div class="grid grid-cols-[120px_1fr] gap-3">
+          <select class="bg-surface-container-lowest border border-outline-variant/20 rounded-xl px-3 py-3 text-on-surface focus:border-primary/50 focus:shadow-[0_0_0_3px_rgba(0,63,108,0.08)] transition-all outline-none appearance-none text-sm">
+            <option>+385</option>
+            <option>+49</option>
+            <option>+44</option>
+            <option>+1</option>
+            <option>+33</option>
+            <option>+39</option>
+          </select>
+          <input type="tel" placeholder="91 234 5678" class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-xl px-4 py-3 text-on-surface focus:border-primary/50 focus:shadow-[0_0_0_3px_rgba(0,63,108,0.08)] transition-all outline-none" />
+        </div>
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-on-surface-variant mb-2 font-label">Nationality</label>
+        <select class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-xl px-4 py-3 text-on-surface focus:border-primary/50 focus:shadow-[0_0_0_3px_rgba(0,63,108,0.08)] transition-all outline-none appearance-none">
+          <option selected>Germany</option>
+          <option>Austria</option>
+          <option>Croatia</option>
+          <option>Czech Republic</option>
+          <option>France</option>
+          <option>Italy</option>
+          <option>Netherlands</option>
+          <option>Poland</option>
+          <option>United Kingdom</option>
+          <option>United States</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- Section 2: Billing Address -->
+    <section class="bg-surface-container-lowest rounded-2xl editorial-shadow p-8 mb-8">
+      <h2 class="font-display text-2xl mb-6 text-on-surface">Billing Address</h2>
+      <div class="mb-5">
+        <label class="block text-sm font-medium text-on-surface-variant mb-2 font-label">Street Address</label>
+        <input type="text" placeholder="Berliner Str. 42" class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-xl px-4 py-3 text-on-surface focus:border-primary/50 focus:shadow-[0_0_0_3px_rgba(0,63,108,0.08)] transition-all outline-none" />
+      </div>
+      <div class="grid sm:grid-cols-2 gap-5 mb-5">
+        <div>
+          <label class="block text-sm font-medium text-on-surface-variant mb-2 font-label">City</label>
+          <input type="text" placeholder="Munich" class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-xl px-4 py-3 text-on-surface focus:border-primary/50 focus:shadow-[0_0_0_3px_rgba(0,63,108,0.08)] transition-all outline-none" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-on-surface-variant mb-2 font-label">Postcode</label>
+          <input type="text" placeholder="80331" class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-xl px-4 py-3 text-on-surface focus:border-primary/50 focus:shadow-[0_0_0_3px_rgba(0,63,108,0.08)] transition-all outline-none" />
+        </div>
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-on-surface-variant mb-2 font-label">Country</label>
+        <select class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-xl px-4 py-3 text-on-surface focus:border-primary/50 focus:shadow-[0_0_0_3px_rgba(0,63,108,0.08)] transition-all outline-none appearance-none">
+          <option selected>Germany</option>
+          <option>Austria</option>
+          <option>Croatia</option>
+          <option>Czech Republic</option>
+          <option>France</option>
+          <option>Italy</option>
+          <option>Netherlands</option>
+          <option>Poland</option>
+          <option>United Kingdom</option>
+          <option>United States</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- Section 3: Sailing Licence -->
+    <section class="bg-surface-container-lowest rounded-2xl editorial-shadow p-8 mb-8">
+      <h2 class="font-display text-2xl mb-6 text-on-surface">Sailing Licence</h2>
+      <div class="border-2 border-dashed border-outline-variant/40 rounded-xl p-8 text-center cursor-pointer hover:border-primary/40 transition-colors">
+        <span class="material-symbols-outlined text-primary text-[48px] mb-3 block">upload_file</span>
+        <p class="text-on-surface font-medium mb-1">Drag & drop your sailing licence or click to browse</p>
+        <p class="text-sm text-on-surface-variant">PDF, JPG or PNG · Max 10MB</p>
+      </div>
+      <p class="text-sm text-on-surface-variant mt-4">Required for bareboat charter. If you have a skipper, this is optional.</p>
+    </section>
+
+    <!-- Section 4: Special Requests -->
+    <section class="bg-surface-container-lowest rounded-2xl editorial-shadow p-8 mb-8">
+      <h2 class="font-display text-2xl mb-6 text-on-surface">Special Requests</h2>
+      <textarea rows="4" placeholder="Dietary requirements, celebrations, accessibility needs..." class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-xl px-4 py-3 text-on-surface focus:border-primary/50 focus:shadow-[0_0_0_3px_rgba(0,63,108,0.08)] transition-all outline-none resize-none"></textarea>
+    </section>
+
+    <!-- Bottom Navigation -->
+    <div class="flex justify-between items-center pt-4">
+      <a href="checkout-step1.html" class="flex items-center gap-1 text-primary font-medium hover:text-primary-container transition-colors">
+        <span class="material-symbols-outlined text-[20px]">arrow_back</span>
+        Back to Your Trip
+      </a>
+      <a href="checkout-step3.html" class="bg-gradient-to-r from-primary to-primary-container text-white px-10 py-4 rounded-xl font-semibold hover:shadow-lg transition-all inline-flex items-center gap-2">
+        Continue to Payment
+        <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+      </a>
+    </div>
+
+  </div>
+
+  <!-- RIGHT COLUMN — SIDEBAR -->
+  <div>
+    <div class="sticky top-[180px]">
+      <div class="bg-surface-container-lowest rounded-2xl editorial-shadow overflow-hidden">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZlvaeLeQ-qAcjgIRNboQrmURvoJ3D6424pn12dBluKZkTJKFFqTyT3dX1CWCntpEapfhdb3FncZc5omvo3SviQo31ya0gSVZDPvXShSYeC9bgXMos0QiQKCMHbKOKIUnxzkbVAUwKXmT0bkXeT6wjooEjZNReC9cbRoXMjtiDsirDFvkz3GQMPvZVnOTp2m4_4O68lZaCUntiwlQivVMHbm83SnaDMgZXJ91by2UjXlgFW7LJJ2TQDGKREJfqNm6LCa03i9MBY84" alt="Lagoon 46 — Sea Breeze" class="w-full aspect-[4/3] object-cover" />
+        <div class="p-6">
+          <h3 class="font-body font-semibold text-lg text-on-surface">Lagoon 46 — Sea Breeze</h3>
+          <p class="text-on-surface-variant text-sm mt-1">Split, Croatia · Jul 12–19, 2026</p>
+          <p class="text-sm text-on-surface-variant mt-1">8 Guests · 4 Cabins</p>
+
+          <div class="bg-surface-container-low rounded-xl p-5 mt-5 space-y-3">
+            <div class="flex justify-between text-sm">
+              <span class="text-on-surface-variant">Charter fee (1 week)</span>
+              <span class="text-on-surface font-medium">€2,800</span>
+            </div>
+            <div class="flex justify-between text-sm">
+              <span class="text-on-surface-variant">Transit log</span>
+              <span class="text-on-surface font-medium">€180</span>
+            </div>
+            <div class="flex justify-between text-sm">
+              <span class="text-on-surface-variant">Final cleaning</span>
+              <span class="text-on-surface font-medium">€250</span>
+            </div>
+            <div class="flex justify-between text-sm">
+              <span class="text-on-surface-variant">Skipper (7 days)</span>
+              <span class="text-on-surface font-medium">€1,260</span>
+            </div>
+            <div class="flex justify-between text-sm">
+              <span class="text-on-surface-variant">Damage deposit waiver</span>
+              <span class="text-on-surface font-medium">€89</span>
+            </div>
+            <div class="flex justify-between text-sm">
+              <span class="text-on-surface-variant">Service fee</span>
+              <span class="text-on-surface font-medium">€140</span>
+            </div>
+            <div class="pt-3 mt-3 border-t border-outline-variant/15">
+              <div class="flex justify-between items-baseline">
+                <span class="text-on-surface font-semibold">Total</span>
+                <span class="font-display text-2xl font-bold text-primary">€4,719</span>
+              </div>
+            </div>
+          </div>
+
+          <p class="text-xs text-on-surface-variant mt-4">Split payment: €2,360 now + €2,359 before Jun 12</p>
+
+          <div class="flex items-center gap-2 mt-4 text-on-surface-variant">
+            <span class="material-symbols-outlined text-[18px]">lock</span>
+            <span class="text-xs font-medium">Secure checkout</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+</body>
+</html>

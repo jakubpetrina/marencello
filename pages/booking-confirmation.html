@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Booking Confirmed — Marencello</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "surface-dim":"#d6dae2","on-primary-fixed-variant":"#00497c","surface-bright":"#f7f9ff","on-surface":"#171c22","surface-container-high":"#e4e8f0","on-error":"#ffffff","background":"#f7f9ff","on-primary-container":"#a2ccff","error":"#ba1a1a","on-surface-variant":"#414750","surface-variant":"#dee3ea","on-error-container":"#93000a","surface-tint":"#19619d","outline":"#717781","on-tertiary-container":"#a0cdff","on-secondary-fixed-variant":"#164973","on-primary-fixed":"#001d36","on-tertiary":"#ffffff","tertiary":"#00406a","surface-container":"#eaeef6","outline-variant":"#c1c7d1","tertiary-container":"#00588f","on-secondary-container":"#285782","tertiary-fixed":"#d0e4ff","inverse-primary":"#9dcaff","surface-container-lowest":"#ffffff","tertiary-fixed-dim":"#9acbff","secondary-container":"#a1cdfe","inverse-surface":"#2c3137","primary-container":"#005792","primary":"#003f6c","surface-container-highest":"#dee3ea","error-container":"#ffdad6","secondary":"#34618c","primary-fixed-dim":"#9dcaff","surface":"#f7f9ff","on-background":"#171c22","primary-fixed":"#d1e4ff","on-tertiary-fixed":"#001d34","on-secondary":"#ffffff","on-tertiary-fixed-variant":"#004a79","on-primary":"#ffffff","inverse-on-surface":"#edf1f9","surface-container-low":"#eff4fc","on-secondary-fixed":"#001d34","secondary-fixed":"#d0e4ff","secondary-fixed-dim":"#9fcafb"
+      },
+      fontFamily: {"headline":["Noto Serif"],"display":["Playfair Display"],"body":["Inter"],"label":["Inter"]},
+      borderRadius: {"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},
+    },
+  },
+}
+</script>
+<style>
+.material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+.glass-nav { background: rgba(255,255,255,0.8); backdrop-filter: blur(12px); }
+.editorial-shadow { box-shadow: 0 12px 40px rgba(0,63,108,0.06); }
+</style>
+</head>
+<body class="bg-surface font-body">
+
+  <!-- Navigation -->
+  <nav class="glass-nav fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-center">
+      <a href="../index.html" class="font-headline text-2xl font-bold text-sky-900">Marencello</a>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="max-w-3xl mx-auto px-6 pt-[120px] pb-24">
+
+    <!-- Success Header -->
+    <div class="text-center mb-16">
+      <div class="w-20 h-20 bg-emerald-100 rounded-full mx-auto flex items-center justify-center mb-6">
+        <span class="material-symbols-outlined text-emerald-600 text-5xl" style="font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 24;">check_circle</span>
+      </div>
+      <h1 class="font-display text-4xl text-primary mb-3">Your Voyage is Confirmed!</h1>
+      <div class="mt-2">
+        <span class="text-on-surface-variant text-sm">Booking Reference</span>
+        <div class="font-headline text-xl text-primary font-bold bg-surface-container-low px-6 py-2 rounded-full inline-block mt-2">MRC-2026-04892</div>
+      </div>
+      <p class="text-on-surface-variant mt-4">A confirmation email has been sent to martin@example.com</p>
+    </div>
+
+    <!-- Yacht Summary Card -->
+    <div class="bg-surface-container-lowest rounded-2xl editorial-shadow overflow-hidden mb-8">
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZlvaeLeQ-qAcjgIRNboQrmURvoJ3D6424pn12dBluKZkTJKFFqTyT3dX1CWCntpEapfhdb3FncZc5omvo3SviQo31ya0gSVZDPvXShSYeC9bgXMos0QiQKCMHbKOKIUnxzkbVAUwKXmT0bkXeT6wjooEjZNReC9cbRoXMjtiDsirDFvkz3GQMPvZVnOTp2m4_4O68lZaCUntiwlQivVMHbm83SnaDMgZXJ91by2UjXlgFW7LJJ2TQDGKREJfqNm6LCa03i9MBY84" alt="Lagoon 46 — Sea Breeze" class="w-full h-48 object-cover"/>
+      <div class="p-8">
+        <div class="grid grid-cols-2 gap-y-5 gap-x-8">
+          <div>
+            <p class="text-on-surface-variant text-xs uppercase tracking-wider mb-1">Yacht</p>
+            <p class="text-on-surface font-semibold">Lagoon 46 — Sea Breeze</p>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-on-surface-variant text-lg">location_on</span>
+              <div>
+                <p class="text-on-surface-variant text-xs uppercase tracking-wider mb-1">Location</p>
+                <p class="text-on-surface font-semibold">ACI Marina Split, Croatia</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-on-surface-variant text-lg">login</span>
+              <div>
+                <p class="text-on-surface-variant text-xs uppercase tracking-wider mb-1">Check-in</p>
+                <p class="text-on-surface font-semibold">Saturday, Jul 12, 2026 · 17:00</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-on-surface-variant text-lg">logout</span>
+              <div>
+                <p class="text-on-surface-variant text-xs uppercase tracking-wider mb-1">Check-out</p>
+                <p class="text-on-surface font-semibold">Saturday, Jul 19, 2026 · 09:00</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-on-surface-variant text-lg">groups</span>
+              <div>
+                <p class="text-on-surface-variant text-xs uppercase tracking-wider mb-1">Guests</p>
+                <p class="text-on-surface font-semibold">8 guests</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-on-surface-variant text-lg">sailing</span>
+              <div>
+                <p class="text-on-surface-variant text-xs uppercase tracking-wider mb-1">Skipper</p>
+                <p class="text-on-surface font-semibold">Captain Luka Mari&#263;</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Payment Summary -->
+    <div class="bg-surface-container-lowest rounded-2xl editorial-shadow p-8 mb-8">
+      <h2 class="font-display text-xl mb-4">Payment Summary</h2>
+      <div class="space-y-3">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-emerald-600 text-lg" style="font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 24;">check_circle</span>
+            <span class="text-on-surface">Paid today</span>
+          </div>
+          <span class="text-emerald-600 font-semibold font-display text-lg">&euro;2,360</span>
+        </div>
+        <div class="flex items-center justify-between">
+          <span class="text-on-surface-variant">Remaining balance — due by Jun 12, 2026</span>
+          <span class="text-on-surface-variant font-display text-lg">&euro;2,359</span>
+        </div>
+        <div class="border-t border-outline-variant/15 pt-3 mt-3 flex items-center justify-between">
+          <span class="text-on-surface font-semibold">Total trip cost</span>
+          <span class="font-display text-2xl font-bold text-primary">&euro;4,719</span>
+        </div>
+        <p class="text-sm text-on-surface-variant">Payment method: Visa ending in 4242</p>
+      </div>
+    </div>
+
+    <!-- What's Next -->
+    <div class="bg-surface-container-lowest rounded-2xl editorial-shadow p-8 mb-8">
+      <h2 class="font-display text-xl mb-6">What's Next</h2>
+      <div class="space-y-6">
+
+        <div class="flex gap-5">
+          <div class="w-10 h-10 rounded-full bg-primary text-white font-bold flex items-center justify-center flex-shrink-0">1</div>
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="material-symbols-outlined text-primary text-xl">email</span>
+              <h3 class="text-on-surface font-semibold">Check Your Email</h3>
+            </div>
+            <p class="text-on-surface-variant text-sm">We've sent your booking confirmation and boarding documents to martin@example.com</p>
+          </div>
+        </div>
+
+        <div class="flex gap-5">
+          <div class="w-10 h-10 rounded-full bg-primary text-white font-bold flex items-center justify-center flex-shrink-0">2</div>
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="material-symbols-outlined text-primary text-xl">description</span>
+              <h3 class="text-on-surface font-semibold">Review Your Documents</h3>
+            </div>
+            <p class="text-on-surface-variant text-sm">Download your charter agreement and check-in instructions from the email</p>
+          </div>
+        </div>
+
+        <div class="flex gap-5">
+          <div class="w-10 h-10 rounded-full bg-primary text-white font-bold flex items-center justify-center flex-shrink-0">3</div>
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="material-symbols-outlined text-primary text-xl">support_agent</span>
+              <h3 class="text-on-surface font-semibold">Meet Your Concierge</h3>
+            </div>
+            <p class="text-on-surface-variant text-sm">Your dedicated trip coordinator will reach out within 24 hours to finalize details</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CTA Buttons -->
+    <div class="flex gap-4 justify-center mt-12">
+      <a href="../index.html" class="bg-gradient-to-r from-primary to-primary-container text-white px-8 py-4 rounded-xl font-semibold">Continue Exploring</a>
+      <a href="#" class="border border-outline-variant/20 text-primary px-8 py-4 rounded-xl font-semibold hover:bg-surface-container-low transition-colors">View All Bookings</a>
+    </div>
+
+    <!-- Account Prompt -->
+    <div class="bg-surface-container-low rounded-2xl p-8 text-center mt-8">
+      <h3 class="font-display text-lg">Save your booking details</h3>
+      <p class="text-on-surface-variant text-sm mt-2">Create a free account to manage your bookings, save favorite yachts, and earn loyalty points.</p>
+      <a href="#" class="text-primary font-semibold underline mt-4 inline-block">Create Account</a>
+    </div>
+
+  </main>
+
+</body>
+</html>
