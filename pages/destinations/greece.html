@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Marencello | Sailing Greece</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-dim": "#d6dae2",
+              "on-primary-fixed-variant": "#00497c",
+              "surface-bright": "#f7f9ff",
+              "on-surface": "#171c22",
+              "surface-container-high": "#e4e8f0",
+              "on-error": "#ffffff",
+              "background": "#f7f9ff",
+              "on-primary-container": "#a2ccff",
+              "error": "#ba1a1a",
+              "on-surface-variant": "#414750",
+              "surface-variant": "#dee3ea",
+              "on-error-container": "#93000a",
+              "surface-tint": "#19619d",
+              "outline": "#717781",
+              "on-tertiary-container": "#a0cdff",
+              "on-secondary-fixed-variant": "#164973",
+              "on-primary-fixed": "#001d36",
+              "on-tertiary": "#ffffff",
+              "tertiary": "#00406a",
+              "surface-container": "#eaeef6",
+              "outline-variant": "#c1c7d1",
+              "tertiary-container": "#00588f",
+              "on-secondary-container": "#285782",
+              "tertiary-fixed": "#d0e4ff",
+              "inverse-primary": "#9dcaff",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-fixed-dim": "#9acbff",
+              "secondary-container": "#a1cdfe",
+              "inverse-surface": "#2c3137",
+              "primary-container": "#005792",
+              "primary": "#003f6c",
+              "surface-container-highest": "#dee3ea",
+              "error-container": "#ffdad6",
+              "secondary": "#34618c",
+              "primary-fixed-dim": "#9dcaff",
+              "surface": "#f7f9ff",
+              "on-background": "#171c22",
+              "primary-fixed": "#d1e4ff",
+              "on-tertiary-fixed": "#001d34",
+              "on-secondary": "#ffffff",
+              "on-tertiary-fixed-variant": "#004a79",
+              "on-primary": "#ffffff",
+              "inverse-on-surface": "#edf1f9",
+              "surface-container-low": "#eff4fc",
+              "on-secondary-fixed": "#001d34",
+              "secondary-fixed": "#d0e4ff",
+              "secondary-fixed-dim": "#9fcafb"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "display": ["Playfair Display"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-nav {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(12px);
+      }
+      .editorial-shadow {
+        box-shadow: 0 12px 40px rgba(0, 63, 108, 0.06);
+      }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+
+<!-- NAVIGATION -->
+<nav class="fixed top-0 w-full z-50 glass-nav shadow-[0_12px_40px_rgba(0,63,108,0.06)]">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<a href="../../index.html" class="text-2xl font-bold tracking-tighter text-sky-900 font-headline">Marencello</a>
+<div class="hidden md:flex items-center space-x-10">
+<a class="text-sky-700 font-semibold border-b-2 border-sky-700 pb-1 font-label" href="../destinations.html">Destinations</a>
+<a class="text-slate-600 hover:text-sky-900 transition-colors font-label" href="../search.html">Yachts</a>
+<a class="text-slate-600 hover:text-sky-900 transition-colors font-label" href="../../index.html#how-it-works">How it Works</a>
+<a class="text-slate-600 hover:text-sky-900 transition-colors font-label" href="../ai-planner.html">AI Planner</a>
+</div>
+<button class="bg-primary hover:bg-primary-container text-white px-6 py-2 rounded-lg font-medium transition-all scale-95 active:scale-90">
+            Sign In
+        </button>
+</div>
+</nav>
+
+<!-- 1. HERO SECTION -->
+<section class="relative w-full pt-[72px]">
+<div class="relative aspect-[21/9] w-full overflow-hidden">
+<img class="w-full h-full object-cover" alt="White-washed villas of Santorini Greece overlooking the caldera at sunset" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIVJ_bFemAyfHIohwgU-6pRTVhET8jRab7xqhcc2RidpI5JsoY1OQNuDNfWUnt-aSSpbJhN_dIvfwr626lzxu6Md5KfvQZd83VLUowIhiA1t5taWbe_NyM0Xrps657sS7nU1WANOouBuXPDjjaPXnE8PmZYyKiKlatmzGJtzH68-WsMjVl3Z9zTAoORX_CizfQIenIVpGE30TI1ntLS1ImVvRI3NkaC4nj8kwepPtDu9zCJiCLJf924u_T5nJfYP88d4XY4RXqmNY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/70 via-primary/20 to-transparent"></div>
+<div class="absolute bottom-8 left-0 right-0 px-6">
+<div class="max-w-7xl mx-auto">
+<h1 class="font-display text-4xl md:text-7xl text-white drop-shadow-lg mb-4 tracking-tight">Greece</h1>
+<p class="font-body text-sky-100 text-lg md:text-xl max-w-2xl leading-relaxed opacity-90 mb-6">The birthplace of sailing, where myth and beauty converge across thousands of Aegean and Ionian islands.</p>
+<div class="flex flex-wrap gap-6">
+<div class="flex items-center gap-2 text-white">
+<span class="material-symbols-outlined">sailing</span>
+<span class="font-semibold">450+ yachts</span>
+</div>
+<div class="flex items-center gap-2 text-white">
+<span class="material-symbols-outlined">date_range</span>
+<span class="font-semibold">Season: May - Oct</span>
+</div>
+<div class="flex items-center gap-2 text-white">
+<span class="material-symbols-outlined">thermostat</span>
+<span class="font-semibold">Avg 28&deg;C</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 2. BREADCRUMB -->
+<div class="max-w-7xl mx-auto px-6 py-6">
+<nav class="flex items-center gap-2 text-sm text-on-surface-variant font-label">
+<a href="../../index.html" class="hover:text-primary transition-colors">Home</a>
+<span class="material-symbols-outlined text-base">chevron_right</span>
+<a href="../destinations.html" class="hover:text-primary transition-colors">Destinations</a>
+<span class="material-symbols-outlined text-base">chevron_right</span>
+<span class="text-primary font-semibold">Greece</span>
+</nav>
+</div>
+
+<!-- 3. ABOUT SECTION -->
+<section class="py-16 px-6 bg-surface">
+<div class="max-w-7xl mx-auto">
+<h2 class="font-display text-3xl md:text-5xl text-primary mb-8">About Greece Sailing</h2>
+<div class="max-w-3xl space-y-6">
+<p class="font-body text-on-surface-variant text-lg leading-relaxed">
+    Greece is the ultimate sailing destination, blessed with over 6,000 islands and islets scattered across the Aegean and Ionian seas. The Meltemi winds of summer provide exhilarating sailing conditions, while the sheltered Saronic Gulf and the gentle Ionian coast welcome beginners with calm, predictable breezes. Every harbour tells a story stretching back millennia, from the temples of Delos to the windmills of Mykonos.
+</p>
+<p class="font-body text-on-surface-variant text-lg leading-relaxed">
+    Greek sailing is as much about the culture as the navigation. Anchor in a secluded cove for a swim in impossibly blue water, then step ashore for grilled octopus at a seaside taverna. The variety is staggering: volcanic calderas in Santorini, lush green hillsides in Corfu, and the wild Cycladic landscapes shaped by wind and sea. With a mature charter infrastructure and warm hospitality at every port, Greece remains the gold standard of Mediterranean sailing.
+</p>
+</div>
+</div>
+</section>
+
+<!-- 4. SAILING REGIONS -->
+<section class="py-20 px-6 bg-surface-container-low">
+<div class="max-w-7xl mx-auto">
+<h2 class="font-display text-3xl md:text-5xl text-primary mb-4">Sailing Regions</h2>
+<p class="font-body text-on-surface-variant mb-12 text-lg">From the windswept Cyclades to the sheltered Ionian, each region offers a distinct Greek experience.</p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+<div class="bg-surface-container-lowest rounded-xl editorial-shadow p-8 hover:-translate-y-2 transition-transform duration-300">
+<div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">air</span>
+</div>
+<h3 class="font-display text-2xl text-primary mb-3">Cyclades</h3>
+<p class="font-body text-on-surface-variant text-sm leading-relaxed mb-6">
+    The iconic Greek islands: Mykonos, Santorini, Paros, and Naxos. Whitewashed villages perched on volcanic cliffs above deep blue waters, with spirited Meltemi winds for experienced sailors.
+</p>
+<a href="../search.html" class="text-primary font-semibold text-sm flex items-center gap-1 hover:gap-2 transition-all">
+    Explore Yachts <span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+
+<div class="bg-surface-container-lowest rounded-xl editorial-shadow p-8 hover:-translate-y-2 transition-transform duration-300">
+<div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">anchor</span>
+</div>
+<h3 class="font-display text-2xl text-primary mb-3">Saronic Gulf</h3>
+<p class="font-body text-on-surface-variant text-sm leading-relaxed mb-6">
+    The gateway to Greek sailing, just a short hop from Athens. Explore the car-free island of Hydra, the pine forests of Poros, and the ancient theatre of Epidaurus, all in sheltered waters.
+</p>
+<a href="../search.html" class="text-primary font-semibold text-sm flex items-center gap-1 hover:gap-2 transition-all">
+    Explore Yachts <span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+
+<div class="bg-surface-container-lowest rounded-xl editorial-shadow p-8 hover:-translate-y-2 transition-transform duration-300">
+<div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">park</span>
+</div>
+<h3 class="font-display text-2xl text-primary mb-3">Ionian Islands</h3>
+<p class="font-body text-on-surface-variant text-sm leading-relaxed mb-6">
+    Lush, green, and sheltered from the Meltemi. Corfu, Lefkada, Kefalonia, and Zakynthos offer gentle sailing, emerald waters, and Venetian-influenced architecture.
+</p>
+<a href="../search.html" class="text-primary font-semibold text-sm flex items-center gap-1 hover:gap-2 transition-all">
+    Explore Yachts <span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- 5. BEST TIME TO SAIL -->
+<section class="py-20 px-6 bg-surface">
+<div class="max-w-7xl mx-auto">
+<h2 class="font-display text-3xl md:text-5xl text-primary mb-4">Best Time to Sail</h2>
+<p class="font-body text-on-surface-variant mb-12 text-lg">Greece rewards sailors from late spring through early autumn.</p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+<div class="bg-surface-container-lowest rounded-xl editorial-shadow p-8 text-center">
+<div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-4 mx-auto">
+<span class="material-symbols-outlined text-primary text-3xl">local_florist</span>
+</div>
+<h3 class="font-display text-xl text-primary mb-2">Spring (May - Jun)</h3>
+<p class="font-body text-on-surface-variant text-sm leading-relaxed">Pleasant 22-26&deg;C temperatures with moderate winds. Islands are green, tourist crowds have not yet arrived, and charter prices are favourable.</p>
+</div>
+
+<div class="bg-surface-container-lowest rounded-xl editorial-shadow p-8 text-center">
+<div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-4 mx-auto">
+<span class="material-symbols-outlined text-primary text-3xl">wb_sunny</span>
+</div>
+<h3 class="font-display text-xl text-primary mb-2">Summer (Jul - Aug)</h3>
+<p class="font-body text-on-surface-variant text-sm leading-relaxed">Peak season with 28-32&deg;C heat and strong Meltemi winds in the Aegean. Vibrant nightlife, bustling ports, and ideal conditions for thrill-seeking sailors.</p>
+</div>
+
+<div class="bg-surface-container-lowest rounded-xl editorial-shadow p-8 text-center">
+<div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-4 mx-auto">
+<span class="material-symbols-outlined text-primary text-3xl">eco</span>
+</div>
+<h3 class="font-display text-xl text-primary mb-2">Autumn (Sep - Oct)</h3>
+<p class="font-body text-on-surface-variant text-sm leading-relaxed">Warm seas at 24-27&deg;C, calmer winds, and golden sunsets. A local favourite, with the grape harvest season adding depth to the culinary experience.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- 6. POPULAR YACHTS -->
+<section class="py-20 px-6 bg-surface-container-low">
+<div class="max-w-7xl mx-auto">
+<h2 class="font-display text-3xl md:text-5xl text-primary mb-4">Popular Yachts in Greece</h2>
+<p class="font-body text-on-surface-variant mb-12 text-lg">Top-rated vessels ready to explore the Greek islands.</p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+<div class="bg-surface-container-lowest rounded-xl editorial-shadow overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
+<a href="../yacht-detail.html" class="block">
+<div class="relative aspect-[4/3]">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Modern sailing yacht at sea" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZlvaeLeQ-qAcjgIRNboQrmURvoJ3D6424pn12dBluKZkTJKFFqTyT3dX1CWCntpEapfhdb3FncZc5omvo3SviQo31ya0gSVZDPvXShSYeC9bgXMos0QiQKCMHbKOKIUnxzkbVAUwKXmT0bkXeT6wjooEjZNReC9cbRoXMjtiDsirDFvkz3GQMPvZVnOTp2m4_4O68lZaCUntiwlQivVMHbm83SnaDMgZXJ91by2UjXlgFW7LJJ2TQDGKREJfqNm6LCa03i9MBY84"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-body font-semibold text-xl text-primary">Dufour 530 Athens</h3>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-yellow-500 scale-75" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-sm font-medium">4.9</span>
+</div>
+</div>
+<p class="text-on-surface-variant text-sm mb-4">Greece &bull; 12 Guests &bull; 5 Cabins</p>
+<p class="font-display text-primary text-lg font-bold">EUR 3,500<span class="text-sm font-normal text-on-surface-variant">/week</span></p>
+</div>
+</a>
+</div>
+
+<div class="bg-surface-container-lowest rounded-xl editorial-shadow overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
+<a href="../yacht-detail.html" class="block">
+<div class="relative aspect-[4/3]">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Classic monohull sailboat at marina" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpRr7xt606CP0CE2OEyItK3w_digdYu2tQUi271xzzWlk9fGIdaAJPfL3A84s8IxX_BLify5fGuGTJsvIjlqKK1Mjst9prt0JWMDrHGvqJNHfW-v3F_f5XqLZNsyggPbt9fe2ACCNhl4uLnlhY-8q_V_BULwHuZEbh2LyEVYuImaDLDE-711F21IQT4kfZ-a6bcD_iBdidFUIawVMLeEbjfYCvpiW-sOIu0BprGyGx4BnJEJZivesGj2f2Qv7tlcsa3ovniGzihqY"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-body font-semibold text-xl text-primary">Lagoon 42 Lefkada</h3>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-yellow-500 scale-75" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-sm font-medium">4.8</span>
+</div>
+</div>
+<p class="text-on-surface-variant text-sm mb-4">Greece &bull; 10 Guests &bull; 4 Cabins</p>
+<p class="font-display text-primary text-lg font-bold">EUR 2,900<span class="text-sm font-normal text-on-surface-variant">/week</span></p>
+</div>
+</a>
+</div>
+
+<div class="bg-surface-container-lowest rounded-xl editorial-shadow overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
+<a href="../yacht-detail.html" class="block">
+<div class="relative aspect-[4/3]">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Luxury motor yacht sun deck" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBscoCuhp1J7rZmStLTp0eIiPKcpbQUccUzpuGW1DT-BXhryMAAWDrgvIECvmkcrJosSSfPMJmS_fUfFYPkHeWEAp67pPqyul-fA6Iho4cXM-VCgAfs410j8o8MAAIP7DCk2x-Unci0D6e6RknwF3OkooE6s5WXjt93zJbjghbpNBXZEKl6nehj0RPXqqRIL2QkUNokyhaqIQG-jRUF_k9YrPWq58UORk8JNrvPhFtRs6vA0xv3g-5B-zBPcEgEvYk_Ia1He3dnXMI"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-body font-semibold text-xl text-primary">Azimut 55 Mykonos</h3>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-yellow-500 scale-75" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-sm font-medium">4.7</span>
+</div>
+</div>
+<p class="text-on-surface-variant text-sm mb-4">Greece &bull; 8 Guests &bull; 3 Cabins</p>
+<p class="font-display text-primary text-lg font-bold">EUR 6,200<span class="text-sm font-normal text-on-surface-variant">/week</span></p>
+</div>
+</a>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- 7. CTA SECTION -->
+<section class="py-24 px-6 bg-primary">
+<div class="max-w-4xl mx-auto text-center">
+<h2 class="font-display text-4xl md:text-6xl text-white mb-6">Ready to Sail Greece?</h2>
+<p class="font-body text-sky-100 text-lg mb-10 leading-relaxed opacity-90">Explore our fleet of 450+ yachts and set course for the Aegean or Ionian islands.</p>
+<a href="../search.html" class="bg-surface-container-lowest text-primary px-10 py-4 rounded-lg font-bold editorial-shadow hover:scale-105 transition-transform inline-block">
+    Search Yachts in Greece
+</a>
+</div>
+</section>
+
+<!-- 8. FOOTER -->
+<footer class="bg-primary pt-16 pb-8 text-white">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-8 max-w-7xl mx-auto text-left">
+<div>
+<a href="../../index.html" class="text-3xl font-headline font-bold text-white mb-4 block">Marencello</a>
+<p class="text-sky-200/70 font-body text-sm leading-relaxed mb-6">
+            Boat Art Meets the Sea. Curating the world's most exceptional maritime experiences with modern precision and timeless elegance.
+        </p>
+<div class="flex gap-4">
+<a class="text-white hover:text-sky-200 transition-colors" href="#"><span class="material-symbols-outlined">social_leaderboard</span></a>
+<a class="text-white hover:text-sky-200 transition-colors" href="#"><span class="material-symbols-outlined">photo_camera</span></a>
+<a class="text-white hover:text-sky-200 transition-colors" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+</div>
+</div>
+<div>
+<h4 class="font-display text-lg mb-6">Destinations</h4>
+<ul class="space-y-3 font-body text-sm">
+<li><a class="text-sky-200/70 hover:text-white transition-colors" href="croatia.html">Croatia</a></li>
+<li><a class="text-sky-200/70 hover:text-white transition-colors" href="greece.html">Greece</a></li>
+<li><a class="text-sky-200/70 hover:text-white transition-colors" href="italy.html">Italy</a></li>
+<li><a class="text-sky-200/70 hover:text-white transition-colors" href="caribbean.html">Caribbean</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-display text-lg mb-6">Company</h4>
+<ul class="space-y-3 font-body text-sm">
+<li><a class="text-sky-200/70 hover:text-white transition-colors" href="#">About Marencello</a></li>
+<li><a class="text-sky-200/70 hover:text-white transition-colors" href="../search.html">Our Fleet</a></li>
+<li><a class="text-sky-200/70 hover:text-white transition-colors" href="#">Blog</a></li>
+<li><a class="text-sky-200/70 hover:text-white transition-colors" href="../ai-planner.html">AI Planner</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-display text-lg mb-6">Support</h4>
+<ul class="space-y-3 font-body text-sm">
+<li><a class="text-sky-200/70 hover:text-white transition-colors" href="#">Help Centre</a></li>
+<li><a class="text-sky-200/70 hover:text-white transition-colors" href="#">Cancellation Policy</a></li>
+<li><a class="text-sky-200/70 hover:text-white transition-colors" href="#">Safety Guidelines</a></li>
+<li><a class="text-sky-200/70 hover:text-white transition-colors" href="#">Contact Us</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-sky-200/50 text-xs font-body">&copy; 2024 Marencello. All rights reserved.</p>
+<div class="flex gap-6 items-center">
+<span class="material-symbols-outlined text-sky-200/30">credit_card</span>
+<span class="material-symbols-outlined text-sky-200/30">payments</span>
+<span class="material-symbols-outlined text-sky-200/30">account_balance</span>
+</div>
+<div class="flex gap-6 font-body text-xs text-sky-200/50">
+<a class="hover:text-white" href="#">Privacy Policy</a>
+<a class="hover:text-white" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+
+</body>
+</html>

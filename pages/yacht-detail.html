@@ -1,735 +1,321 @@
 <!DOCTYPE html>
-<html class="scroll-smooth" lang="en">
+<html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Lagoon 46 — Sea Breeze | Marencello</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@300;400;500;600&amp;family=Noto+Serif:wght@400;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script>
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "surface-dim": "#d6dae2",
-              "on-primary-fixed-variant": "#00497c",
-              "surface-bright": "#f7f9ff",
-              "on-surface": "#171c22",
-              "surface-container-high": "#e4e8f0",
-              "on-error": "#ffffff",
-              "background": "#f7f9ff",
-              "on-primary-container": "#a2ccff",
-              "error": "#ba1a1a",
-              "on-surface-variant": "#414750",
-              "surface-variant": "#dee3ea",
-              "on-error-container": "#93000a",
-              "surface-tint": "#19619d",
-              "outline": "#717781",
-              "on-tertiary-container": "#a0cdff",
-              "on-secondary-fixed-variant": "#164973",
-              "on-primary-fixed": "#001d36",
-              "on-tertiary": "#ffffff",
-              "tertiary": "#00406a",
-              "surface-container": "#eaeef6",
-              "outline-variant": "#c1c7d1",
-              "tertiary-container": "#00588f",
-              "on-secondary-container": "#285782",
-              "tertiary-fixed": "#d0e4ff",
-              "inverse-primary": "#9dcaff",
-              "surface-container-lowest": "#ffffff",
-              "tertiary-fixed-dim": "#9acbff",
-              "secondary-container": "#a1cdfe",
-              "inverse-surface": "#2c3137",
-              "primary-container": "#005792",
-              "primary": "#003f6c",
-              "surface-container-highest": "#dee3ea",
-              "error-container": "#ffdad6",
-              "secondary": "#34618c",
-              "primary-fixed-dim": "#9dcaff",
-              "surface": "#f7f9ff",
-              "on-background": "#171c22",
-              "primary-fixed": "#d1e4ff",
-              "on-tertiary-fixed": "#001d34",
-              "on-secondary": "#ffffff",
-              "on-tertiary-fixed-variant": "#004a79",
-              "on-primary": "#ffffff",
-              "inverse-on-surface": "#edf1f9",
-              "surface-container-low": "#eff4fc",
-              "on-secondary-fixed": "#001d34",
-              "secondary-fixed": "#d0e4ff",
-              "secondary-fixed-dim": "#9fcafb"
-            },
-            fontFamily: {
-              "headline": ["Noto Serif"],
-              "display": ["Playfair Display"],
-              "body": ["Inter"],
-              "label": ["Inter"]
-            },
-            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
-          },
-        },
-      }
-    </script>
-<style>
-      .material-symbols-outlined {
-        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-      }
-      .glass-nav {
-        background: rgba(255, 255, 255, 0.8);
-        backdrop-filter: blur(12px);
-      }
-      .editorial-shadow {
-        box-shadow: 0 12px 40px rgba(0, 63, 108, 0.06);
-      }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lagoon 46 — Sea Breeze — Marencello</title>
+  <link rel="stylesheet" href="../css/styles.css">
 </head>
-<body class="bg-surface font-body text-on-surface antialiased">
+<body>
 
 <!-- Navigation -->
-<nav class="fixed top-0 w-full z-50 glass-nav shadow-[0_12px_40px_rgba(0,63,108,0.06)]">
-<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
-<a href="../index.html" class="text-2xl font-bold tracking-tighter text-sky-900 font-headline no-underline">Marencello</a>
-<div class="hidden md:flex items-center space-x-10">
-<a class="text-slate-600 hover:text-sky-900 transition-colors font-label" href="destinations.html">Destinations</a>
-<a class="text-slate-600 hover:text-sky-900 transition-colors font-label" href="search.html">Yachts</a>
-<a class="text-slate-600 hover:text-sky-900 transition-colors font-label" href="../index.html#how-it-works">How it Works</a>
-<a class="text-slate-600 hover:text-sky-900 transition-colors font-label" href="ai-planner.html">AI Planner</a>
-</div>
-<button class="bg-primary hover:bg-primary-container text-white px-6 py-2 rounded-lg font-medium transition-all scale-95 active:scale-90">
-  Sign In
-</button>
-</div>
+<nav class="nav scrolled" id="nav">
+  <div class="container">
+    <a href="../index.html" class="nav-logo">Marencello</a>
+    <div class="nav-links">
+      <a href="destinations.html">Destinations</a>
+      <a href="search.html">Yachts</a>
+      <a href="#">Deals</a>
+      <a href="#">Guides</a>
+      <a href="ai-planner.html" class="nav-cta">AI Trip Planner</a>
+    </div>
+    <div class="nav-right">
+      <a href="#" class="nav-icon" title="Saved">&#9825;</a>
+      <a href="#" class="nav-icon" title="Account">&#9786;</a>
+      <button class="mobile-menu-toggle" aria-label="Menu">&#9776;</button>
+    </div>
+  </div>
 </nav>
-
-<!-- Page Content -->
-<main class="pt-[72px]">
 
 <!-- Photo Gallery -->
-<section class="max-w-7xl mx-auto px-6 pt-8 pb-4">
-<div class="grid gap-1 rounded-2xl overflow-hidden" style="grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 1fr 1fr; height: 480px;">
-  <div class="row-span-2 relative group cursor-pointer">
-    <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZlvaeLeQ-qAcjgIRNboQrmURvoJ3D6424pn12dBluKZkTJKFFqTyT3dX1CWCntpEapfhdb3FncZc5omvo3SviQo31ya0gSVZDPvXShSYeC9bgXMos0QiQKCMHbKOKIUnxzkbVAUwKXmT0bkXeT6wjooEjZNReC9cbRoXMjtiDsirDFvkz3GQMPvZVnOTp2m4_4O68lZaCUntiwlQivVMHbm83SnaDMgZXJ91by2UjXlgFW7LJJ2TQDGKREJfqNm6LCa03i9MBY84" alt="Lagoon 46 Sea Breeze main photo"/>
-    <div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors"></div>
-  </div>
-  <div class="relative group cursor-pointer">
-    <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpRr7xt606CP0CE2OEyItK3w_digdYu2tQUi271xzzWlk9fGIdaAJPfL3A84s8IxX_BLify5fGuGTJsvIjlqKK1Mjst9prt0JWMDrHGvqJNHfW-v3F_f5XqLZNsyggPbt9fe2ACCNhl4uLnlhY-8q_V_BULwHuZEbh2LyEVYuImaDLDE-711F21IQT4kfZ-a6bcD_iBdidFUIawVMLeEbjfYCvpiW-sOIu0BprGyGx4BnJEJZivesGj2f2Qv7tlcsa3ovniGzihqY" alt="Lagoon 46 interior cabin"/>
-    <div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors"></div>
-  </div>
-  <div class="relative group cursor-pointer">
-    <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBscoCuhp1J7rZmStLTp0eIiPKcpbQUccUzpuGW1DT-BXhryMAAWDrgvIECvmkcrJosSSfPMJmS_fUfFYPkHeWEAp67pPqyul-fA6Iho4cXM-VCgAfs410j8o8MAAIP7DCk2x-Unci0D6e6RknwF3OkooE6s5WXjt93zJbjghbpNBXZEKl6nehj0RPXqqRIL2QkUNokyhaqIQG-jRUF_k9YrPWq58UORk8JNrvPhFtRs6vA0xv3g-5B-zBPcEgEvYk_Ia1He3dnXMI" alt="Lagoon 46 deck view"/>
-    <div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors"></div>
-  </div>
-  <div class="relative group cursor-pointer">
-    <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQIgVM8uEPZ9qvgAuk3kd4dTIl8BFuevgTGRsImBCMhDP3shr9MJ8kmMfKrfZomZTMytBx8Zsk0hGA8sVGa-PACZFV2DX2YaoXGoBdKN9ix_QkrLJEmZto5_6Nw4drZZzUVQoSulQWbygMkC_siCxFxoOaJeYIkD8NxjmX1fOJ41e0dHSWb8cNwXFMTOMO0R-WKEtZh-BtYXyNMTuS1bKJ5VEVsDQ-Kdk71tIaFsvgO3rMa8Br81TXlafo23cLmeq3lB4YjZDmP3I" alt="Lagoon 46 sailing"/>
-    <div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors flex items-center justify-center">
-      <span class="text-white font-label text-sm bg-primary/60 px-4 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity">View all photos</span>
-    </div>
-  </div>
-</div>
-</section>
-
-<!-- Two-Column Layout -->
-<section class="max-w-7xl mx-auto px-6 py-8">
-<div class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 items-start">
-
-<!-- LEFT COLUMN -->
-<div>
-
-<!-- Breadcrumb -->
-<nav class="flex items-center gap-2 text-sm text-on-surface-variant mb-6 font-label">
-  <a href="../index.html" class="hover:text-primary transition-colors">Home</a>
-  <span class="material-symbols-outlined text-sm">chevron_right</span>
-  <a href="search.html" class="hover:text-primary transition-colors">Yachts</a>
-  <span class="material-symbols-outlined text-sm">chevron_right</span>
-  <a href="search.html" class="hover:text-primary transition-colors">Catamarans</a>
-  <span class="material-symbols-outlined text-sm">chevron_right</span>
-  <span class="text-on-surface">Lagoon 46</span>
-</nav>
-
-<!-- Type Badge + Rating -->
-<div class="flex items-center gap-3 mb-3">
-  <span class="bg-tertiary/10 text-tertiary px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider">Catamaran</span>
-  <div class="flex items-center gap-1">
-    <span class="material-symbols-outlined text-yellow-500 text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
-    <span class="font-semibold text-on-surface">4.9</span>
-    <span class="text-on-surface-variant text-sm">(47 reviews)</span>
+<div style="padding-top:64px">
+  <div class="yacht-gallery">
+    <img class="main-photo" src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=1200&q=80" alt="Lagoon 46 exterior">
+    <img src="https://images.unsplash.com/photo-1605281317010-fe5ffe798166?w=600&q=80" alt="Lagoon 46 sailing">
+    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&q=80" alt="Lagoon 46 interior">
+    <img src="https://images.unsplash.com/photo-1540946485063-a40da27545f8?w=600&q=80" alt="Lagoon 46 cabin">
   </div>
 </div>
 
-<!-- Title -->
-<h1 class="font-display text-3xl md:text-4xl text-primary mb-3 tracking-tight">Lagoon 46 — Sea Breeze</h1>
+<!-- Detail Layout -->
+<div class="container">
+  <div class="yacht-detail-layout">
+    <!-- Left: Info -->
+    <div class="yacht-info">
+      <div style="padding-top:var(--space-xl)">
+        <div class="breadcrumb" style="font-size:13px;color:var(--soft-grey);margin-bottom:var(--space-md)">
+          <a href="../index.html" style="color:var(--light-blue)">Home</a> /
+          <a href="search.html" style="color:var(--light-blue)">Yachts</a> /
+          <a href="search.html" style="color:var(--light-blue)">Catamarans</a> /
+          Lagoon 46
+        </div>
+        <div style="display:flex;align-items:center;gap:var(--space-md);margin-bottom:4px">
+          <span class="yacht-card-badge" style="position:static">Catamaran</span>
+          <span style="font-size:13px;color:var(--warm-copper);font-weight:600">&#9733; 4.9 (47 reviews)</span>
+        </div>
+        <h1>Lagoon 46 &mdash; Sea Breeze</h1>
+        <div class="yacht-location">&#128205; ACI Marina Split, Croatia</div>
+      </div>
 
-<!-- Location -->
-<div class="flex items-center gap-2 text-on-surface-variant mb-8">
-  <span class="material-symbols-outlined text-primary text-xl">location_on</span>
-  <span class="font-body">Split, Croatia &middot; Dalmatian Coast</span>
-</div>
+      <!-- Highlights -->
+      <div class="yacht-highlights">
+        <div class="yacht-highlight">
+          <div class="value">14m</div>
+          <div class="label">Length</div>
+        </div>
+        <div class="yacht-highlight">
+          <div class="value">4</div>
+          <div class="label">Cabins</div>
+        </div>
+        <div class="yacht-highlight">
+          <div class="value">10</div>
+          <div class="label">Guests</div>
+        </div>
+        <div class="yacht-highlight">
+          <div class="value">2023</div>
+          <div class="label">Year</div>
+        </div>
+        <div class="yacht-highlight">
+          <div class="value">4</div>
+          <div class="label">Heads</div>
+        </div>
+      </div>
 
-<!-- Highlights Row -->
-<div class="grid grid-cols-5 gap-4 bg-surface-container-low rounded-xl p-6 mb-10">
-  <div class="text-center">
-    <span class="material-symbols-outlined text-primary mb-1">straighten</span>
-    <p class="font-display text-xl text-primary font-bold">14m</p>
-    <p class="text-xs text-on-surface-variant mt-1">Length</p>
-  </div>
-  <div class="text-center">
-    <span class="material-symbols-outlined text-primary mb-1">bed</span>
-    <p class="font-display text-xl text-primary font-bold">4</p>
-    <p class="text-xs text-on-surface-variant mt-1">Cabins</p>
-  </div>
-  <div class="text-center">
-    <span class="material-symbols-outlined text-primary mb-1">group</span>
-    <p class="font-display text-xl text-primary font-bold">10</p>
-    <p class="text-xs text-on-surface-variant mt-1">Guests</p>
-  </div>
-  <div class="text-center">
-    <span class="material-symbols-outlined text-primary mb-1">calendar_month</span>
-    <p class="font-display text-xl text-primary font-bold">2023</p>
-    <p class="text-xs text-on-surface-variant mt-1">Year</p>
-  </div>
-  <div class="text-center">
-    <span class="material-symbols-outlined text-primary mb-1">shower</span>
-    <p class="font-display text-xl text-primary font-bold">4</p>
-    <p class="text-xs text-on-surface-variant mt-1">Heads</p>
-  </div>
-</div>
+      <!-- Description -->
+      <div class="yacht-section">
+        <h2>About This Yacht</h2>
+        <p style="font-size:15px;line-height:1.8;color:#555">
+          The Lagoon 46 "Sea Breeze" is a stunning 2023 catamaran based in ACI Marina Split. With her spacious 4-cabin layout, she comfortably accommodates up to 10 guests in style. The flybridge offers a panoramic helm station and generous lounging area, while the cockpit features a large dining table perfect for al fresco meals.
+        </p>
+        <p style="font-size:15px;line-height:1.8;color:#555;margin-top:var(--space-md)">
+          Fully equipped with air conditioning, watermaker, electric winches, and a comprehensive electronics package. Water toys include a stand-up paddleboard, snorkelling gear, and a tender with outboard engine.
+        </p>
+      </div>
 
-<!-- About This Yacht -->
-<div class="mb-12">
-  <h2 class="font-display text-2xl text-primary mb-4">About This Yacht</h2>
-  <div class="text-on-surface-variant leading-relaxed space-y-4">
-    <p>The Lagoon 46 "Sea Breeze" is a modern, spacious catamaran designed for the ultimate charter experience. With her sleek lines and generous living spaces, she offers an unparalleled combination of performance and comfort on the Adriatic Sea.</p>
-    <p>Her open-plan saloon features panoramic windows that flood the interior with natural light, while the expansive flybridge provides the perfect vantage point for watching sunsets over the Croatian islands. Each of the four cabins has its own ensuite bathroom, ensuring privacy and comfort for all guests.</p>
-    <p>Whether you're an experienced sailor looking for a bareboat adventure or prefer the luxury of a skippered charter, Sea Breeze adapts perfectly to your style of cruising. Her shallow draft allows access to secluded bays and anchorages that larger yachts simply cannot reach.</p>
-  </div>
-</div>
+      <!-- Specifications -->
+      <div class="yacht-section">
+        <h2>Specifications</h2>
+        <div class="spec-grid">
+          <div class="spec-row"><span class="spec-label">Builder</span><span class="spec-value">Lagoon (Beneteau Group)</span></div>
+          <div class="spec-row"><span class="spec-label">Model</span><span class="spec-value">Lagoon 46</span></div>
+          <div class="spec-row"><span class="spec-label">Year</span><span class="spec-value">2023</span></div>
+          <div class="spec-row"><span class="spec-label">LOA</span><span class="spec-value">13.99 m / 45.9 ft</span></div>
+          <div class="spec-row"><span class="spec-label">Beam</span><span class="spec-value">7.74 m / 25.4 ft</span></div>
+          <div class="spec-row"><span class="spec-label">Draft</span><span class="spec-value">1.35 m / 4.4 ft</span></div>
+          <div class="spec-row"><span class="spec-label">Displacement</span><span class="spec-value">16,150 kg</span></div>
+          <div class="spec-row"><span class="spec-label">Engines</span><span class="spec-value">2 &times; 57 HP Yanmar</span></div>
+          <div class="spec-row"><span class="spec-label">Fuel Capacity</span><span class="spec-value">2 &times; 350 L</span></div>
+          <div class="spec-row"><span class="spec-label">Water Capacity</span><span class="spec-value">2 &times; 350 L</span></div>
+          <div class="spec-row"><span class="spec-label">Cabins / Berths</span><span class="spec-value">4 cabins / 8+2 berths</span></div>
+          <div class="spec-row"><span class="spec-label">Heads</span><span class="spec-value">4</span></div>
+        </div>
+      </div>
 
-<!-- Specifications -->
-<div class="mb-12">
-  <h2 class="font-display text-2xl text-primary mb-6">Specifications</h2>
-  <div class="rounded-xl overflow-hidden">
-    <div class="grid grid-cols-2">
-      <div class="bg-surface-container-low px-6 py-4">
-        <span class="text-on-surface-variant text-sm">Builder</span>
-        <p class="font-semibold text-on-surface">Lagoon (Groupe Beneteau)</p>
+      <!-- Equipment -->
+      <div class="yacht-section">
+        <h2>Equipment</h2>
+        <div class="equipment-grid">
+          <div class="equipment-item"><span class="check">&#10003;</span> Air conditioning</div>
+          <div class="equipment-item"><span class="check">&#10003;</span> Watermaker</div>
+          <div class="equipment-item"><span class="check">&#10003;</span> Electric winches</div>
+          <div class="equipment-item"><span class="check">&#10003;</span> Bow thruster</div>
+          <div class="equipment-item"><span class="check">&#10003;</span> Generator</div>
+          <div class="equipment-item"><span class="check">&#10003;</span> Solar panels</div>
+          <div class="equipment-item"><span class="check">&#10003;</span> Autopilot</div>
+          <div class="equipment-item"><span class="check">&#10003;</span> Chartplotter</div>
+          <div class="equipment-item"><span class="check">&#10003;</span> Radar</div>
+          <div class="equipment-item"><span class="check">&#10003;</span> Dinghy + outboard</div>
+          <div class="equipment-item"><span class="check">&#10003;</span> SUP board</div>
+          <div class="equipment-item"><span class="check">&#10003;</span> Snorkelling gear</div>
+          <div class="equipment-item"><span class="check">&#10003;</span> Bimini top</div>
+          <div class="equipment-item"><span class="check">&#10003;</span> Cockpit speakers</div>
+          <div class="equipment-item"><span class="check">&#10003;</span> USB charging</div>
+        </div>
       </div>
-      <div class="bg-surface-container-low px-6 py-4">
-        <span class="text-on-surface-variant text-sm">Model</span>
-        <p class="font-semibold text-on-surface">Lagoon 46</p>
-      </div>
-    </div>
-    <div class="grid grid-cols-2">
-      <div class="bg-surface px-6 py-4">
-        <span class="text-on-surface-variant text-sm">Year Built</span>
-        <p class="font-semibold text-on-surface">2023</p>
-      </div>
-      <div class="bg-surface px-6 py-4">
-        <span class="text-on-surface-variant text-sm">Length Overall</span>
-        <p class="font-semibold text-on-surface">13.99 m / 45.9 ft</p>
-      </div>
-    </div>
-    <div class="grid grid-cols-2">
-      <div class="bg-surface-container-low px-6 py-4">
-        <span class="text-on-surface-variant text-sm">Beam</span>
-        <p class="font-semibold text-on-surface">7.73 m / 25.4 ft</p>
-      </div>
-      <div class="bg-surface-container-low px-6 py-4">
-        <span class="text-on-surface-variant text-sm">Draft</span>
-        <p class="font-semibold text-on-surface">1.30 m / 4.3 ft</p>
-      </div>
-    </div>
-    <div class="grid grid-cols-2">
-      <div class="bg-surface px-6 py-4">
-        <span class="text-on-surface-variant text-sm">Engines</span>
-        <p class="font-semibold text-on-surface">2 x 57 HP Yanmar</p>
-      </div>
-      <div class="bg-surface px-6 py-4">
-        <span class="text-on-surface-variant text-sm">Water Capacity</span>
-        <p class="font-semibold text-on-surface">680 L</p>
-      </div>
-    </div>
-    <div class="grid grid-cols-2">
-      <div class="bg-surface-container-low px-6 py-4">
-        <span class="text-on-surface-variant text-sm">Fuel Capacity</span>
-        <p class="font-semibold text-on-surface">2 x 520 L</p>
-      </div>
-      <div class="bg-surface-container-low px-6 py-4">
-        <span class="text-on-surface-variant text-sm">Sail Area</span>
-        <p class="font-semibold text-on-surface">130 m&sup2;</p>
-      </div>
-    </div>
-  </div>
-</div>
 
-<!-- Equipment -->
-<div class="mb-12">
-  <h2 class="font-display text-2xl text-primary mb-6">Equipment &amp; Amenities</h2>
-  <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-    <div class="flex items-center gap-3 py-3">
-      <span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-      <span class="text-on-surface text-sm">Air Conditioning</span>
-    </div>
-    <div class="flex items-center gap-3 py-3">
-      <span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-      <span class="text-on-surface text-sm">Watermaker</span>
-    </div>
-    <div class="flex items-center gap-3 py-3">
-      <span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-      <span class="text-on-surface text-sm">Generator</span>
-    </div>
-    <div class="flex items-center gap-3 py-3">
-      <span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-      <span class="text-on-surface text-sm">Autopilot</span>
-    </div>
-    <div class="flex items-center gap-3 py-3">
-      <span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-      <span class="text-on-surface text-sm">GPS / Chartplotter</span>
-    </div>
-    <div class="flex items-center gap-3 py-3">
-      <span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-      <span class="text-on-surface text-sm">Electric Windlass</span>
-    </div>
-    <div class="flex items-center gap-3 py-3">
-      <span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-      <span class="text-on-surface text-sm">Dinghy + Outboard</span>
-    </div>
-    <div class="flex items-center gap-3 py-3">
-      <span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-      <span class="text-on-surface text-sm">SUP Board</span>
-    </div>
-    <div class="flex items-center gap-3 py-3">
-      <span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-      <span class="text-on-surface text-sm">Snorkelling Gear</span>
-    </div>
-    <div class="flex items-center gap-3 py-3">
-      <span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-      <span class="text-on-surface text-sm">Bluetooth Sound System</span>
-    </div>
-    <div class="flex items-center gap-3 py-3">
-      <span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-      <span class="text-on-surface text-sm">Solar Panels</span>
-    </div>
-    <div class="flex items-center gap-3 py-3">
-      <span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-      <span class="text-on-surface text-sm">Bimini &amp; Sprayhood</span>
-    </div>
-  </div>
-</div>
+      <!-- Availability Calendar -->
+      <div class="yacht-section">
+        <h2>Availability</h2>
+        <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-top:var(--space-md)">
+          <div style="font-size:11px;font-weight:700;color:var(--soft-grey);text-align:center;padding:8px 0">Sat</div>
+          <div style="font-size:11px;font-weight:700;color:var(--soft-grey);text-align:center;padding:8px 0">Sun</div>
+          <div style="font-size:11px;font-weight:700;color:var(--soft-grey);text-align:center;padding:8px 0">Mon</div>
+          <div style="font-size:11px;font-weight:700;color:var(--soft-grey);text-align:center;padding:8px 0">Tue</div>
+          <div style="font-size:11px;font-weight:700;color:var(--soft-grey);text-align:center;padding:8px 0">Wed</div>
+          <div style="font-size:11px;font-weight:700;color:var(--soft-grey);text-align:center;padding:8px 0">Thu</div>
+          <div style="font-size:11px;font-weight:700;color:var(--soft-grey);text-align:center;padding:8px 0">Fri</div>
 
-<!-- Availability Calendar -->
-<div class="mb-12">
-  <h2 class="font-display text-2xl text-primary mb-6">Availability</h2>
-  <div class="bg-surface-container-lowest rounded-2xl editorial-shadow p-6">
-    <div class="flex items-center justify-between mb-6">
-      <button class="flex items-center gap-1 text-on-surface-variant hover:text-primary transition-colors">
-        <span class="material-symbols-outlined">chevron_left</span>
-        <span class="text-sm font-label">Previous</span>
-      </button>
-      <h3 class="font-display text-lg text-primary">July &mdash; August 2026</h3>
-      <button class="flex items-center gap-1 text-on-surface-variant hover:text-primary transition-colors">
-        <span class="text-sm font-label">Next</span>
-        <span class="material-symbols-outlined">chevron_right</span>
-      </button>
-    </div>
-    <div class="space-y-2">
-      <!-- Header -->
-      <div class="grid grid-cols-[140px_1fr_100px] gap-4 px-4 py-2">
-        <span class="text-xs text-on-surface-variant font-semibold uppercase tracking-wider">Week</span>
-        <span class="text-xs text-on-surface-variant font-semibold uppercase tracking-wider">Status</span>
-        <span class="text-xs text-on-surface-variant font-semibold uppercase tracking-wider text-right">Price</span>
-      </div>
-      <!-- Available -->
-      <div class="grid grid-cols-[140px_1fr_100px] gap-4 bg-tertiary/5 rounded-lg px-4 py-3 items-center">
-        <span class="text-sm font-medium text-on-surface">Jul 4 &ndash; Jul 11</span>
-        <div class="flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-tertiary"></span>
-          <span class="text-sm text-tertiary font-medium">Available</span>
-        </div>
-        <span class="text-sm font-display font-bold text-primary text-right">&euro;2,800</span>
-      </div>
-      <!-- Booked -->
-      <div class="grid grid-cols-[140px_1fr_100px] gap-4 bg-error/5 rounded-lg px-4 py-3 items-center">
-        <span class="text-sm font-medium text-on-surface">Jul 11 &ndash; Jul 18</span>
-        <div class="flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-error/60"></span>
-          <span class="text-sm text-error/80 font-medium">Booked</span>
-        </div>
-        <span class="text-sm text-on-surface-variant text-right">&mdash;</span>
-      </div>
-      <!-- Booked -->
-      <div class="grid grid-cols-[140px_1fr_100px] gap-4 bg-error/5 rounded-lg px-4 py-3 items-center">
-        <span class="text-sm font-medium text-on-surface">Jul 18 &ndash; Jul 25</span>
-        <div class="flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-error/60"></span>
-          <span class="text-sm text-error/80 font-medium">Booked</span>
-        </div>
-        <span class="text-sm text-on-surface-variant text-right">&mdash;</span>
-      </div>
-      <!-- Available -->
-      <div class="grid grid-cols-[140px_1fr_100px] gap-4 bg-tertiary/5 rounded-lg px-4 py-3 items-center">
-        <span class="text-sm font-medium text-on-surface">Jul 25 &ndash; Aug 1</span>
-        <div class="flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-tertiary"></span>
-          <span class="text-sm text-tertiary font-medium">Available</span>
-        </div>
-        <span class="text-sm font-display font-bold text-primary text-right">&euro;3,200</span>
-      </div>
-      <!-- Available -->
-      <div class="grid grid-cols-[140px_1fr_100px] gap-4 bg-tertiary/5 rounded-lg px-4 py-3 items-center">
-        <span class="text-sm font-medium text-on-surface">Aug 1 &ndash; Aug 8</span>
-        <div class="flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-tertiary"></span>
-          <span class="text-sm text-tertiary font-medium">Available</span>
-        </div>
-        <span class="text-sm font-display font-bold text-primary text-right">&euro;3,200</span>
-      </div>
-      <!-- Booked -->
-      <div class="grid grid-cols-[140px_1fr_100px] gap-4 bg-error/5 rounded-lg px-4 py-3 items-center">
-        <span class="text-sm font-medium text-on-surface">Aug 8 &ndash; Aug 15</span>
-        <div class="flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-error/60"></span>
-          <span class="text-sm text-error/80 font-medium">Booked</span>
-        </div>
-        <span class="text-sm text-on-surface-variant text-right">&mdash;</span>
-      </div>
-      <!-- Available -->
-      <div class="grid grid-cols-[140px_1fr_100px] gap-4 bg-tertiary/5 rounded-lg px-4 py-3 items-center">
-        <span class="text-sm font-medium text-on-surface">Aug 15 &ndash; Aug 22</span>
-        <div class="flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-tertiary"></span>
-          <span class="text-sm text-tertiary font-medium">Available</span>
-        </div>
-        <span class="text-sm font-display font-bold text-primary text-right">&euro;2,800</span>
-      </div>
-    </div>
-    <!-- Legend -->
-    <div class="flex items-center gap-6 mt-6 pt-4">
-      <div class="flex items-center gap-2">
-        <span class="w-3 h-3 rounded-full bg-tertiary"></span>
-        <span class="text-xs text-on-surface-variant">Available</span>
-      </div>
-      <div class="flex items-center gap-2">
-        <span class="w-3 h-3 rounded-full bg-error/60"></span>
-        <span class="text-xs text-on-surface-variant">Booked</span>
-      </div>
-    </div>
-  </div>
-</div>
+          <div style="background:var(--coral-red);color:white;text-align:center;padding:12px 4px;border-radius:4px;font-size:12px">Jun 28<br><small>Booked</small></div>
+          <div style="background:#f0f0f0;text-align:center;padding:12px 4px;border-radius:4px;font-size:12px;color:var(--soft-grey)">29</div>
+          <div style="background:#f0f0f0;text-align:center;padding:12px 4px;border-radius:4px;font-size:12px;color:var(--soft-grey)">30</div>
+          <div style="background:#f0f0f0;text-align:center;padding:12px 4px;border-radius:4px;font-size:12px;color:var(--soft-grey)">1</div>
+          <div style="background:#f0f0f0;text-align:center;padding:12px 4px;border-radius:4px;font-size:12px;color:var(--soft-grey)">2</div>
+          <div style="background:#f0f0f0;text-align:center;padding:12px 4px;border-radius:4px;font-size:12px;color:var(--soft-grey)">3</div>
+          <div style="background:#f0f0f0;text-align:center;padding:12px 4px;border-radius:4px;font-size:12px;color:var(--soft-grey)">4</div>
 
-<!-- Reviews -->
-<div class="mb-12">
-  <h2 class="font-display text-2xl text-primary mb-6">Guest Reviews</h2>
-  <div class="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-8 mb-8">
-    <!-- Overall Rating -->
-    <div class="bg-surface-container-low rounded-2xl p-8 text-center">
-      <p class="font-display text-5xl text-primary font-bold mb-2">4.9</p>
-      <div class="flex justify-center gap-0.5 text-yellow-500 mb-2">
-        <span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
-        <span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
-        <span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
-        <span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
-        <span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
-      </div>
-      <p class="text-sm text-on-surface-variant">47 reviews</p>
-    </div>
-    <!-- Sub-Ratings -->
-    <div class="grid grid-cols-2 gap-x-8 gap-y-4 content-center">
-      <div>
-        <div class="flex justify-between text-sm mb-1">
-          <span class="text-on-surface-variant">Condition</span>
-          <span class="font-semibold text-on-surface">5.0</span>
-        </div>
-        <div class="h-2 bg-surface-container-high rounded-full overflow-hidden">
-          <div class="h-full bg-tertiary rounded-full" style="width: 100%"></div>
-        </div>
-      </div>
-      <div>
-        <div class="flex justify-between text-sm mb-1">
-          <span class="text-on-surface-variant">Comfort</span>
-          <span class="font-semibold text-on-surface">4.9</span>
-        </div>
-        <div class="h-2 bg-surface-container-high rounded-full overflow-hidden">
-          <div class="h-full bg-tertiary rounded-full" style="width: 98%"></div>
-        </div>
-      </div>
-      <div>
-        <div class="flex justify-between text-sm mb-1">
-          <span class="text-on-surface-variant">Cleanliness</span>
-          <span class="font-semibold text-on-surface">5.0</span>
-        </div>
-        <div class="h-2 bg-surface-container-high rounded-full overflow-hidden">
-          <div class="h-full bg-tertiary rounded-full" style="width: 100%"></div>
-        </div>
-      </div>
-      <div>
-        <div class="flex justify-between text-sm mb-1">
-          <span class="text-on-surface-variant">Value for Money</span>
-          <span class="font-semibold text-on-surface">4.8</span>
-        </div>
-        <div class="h-2 bg-surface-container-high rounded-full overflow-hidden">
-          <div class="h-full bg-tertiary rounded-full" style="width: 96%"></div>
-        </div>
-      </div>
-      <div>
-        <div class="flex justify-between text-sm mb-1">
-          <span class="text-on-surface-variant">Check-in</span>
-          <span class="font-semibold text-on-surface">4.9</span>
-        </div>
-        <div class="h-2 bg-surface-container-high rounded-full overflow-hidden">
-          <div class="h-full bg-tertiary rounded-full" style="width: 98%"></div>
-        </div>
-      </div>
-      <div>
-        <div class="flex justify-between text-sm mb-1">
-          <span class="text-on-surface-variant">Sailing Performance</span>
-          <span class="font-semibold text-on-surface">4.8</span>
-        </div>
-        <div class="h-2 bg-surface-container-high rounded-full overflow-hidden">
-          <div class="h-full bg-tertiary rounded-full" style="width: 96%"></div>
-        </div>
-      </div>
-    </div>
-  </div>
+          <div style="background:var(--coral-red);color:white;text-align:center;padding:12px 4px;border-radius:4px;font-size:12px">Jul 5<br><small>Booked</small></div>
+          <div style="background:#f0f0f0;text-align:center;padding:12px 4px;border-radius:4px;font-size:12px;color:var(--soft-grey)">6</div>
+          <div style="background:#f0f0f0;text-align:center;padding:12px 4px;border-radius:4px;font-size:12px;color:var(--soft-grey)">7</div>
+          <div style="background:#f0f0f0;text-align:center;padding:12px 4px;border-radius:4px;font-size:12px;color:var(--soft-grey)">8</div>
+          <div style="background:#f0f0f0;text-align:center;padding:12px 4px;border-radius:4px;font-size:12px;color:var(--soft-grey)">9</div>
+          <div style="background:#f0f0f0;text-align:center;padding:12px 4px;border-radius:4px;font-size:12px;color:var(--soft-grey)">10</div>
+          <div style="background:#f0f0f0;text-align:center;padding:12px 4px;border-radius:4px;font-size:12px;color:var(--soft-grey)">11</div>
 
-  <!-- Review Cards -->
-  <div class="space-y-6">
-    <!-- Review 1 -->
-    <div class="bg-surface-container-lowest p-8 rounded-xl editorial-shadow">
-      <div class="flex items-start gap-4 mb-4">
-        <img class="w-12 h-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBL-jyAswUbX1QOl_cmQr4c4s4C6u30v_oKQIgfz-Evtc_B6nvlDakFtNOggRi4zDuUI8jKe-4PLDUba1J8wCKuIR3enCKq7TN4y6znV01n2_fFXJrNBGyNOPncYKe_3uAyGQpNNxEGyQEUadQRDzH_wQNVxbIFJmCa_3nGiva08BmMVZG8Vg7mCkI1NZ8ba1Vorl5ZB4J5gfyQhfk7r0ZPhYDmnicohAds3w_3ft-qGKcEa2uiYNPuE6zvihKxydqF8yB2DNMRfXE" alt="Julian Marek"/>
-        <div class="flex-1">
-          <div class="flex items-center justify-between">
-            <div>
-              <p class="font-semibold text-primary">Julian Marek</p>
-              <p class="text-xs text-on-surface-variant">Sailed Croatia &middot; August 2025</p>
+          <div style="background:var(--deep-teal);color:white;text-align:center;padding:12px 4px;border-radius:4px;font-size:12px;cursor:pointer">Jul 12<br><small>&euro;2,890</small></div>
+          <div style="background:#e8f5e9;text-align:center;padding:12px 4px;border-radius:4px;font-size:12px;color:var(--deep-teal)">13</div>
+          <div style="background:#e8f5e9;text-align:center;padding:12px 4px;border-radius:4px;font-size:12px;color:var(--deep-teal)">14</div>
+          <div style="background:#e8f5e9;text-align:center;padding:12px 4px;border-radius:4px;font-size:12px;color:var(--deep-teal)">15</div>
+          <div style="background:#e8f5e9;text-align:center;padding:12px 4px;border-radius:4px;font-size:12px;color:var(--deep-teal)">16</div>
+          <div style="background:#e8f5e9;text-align:center;padding:12px 4px;border-radius:4px;font-size:12px;color:var(--deep-teal)">17</div>
+          <div style="background:#e8f5e9;text-align:center;padding:12px 4px;border-radius:4px;font-size:12px;color:var(--deep-teal)">18</div>
+
+          <div style="background:var(--deep-teal);color:white;text-align:center;padding:12px 4px;border-radius:4px;font-size:12px;cursor:pointer">Jul 19<br><small>&euro;3,290</small></div>
+          <div style="background:#e8f5e9;text-align:center;padding:12px 4px;border-radius:4px;font-size:12px;color:var(--deep-teal)">20</div>
+          <div style="background:#e8f5e9;text-align:center;padding:12px 4px;border-radius:4px;font-size:12px;color:var(--deep-teal)">21</div>
+          <div style="background:#e8f5e9;text-align:center;padding:12px 4px;border-radius:4px;font-size:12px;color:var(--deep-teal)">22</div>
+          <div style="background:#e8f5e9;text-align:center;padding:12px 4px;border-radius:4px;font-size:12px;color:var(--deep-teal)">23</div>
+          <div style="background:#e8f5e9;text-align:center;padding:12px 4px;border-radius:4px;font-size:12px;color:var(--deep-teal)">24</div>
+          <div style="background:#e8f5e9;text-align:center;padding:12px 4px;border-radius:4px;font-size:12px;color:var(--deep-teal)">25</div>
+        </div>
+        <div style="display:flex;gap:var(--space-lg);margin-top:var(--space-md);font-size:12px;color:var(--soft-grey)">
+          <span><span style="display:inline-block;width:12px;height:12px;background:var(--deep-teal);border-radius:2px;vertical-align:middle;margin-right:4px"></span> Available</span>
+          <span><span style="display:inline-block;width:12px;height:12px;background:var(--coral-red);border-radius:2px;vertical-align:middle;margin-right:4px"></span> Booked</span>
+          <span><span style="display:inline-block;width:12px;height:12px;background:#ffa726;border-radius:2px;vertical-align:middle;margin-right:4px"></span> Option held</span>
+        </div>
+      </div>
+
+      <!-- Reviews -->
+      <div class="yacht-section">
+        <h2>Reviews</h2>
+        <div style="display:flex;align-items:center;gap:var(--space-xl);margin-bottom:var(--space-xl);padding:var(--space-lg);background:var(--sand-white);border-radius:var(--radius-sm)">
+          <div style="text-align:center">
+            <div style="font-family:'Playfair Display',serif;font-size:48px;font-weight:700;color:var(--ocean-navy)">4.9</div>
+            <div style="color:var(--warm-copper);font-size:16px">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <div style="font-size:13px;color:var(--soft-grey);margin-top:4px">47 reviews</div>
+          </div>
+          <div style="flex:1;display:grid;grid-template-columns:1fr 1fr;gap:var(--space-sm)">
+            <div style="font-size:13px"><span style="color:var(--soft-grey)">Condition</span> <strong>5.0</strong></div>
+            <div style="font-size:13px"><span style="color:var(--soft-grey)">Cleanliness</span> <strong>4.9</strong></div>
+            <div style="font-size:13px"><span style="color:var(--soft-grey)">Value</span> <strong>4.8</strong></div>
+            <div style="font-size:13px"><span style="color:var(--soft-grey)">Base Service</span> <strong>4.9</strong></div>
+            <div style="font-size:13px"><span style="color:var(--soft-grey)">Accuracy</span> <strong>5.0</strong></div>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:var(--space-lg)">
+          <div class="review-card">
+            <div class="review-header">
+              <div class="review-author">
+                <div class="review-avatar">MK</div>
+                <div><div class="review-name">Martin K.</div><div class="review-trip">Aug 2025 &middot; Split &rarr; Dubrovnik</div></div>
+              </div>
+              <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
             </div>
-            <div class="flex gap-0.5 text-yellow-500">
-              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+            <p class="review-text">Absolutely fantastic catamaran. The Lagoon 46 is incredibly spacious for 4 couples. Everything worked perfectly, the check-in was smooth, and the base staff were helpful with route planning. Would book again without hesitation.</p>
+          </div>
+          <div class="review-card">
+            <div class="review-header">
+              <div class="review-author">
+                <div class="review-avatar">AH</div>
+                <div><div class="review-name">Anna H.</div><div class="review-trip">Jul 2025 &middot; Split &rarr; Split</div></div>
+              </div>
+              <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
             </div>
+            <p class="review-text">Second time on this exact boat. The owners maintain it beautifully. Air conditioning was a lifesaver in July. The watermaker meant we never had to worry about water. Highly recommended for families.</p>
           </div>
         </div>
       </div>
-      <p class="text-on-surface-variant leading-relaxed italic">
-        "Absolutely stunning catamaran. The Sea Breeze was in impeccable condition and the space on board was incredible for our group of 8. We spent a week island-hopping from Split to Hvar and Vis. The shallow draft meant we could anchor in bays that other boats couldn't reach. Highly recommend for families or groups who want comfort without compromising on sailing quality."
-      </p>
     </div>
-    <!-- Review 2 -->
-    <div class="bg-surface-container-lowest p-8 rounded-xl editorial-shadow">
-      <div class="flex items-start gap-4 mb-4">
-        <img class="w-12 h-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtyYBiVPjxyzSp4cQcjFyj-eBEufemjp6pNzLZ5Nab7xWuEvNYlJhaQ7ypYRDZ0BEVPWetEKQOFBbnQxD97GUtTUiZQnDAquWvuac-wMEq8U6Un8exzRl8h5glwYZR7g3VHijEJeMsDIWEpAIXYCqU3zXsySlytdVoY5GDkuKcJ7wfKDfkWmVniMCLLnudpmZW63Ed_oOH_Q0UY0zWjyJuraYhbt5s-XpTTG5ORJEjMAIHPLWe_t8wQkcNkH2DBomk_AfjOZ9UDNw" alt="Elena Rossi"/>
-        <div class="flex-1">
-          <div class="flex items-center justify-between">
-            <div>
-              <p class="font-semibold text-primary">Elena Rossi</p>
-              <p class="text-xs text-on-surface-variant">Sailed Croatia &middot; July 2025</p>
-            </div>
-            <div class="flex gap-0.5 text-yellow-500">
-              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-            </div>
+
+    <!-- Right: Booking Sidebar -->
+    <div>
+      <div class="booking-sidebar">
+        <div class="booking-price">
+          <span class="amount">&euro;2,890</span>
+          <span class="period">/week all-in</span>
+        </div>
+
+        <div class="booking-form">
+          <div class="booking-field">
+            <label>Check-in</label>
+            <input type="text" value="Saturday, Jul 12, 2026">
+          </div>
+          <div class="booking-field">
+            <label>Check-out</label>
+            <input type="text" value="Saturday, Jul 19, 2026">
+          </div>
+          <div class="booking-field">
+            <label>Guests</label>
+            <select>
+              <option>6 guests</option>
+              <option>8 guests</option>
+              <option selected>10 guests</option>
+            </select>
           </div>
         </div>
-      </div>
-      <p class="text-on-surface-variant leading-relaxed italic">
-        "A perfect week on the water. The Lagoon 46 handled beautifully under sail and the Marencello team made the check-in process completely seamless. The galley was well equipped for cooking on board, and the flybridge became our favourite spot for morning coffee. The air conditioning was a lifesaver during the July heat. We're already planning our return trip."
-      </p>
-    </div>
-  </div>
-</div>
 
-</div>
-<!-- END LEFT COLUMN -->
-
-<!-- RIGHT COLUMN — Booking Sidebar -->
-<div class="lg:sticky lg:top-24">
-<div class="bg-surface-container-lowest rounded-2xl editorial-shadow p-8">
-
-  <!-- Price -->
-  <div class="mb-6">
-    <div class="flex items-baseline gap-2">
-      <span class="font-display text-3xl text-primary font-bold">EUR 2,800</span>
-      <span class="text-on-surface-variant text-sm">/ week</span>
-    </div>
-    <p class="text-tertiary text-xs mt-1 font-medium">All-inclusive pricing</p>
-  </div>
-
-  <!-- Date Inputs -->
-  <div class="space-y-4 mb-6">
-    <div>
-      <label class="block text-xs font-label text-on-surface-variant mb-1.5 uppercase tracking-wider">Check-in</label>
-      <div class="flex items-center gap-3 border border-outline-variant/20 rounded-lg px-4 py-3">
-        <span class="material-symbols-outlined text-primary text-xl">calendar_month</span>
-        <input class="bg-transparent border-none focus:ring-0 w-full text-on-surface font-body text-sm p-0" placeholder="Select date" type="text" value="Jul 4, 2026"/>
-      </div>
-    </div>
-    <div>
-      <label class="block text-xs font-label text-on-surface-variant mb-1.5 uppercase tracking-wider">Check-out</label>
-      <div class="flex items-center gap-3 border border-outline-variant/20 rounded-lg px-4 py-3">
-        <span class="material-symbols-outlined text-primary text-xl">calendar_month</span>
-        <input class="bg-transparent border-none focus:ring-0 w-full text-on-surface font-body text-sm p-0" placeholder="Select date" type="text" value="Jul 11, 2026"/>
-      </div>
-    </div>
-    <div>
-      <label class="block text-xs font-label text-on-surface-variant mb-1.5 uppercase tracking-wider">Guests</label>
-      <div class="flex items-center gap-3 border border-outline-variant/20 rounded-lg px-4 py-3">
-        <span class="material-symbols-outlined text-primary text-xl">group</span>
-        <select class="bg-transparent border-none focus:ring-0 w-full text-on-surface font-body text-sm p-0">
-          <option>2 guests</option>
-          <option>4 guests</option>
-          <option>6 guests</option>
-          <option selected>8 guests</option>
-          <option>10 guests</option>
-        </select>
-      </div>
-    </div>
-  </div>
-
-  <!-- Price Breakdown -->
-  <div class="mb-6">
-    <div class="bg-surface-container-low rounded-xl p-4 space-y-3">
-      <div class="flex justify-between text-sm">
-        <span class="text-on-surface-variant">Charter fee (1 week)</span>
-        <span class="text-on-surface font-medium">&euro;2,800</span>
-      </div>
-      <div class="flex justify-between text-sm">
-        <span class="text-on-surface-variant">Transit log</span>
-        <span class="text-on-surface font-medium">&euro;180</span>
-      </div>
-      <div class="flex justify-between text-sm">
-        <span class="text-on-surface-variant">Final cleaning</span>
-        <span class="text-on-surface font-medium">&euro;250</span>
-      </div>
-      <div class="flex justify-between text-sm">
-        <span class="text-on-surface-variant">Service fee</span>
-        <span class="text-on-surface font-medium">&euro;140</span>
-      </div>
-    </div>
-    <!-- Total -->
-    <div class="flex justify-between items-baseline mt-4 px-1">
-      <span class="font-semibold text-on-surface">Total</span>
-      <span class="font-display text-2xl text-primary font-bold">&euro;3,370</span>
-    </div>
-  </div>
-
-  <!-- Reserve Button -->
-  <button class="w-full bg-primary hover:bg-primary-container text-white py-4 rounded-lg font-semibold text-base transition-all mb-3">
-    Reserve This Yacht
-  </button>
-  <p class="text-center text-xs text-on-surface-variant mb-6">Split payment available &middot; 50% now, 50% before departure</p>
-
-  <!-- Add-Ons -->
-  <div>
-    <h4 class="text-xs font-label text-on-surface-variant uppercase tracking-wider mb-3">Optional Add-Ons</h4>
-    <div class="space-y-3">
-      <label class="flex items-center justify-between cursor-pointer group">
-        <div class="flex items-center gap-3">
-          <input type="checkbox" class="rounded border-outline-variant/40 text-primary focus:ring-primary/20"/>
-          <span class="text-sm text-on-surface group-hover:text-primary transition-colors">Skipper</span>
+        <div class="booking-breakdown">
+          <div class="booking-line"><span>Base charter fee</span><span>&euro;2,400</span></div>
+          <div class="booking-line"><span>Cleaning fee</span><span>&euro;180</span></div>
+          <div class="booking-line"><span>Linen &amp; towels</span><span>&euro;120</span></div>
+          <div class="booking-line"><span>Transit log</span><span>&euro;90</span></div>
+          <div class="booking-line"><span>Tourist tax</span><span>&euro;100</span></div>
+          <div class="booking-line total"><span>Total (all-in)</span><span>&euro;2,890</span></div>
         </div>
-        <span class="text-sm font-display font-bold text-on-surface-variant">&euro;180/day</span>
-      </label>
-      <label class="flex items-center justify-between cursor-pointer group">
-        <div class="flex items-center gap-3">
-          <input type="checkbox" class="rounded border-outline-variant/40 text-primary focus:ring-primary/20"/>
-          <span class="text-sm text-on-surface group-hover:text-primary transition-colors">Hostess / Cook</span>
+
+        <button class="booking-btn">Reserve This Yacht</button>
+
+        <div style="text-align:center;margin-top:var(--space-md)">
+          <div style="font-size:13px;color:var(--soft-grey)">or pay 50% now, 50% before departure</div>
+          <div style="font-size:12px;color:var(--deep-teal);margin-top:8px;font-weight:600">&#128274; Free cancellation up to 30 days before</div>
         </div>
-        <span class="text-sm font-display font-bold text-on-surface-variant">&euro;160/day</span>
-      </label>
-      <label class="flex items-center justify-between cursor-pointer group">
-        <div class="flex items-center gap-3">
-          <input type="checkbox" class="rounded border-outline-variant/40 text-primary focus:ring-primary/20"/>
-          <span class="text-sm text-on-surface group-hover:text-primary transition-colors">Outboard Motor Upgrade</span>
+
+        <div style="margin-top:var(--space-xl);padding-top:var(--space-lg);border-top:1px solid #eee">
+          <h4 style="font-family:'Inter',sans-serif;font-size:14px;font-weight:700;margin-bottom:var(--space-md)">Optional Add-ons</h4>
+          <label style="display:flex;align-items:center;gap:8px;font-size:14px;padding:6px 0;cursor:pointer">
+            <input type="checkbox"> Skipper <span style="margin-left:auto;color:var(--soft-grey)">&euro;180/day</span>
+          </label>
+          <label style="display:flex;align-items:center;gap:8px;font-size:14px;padding:6px 0;cursor:pointer">
+            <input type="checkbox"> Provisioning package <span style="margin-left:auto;color:var(--soft-grey)">&euro;250</span>
+          </label>
+          <label style="display:flex;align-items:center;gap:8px;font-size:14px;padding:6px 0;cursor:pointer">
+            <input type="checkbox"> Extra water toys <span style="margin-left:auto;color:var(--soft-grey)">&euro;150</span>
+          </label>
+          <label style="display:flex;align-items:center;gap:8px;font-size:14px;padding:6px 0;cursor:pointer">
+            <input type="checkbox" checked> Damage deposit waiver <span style="margin-left:auto;color:var(--soft-grey)">&euro;89</span>
+          </label>
         </div>
-        <span class="text-sm font-display font-bold text-on-surface-variant">&euro;100/wk</span>
-      </label>
-      <label class="flex items-center justify-between cursor-pointer group">
-        <div class="flex items-center gap-3">
-          <input type="checkbox" class="rounded border-outline-variant/40 text-primary focus:ring-primary/20"/>
-          <span class="text-sm text-on-surface group-hover:text-primary transition-colors">Extra Bedding Set</span>
-        </div>
-        <span class="text-sm font-display font-bold text-on-surface-variant">&euro;50</span>
-      </label>
+      </div>
     </div>
   </div>
-
 </div>
-</div>
-<!-- END RIGHT COLUMN -->
-
-</div>
-</section>
-</main>
 
 <!-- Footer -->
-<footer class="bg-primary pt-16 pb-8 text-white">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-8 max-w-7xl mx-auto text-left">
-<!-- Col 1 -->
-<div>
-<span class="text-3xl font-headline font-bold text-white mb-4 block">Marencello</span>
-<p class="text-sky-200/70 font-body text-sm leading-relaxed mb-6">
-  Boat Art Meets the Sea. Curating the world's most exceptional maritime experiences with modern precision and timeless elegance.
-</p>
-<div class="flex gap-4">
-<a class="text-white hover:text-sky-200 transition-colors" href="#"><span class="material-symbols-outlined">social_leaderboard</span></a>
-<a class="text-white hover:text-sky-200 transition-colors" href="#"><span class="material-symbols-outlined">photo_camera</span></a>
-<a class="text-white hover:text-sky-200 transition-colors" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
-</div>
-</div>
-<!-- Col 2 -->
-<div>
-<h4 class="font-display text-lg mb-6">Destinations</h4>
-<ul class="space-y-3 font-body text-sm">
-<li><a class="text-sky-200/70 hover:text-white transition-colors" href="destinations.html">Croatia</a></li>
-<li><a class="text-sky-200/70 hover:text-white transition-colors" href="destinations.html">Greece</a></li>
-<li><a class="text-sky-200/70 hover:text-white transition-colors" href="destinations.html">Italy</a></li>
-<li><a class="text-sky-200/70 hover:text-white transition-colors" href="destinations.html">Caribbean</a></li>
-</ul>
-</div>
-<!-- Col 3 -->
-<div>
-<h4 class="font-display text-lg mb-6">Company</h4>
-<ul class="space-y-3 font-body text-sm">
-<li><a class="text-sky-200/70 hover:text-white transition-colors" href="#">About Marencello</a></li>
-<li><a class="text-sky-200/70 hover:text-white transition-colors" href="search.html">Our Fleet</a></li>
-<li><a class="text-sky-200/70 hover:text-white transition-colors" href="#">Blog</a></li>
-<li><a class="text-sky-200/70 hover:text-white transition-colors" href="ai-planner.html">AI Planner</a></li>
-</ul>
-</div>
-<!-- Col 4 -->
-<div>
-<h4 class="font-display text-lg mb-6">Support</h4>
-<ul class="space-y-3 font-body text-sm">
-<li><a class="text-sky-200/70 hover:text-white transition-colors" href="#">Help Centre</a></li>
-<li><a class="text-sky-200/70 hover:text-white transition-colors" href="#">Cancellation Policy</a></li>
-<li><a class="text-sky-200/70 hover:text-white transition-colors" href="#">Safety Guidelines</a></li>
-<li><a class="text-sky-200/70 hover:text-white transition-colors" href="#">Contact Us</a></li>
-</ul>
-</div>
-</div>
-<!-- Bottom Bar -->
-<div class="max-w-7xl mx-auto px-8 mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
-<p class="text-sky-200/50 text-xs font-body">&copy; 2024 Marencello. All rights reserved.</p>
-<div class="flex gap-6 items-center">
-<span class="material-symbols-outlined text-sky-200/30">credit_card</span>
-<span class="material-symbols-outlined text-sky-200/30">payments</span>
-<span class="material-symbols-outlined text-sky-200/30">account_balance</span>
-</div>
-<div class="flex gap-6 font-body text-xs text-sky-200/50">
-<a class="hover:text-white" href="#">Privacy Policy</a>
-<a class="hover:text-white" href="#">Terms of Service</a>
-</div>
-</div>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">Marencello</div>
+        <div class="footer-tagline">Boat Art Meets the Sea</div>
+        <p>Premium yacht charter, transparently priced and expertly guided.</p>
+      </div>
+      <div class="footer-col"><h4>Destinations</h4><a href="#">Croatia</a><a href="#">Greece</a><a href="#">Italy</a></div>
+      <div class="footer-col"><h4>Yachts</h4><a href="search.html">Sailboats</a><a href="search.html">Catamarans</a><a href="search.html">Motor Yachts</a></div>
+      <div class="footer-col"><h4>Company</h4><a href="#">About</a><a href="#">Contact</a></div>
+      <div class="footer-col"><h4>Support</h4><a href="#">FAQ</a><a href="#">Terms</a><a href="#">Privacy</a></div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Marencello. All rights reserved.</span>
+      <div class="footer-social"><a href="#">&#128247;</a><a href="#">f</a><a href="#">&#9654;</a></div>
+    </div>
+  </div>
 </footer>
 
+<script src="../js/main.js"></script>
+<!-- Firebase Auth SDK -->
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+<script src="../js/firebase-config.js"></script>
+<script src="../js/auth.js"></script>
 </body>
 </html>
