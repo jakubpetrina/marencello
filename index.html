@@ -1,417 +1,534 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Marencello — Boat Art Meets the Sea</title>
-  <link rel="stylesheet" href="css/styles.css">
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Marencello | Boat Art Meets the Sea</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@300;400;500;600&amp;family=Noto+Serif:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-dim": "#d6dae2",
+              "on-primary-fixed-variant": "#00497c",
+              "surface-bright": "#f7f9ff",
+              "on-surface": "#171c22",
+              "surface-container-high": "#e4e8f0",
+              "on-error": "#ffffff",
+              "background": "#f7f9ff",
+              "on-primary-container": "#a2ccff",
+              "error": "#ba1a1a",
+              "on-surface-variant": "#414750",
+              "surface-variant": "#dee3ea",
+              "on-error-container": "#93000a",
+              "surface-tint": "#19619d",
+              "outline": "#717781",
+              "on-tertiary-container": "#a0cdff",
+              "on-secondary-fixed-variant": "#164973",
+              "on-primary-fixed": "#001d36",
+              "on-tertiary": "#ffffff",
+              "tertiary": "#00406a",
+              "surface-container": "#eaeef6",
+              "outline-variant": "#c1c7d1",
+              "tertiary-container": "#00588f",
+              "on-secondary-container": "#285782",
+              "tertiary-fixed": "#d0e4ff",
+              "inverse-primary": "#9dcaff",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-fixed-dim": "#9acbff",
+              "secondary-container": "#a1cdfe",
+              "inverse-surface": "#2c3137",
+              "primary-container": "#005792",
+              "primary": "#003f6c",
+              "surface-container-highest": "#dee3ea",
+              "error-container": "#ffdad6",
+              "secondary": "#34618c",
+              "primary-fixed-dim": "#9dcaff",
+              "surface": "#f7f9ff",
+              "on-background": "#171c22",
+              "primary-fixed": "#d1e4ff",
+              "on-tertiary-fixed": "#001d34",
+              "on-secondary": "#ffffff",
+              "on-tertiary-fixed-variant": "#004a79",
+              "on-primary": "#ffffff",
+              "inverse-on-surface": "#edf1f9",
+              "surface-container-low": "#eff4fc",
+              "on-secondary-fixed": "#001d34",
+              "secondary-fixed": "#d0e4ff",
+              "secondary-fixed-dim": "#9fcafb"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "display": ["Playfair Display"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-nav {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(12px);
+      }
+      .editorial-shadow {
+        box-shadow: 0 12px 40px rgba(0, 63, 108, 0.06);
+      }
+    </style>
 </head>
-<body>
-
-<!-- ===== NAVIGATION ===== -->
-<nav class="nav" id="nav">
-  <div class="container">
-    <a href="/" class="nav-logo">Marencello</a>
-    <div class="nav-links">
-      <a href="pages/destinations.html">Destinations</a>
-      <a href="pages/search.html">Yachts</a>
-      <a href="#">Deals</a>
-      <a href="#">Guides</a>
-      <a href="pages/ai-planner.html" class="nav-cta">AI Trip Planner</a>
-    </div>
-    <div class="nav-right">
-      <a href="#" class="nav-icon" title="Saved">&#9825;</a>
-      <a href="#" class="nav-icon" title="Account">&#9786;</a>
-      <button class="mobile-menu-toggle" aria-label="Menu">&#9776;</button>
-    </div>
-  </div>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- 1. HERO SECTION -->
+<section class="relative h-screen w-full flex flex-col overflow-hidden">
+<!-- TopNavBar - Rendered based on Shared Components JSON -->
+<nav class="fixed top-0 w-full z-50 glass-nav shadow-[0_12px_40px_rgba(0,63,108,0.06)]">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-sky-900 font-headline">Marencello</div>
+<div class="hidden md:flex items-center space-x-10">
+<a class="text-sky-700 font-semibold border-b-2 border-sky-700 transition-all font-label" href="#">Destinations</a>
+<a class="text-slate-600 hover:text-sky-900 transition-colors font-label" href="#">Yachts</a>
+<a class="text-slate-600 hover:text-sky-900 transition-colors font-label" href="#">How it Works</a>
+<a class="text-slate-600 hover:text-sky-900 transition-colors font-label" href="#">AI Planner</a>
+</div>
+<button class="bg-primary hover:bg-primary-container text-white px-6 py-2 rounded-lg font-medium transition-all scale-95 active:scale-90">
+                    Sign In
+                </button>
+</div>
 </nav>
-
-<!-- ===== HERO ===== -->
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-content">
-    <div class="hero-logo">Marencello</div>
-    <div class="hero-tagline">Boat Art Meets the Sea</div>
-    <p class="hero-subtitle">Transparently priced. Expertly guided. Beautifully delivered.</p>
-    <div class="hero-search">
-      <div class="search-fields">
-        <div class="search-field">
-          <label>Destination</label>
-          <input type="text" placeholder="Where do you want to sail?">
-        </div>
-        <div class="search-field">
-          <label>Dates</label>
-          <input type="text" placeholder="Select dates">
-        </div>
-        <div class="search-field">
-          <label>Guests</label>
-          <select>
-            <option>2 guests</option>
-            <option>4 guests</option>
-            <option>6 guests</option>
-            <option>8 guests</option>
-            <option>10+ guests</option>
-          </select>
-        </div>
-        <a href="pages/search.html" class="search-btn">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-          Explore Yachts
-        </a>
-      </div>
-      <div class="quick-filters">
-        <button class="pill">Last Minute</button>
-        <button class="pill">Best Deals</button>
-        <button class="pill">New Boats</button>
-        <button class="pill">Instant Booking</button>
-        <button class="pill">Cabin Charter</button>
-      </div>
-    </div>
-  </div>
-  <div class="scroll-indicator">
-    <span>Explore</span>
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-  </div>
+<!-- Hero Content -->
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="Luxurious sleek white sailing yacht gliding through pristine turquoise Mediterranean waters under a bright sunlit sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQIgVM8uEPZ9qvgAuk3kd4dTIl8BFuevgTGRsImBCMhDP3shr9MJ8kmMfKrfZomZTMytBx8Zsk0hGA8sVGa-PACZFV2DX2YaoXGoBdKN9ix_QkrLJEmZto5_6Nw4drZZzUVQoSulQWbygMkC_siCxFxoOaJeYIkD8NxjmX1fOJ41e0dHSWb8cNwXFMTOMO0R-WKEtZh-BtYXyNMTuS1bKJ5VEVsDQ-Kdk71tIaFsvgO3rMa8Br81TXlafo23cLmeq3lB4YjZDmP3I"/>
+<div class="absolute inset-0 bg-gradient-to-b from-primary/20 via-transparent to-surface/40"></div>
+</div>
+<div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
+<h1 class="font-display text-5xl md:text-8xl text-white drop-shadow-lg mb-6 tracking-tight">
+                Boat Art Meets the Sea
+            </h1>
+<p class="font-body text-white text-lg md:text-xl max-w-2xl opacity-90 mb-10 leading-relaxed">
+                Experience the heritage of Mediterranean sailing with a fleet curated for the modern navigator.
+            </p>
+<div class="flex flex-col md:flex-row gap-4">
+<button class="bg-primary-container text-white px-10 py-4 rounded-lg font-semibold editorial-shadow hover:scale-105 transition-transform">
+                    Explore the Fleet
+                </button>
+<button class="glass-nav text-primary px-10 py-4 rounded-lg font-semibold hover:bg-white transition-all">
+                    Plan Your Voyage
+                </button>
+</div>
+</div>
+<!-- Floating Search Anchor -->
+<div class="absolute bottom-12 left-1/2 -translate-x-1/2 w-full max-w-4xl px-6">
+<div class="bg-surface-container-lowest rounded-xl editorial-shadow p-2 flex flex-col md:flex-row items-center gap-2">
+<div class="flex-1 flex items-center px-4 py-3 gap-3 border-r border-outline-variant/20 w-full">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<input class="bg-transparent border-none focus:ring-0 w-full text-on-surface font-body" placeholder="Where to?" type="text"/>
+</div>
+<div class="flex-1 flex items-center px-4 py-3 gap-3 border-r border-outline-variant/20 w-full">
+<span class="material-symbols-outlined text-primary">calendar_month</span>
+<input class="bg-transparent border-none focus:ring-0 w-full text-on-surface font-body" placeholder="Add dates" type="text"/>
+</div>
+<button class="bg-primary text-white w-full md:w-auto px-8 py-3 rounded-lg font-semibold flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">search</span>
+                    Search
+                </button>
+</div>
+</div>
 </section>
-
-<!-- ===== FEATURED DESTINATIONS ===== -->
-<section class="destinations" id="destinations">
-  <div class="container">
-    <h2>Explore the World's Finest Sailing Grounds</h2>
-    <p class="section-subtitle">From the turquoise coves of Croatia to the trade-wind islands of the Caribbean.</p>
-    <div class="dest-grid">
-      <a href="pages/destinations.html" class="dest-card">
-        <img src="https://images.unsplash.com/photo-1534008897995-27a23e859048?w=600&q=80" alt="Croatia">
-        <div class="dest-card-overlay">
-          <h3>Croatia</h3>
-          <span>342 yachts</span>
-        </div>
-      </a>
-      <a href="pages/destinations.html" class="dest-card">
-        <img src="https://images.unsplash.com/photo-1530841377377-3ff06c0ca713?w=600&q=80" alt="Greece">
-        <div class="dest-card-overlay">
-          <h3>Greece</h3>
-          <span>518 yachts</span>
-        </div>
-      </a>
-      <a href="pages/destinations.html" class="dest-card">
-        <img src="https://images.unsplash.com/photo-1499678329028-101435549a4e?w=600&q=80" alt="Caribbean">
-        <div class="dest-card-overlay">
-          <h3>Caribbean</h3>
-          <span>276 yachts</span>
-        </div>
-      </a>
-      <a href="pages/destinations.html" class="dest-card">
-        <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=600&q=80" alt="Italy">
-        <div class="dest-card-overlay">
-          <h3>Italy</h3>
-          <span>189 yachts</span>
-        </div>
-      </a>
-    </div>
-  </div>
+<!-- 2. FEATURED DESTINATIONS -->
+<section class="py-24 px-6 md:px-12 bg-surface">
+<div class="max-w-7xl mx-auto">
+<h2 class="font-display text-4xl md:text-5xl text-primary mb-4">Discover Your Perfect Sailing Ground</h2>
+<p class="font-body text-on-surface-variant mb-12 text-lg">Curated routes through the world's most breathtaking coastlines.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1: Croatia -->
+<div class="group relative aspect-[4/5] rounded-xl overflow-hidden editorial-shadow hover:-translate-y-2 transition-transform duration-300">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Sun-drenched coastal town of Dubrovnik, Croatia with terracotta roofs against deep blue Adriatic sea" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXXxxdp9wkZ-k-Q1rUzOlWvpbityoNn5Vp6v4WlZzQnQt9SIUX_tZ4k006DSWKZpV7Qvrv3XHAAZ6X8eJLQ6ObV1DGrfQOdjRUap8Lk5FD-8ct9rK_jQ3-DLQ-SgydJ5c6GJcfMS4xPtnV9RHQ8P0R-vEW_1kzUnox-f2SqnfhpcJ3ZoLG5yzvJE52WSU1X7sKNkoQ0oM8ityQ8wqbvrx2f8FiQo8wc2zrpf9RQYAegUX7yVMHMl9R7HD59QVuw8hn-JeEsFYngsM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 text-white">
+<span class="bg-sky-500/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold mb-2 inline-block">320+ yachts</span>
+<h3 class="font-display text-2xl mb-1">Croatia</h3>
+<p class="font-body text-sm opacity-80 italic">From EUR 1200/week</p>
+</div>
+</div>
+<!-- Card 2: Greece -->
+<div class="group relative aspect-[4/5] rounded-xl overflow-hidden editorial-shadow hover:-translate-y-2 transition-transform duration-300">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="White-washed villas of Santorini Greece overlooking the caldera at sunset with vibrant orange skies" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIVJ_bFemAyfHIohwgU-6pRTVhET8jRab7xqhcc2RidpI5JsoY1OQNuDNfWUnt-aSSpbJhN_dIvfwr626lzxu6Md5KfvQZd83VLUowIhiA1t5taWbe_NyM0Xrps657sS7nU1WANOouBuXPDjjaPXnE8PmZYyKiKlatmzGJtzH68-WsMjVl3Z9zTAoORX_CizfQIenIVpGE30TI1ntLS1ImVvRI3NkaC4nj8kwepPtDu9zCJiCLJf924u_T5nJfYP88d4XY4RXqmNY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 text-white">
+<span class="bg-sky-500/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold mb-2 inline-block">450+ yachts</span>
+<h3 class="font-display text-2xl mb-1">Greece</h3>
+<p class="font-body text-sm opacity-80 italic">From EUR 1450/week</p>
+</div>
+</div>
+<!-- Card 3: Italy -->
+<div class="group relative aspect-[4/5] rounded-xl overflow-hidden editorial-shadow hover:-translate-y-2 transition-transform duration-300">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Colorful buildings of Positano, Amalfi Coast Italy clinging to cliffs above sparkling azure Mediterranean water" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjZdK85_HgUO3SmLmTyew6as03LH472afLuP8OMKYG19eFByaTiHq-x9LFs8PdqkBMuM4_RWpzCwTTlwAi1CCM3zYo07Y3EmijybPU6sVFX7RBkyzsZz-OQVIi_5gR8HmJygie9Zk3IpZIujdqAW4E6YSKGWw1XtxENR9F3cu36PT-brQaccINhQnpoYul6MeR-65LeX5qPTgT6z2LOzDRcVQWy72UAwU2oxPX_rYsVzdohTWkkTVJrCV6AQkTYfvuJwXoGX6XIKc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 text-white">
+<span class="bg-sky-500/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold mb-2 inline-block">280+ yachts</span>
+<h3 class="font-display text-2xl mb-1">Italy</h3>
+<p class="font-body text-sm opacity-80 italic">From EUR 1800/week</p>
+</div>
+</div>
+<!-- Card 4: Turkey -->
+<div class="group relative aspect-[4/5] rounded-xl overflow-hidden editorial-shadow hover:-translate-y-2 transition-transform duration-300">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Traditional Turkish Gulet boat anchored in a secluded turquoise bay surrounded by lush pine forests" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDH5FgmuaE4tjTjCeM9pn73_rri-5rl7ctoS-ErDj3eFDNDOqHfeeG5Fb9rMA8n8ANeccY2pudpXl9H5ka83NA1H3mrZqe02RYVXEhqiniJnIHtGuhetCtfpbVCRFkLnhc1tTuAGoKIlGUSKoblIN3vT2XJHfFdEyO__Bs9ePeWNiNQ6nJW8iEbFKAmiUCOWQXsuNplz_4uswjUi2JWdWsgIaMor7XugNFbmAOAj6-MLnNnEDALrrvOygZoDv_Sxe2O_tMh29JbvkA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 text-white">
+<span class="bg-sky-500/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold mb-2 inline-block">190+ yachts</span>
+<h3 class="font-display text-2xl mb-1">Turkey</h3>
+<p class="font-body text-sm opacity-80 italic">From EUR 1100/week</p>
+</div>
+</div>
+<!-- Card 5: Caribbean -->
+<div class="group relative aspect-[4/5] rounded-xl overflow-hidden editorial-shadow hover:-translate-y-2 transition-transform duration-300">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Palm trees leaning over a white sand beach with crystal clear turquoise water in the Caribbean islands" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCk_-a_cZBss_fO_B1p5c8sM1NLWP2-oWb3Qy0AnB4-3WN7WarnBox2PgWd-Vkt3KTY8LPjYpjP-SEx4l92lFbJAvo8UEeZDMpr9utldxDg--4K6miwSOwIreIYWcLkpGAnr8knxc6JpDu5SMyBQhPuN3O8mZMFOKivr_kSzx__-ae8cHKk01loYDJzR2mddjvDphHp35k6BroDtJXFZSAYhpTciGLNuN9L2gWFXxlGCENTt9f05xLh9kjF4v_wYxuJ4coOOu3rGE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 text-white">
+<span class="bg-sky-500/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold mb-2 inline-block">500+ yachts</span>
+<h3 class="font-display text-2xl mb-1">Caribbean</h3>
+<p class="font-body text-sm opacity-80 italic">From EUR 2200/week</p>
+</div>
+</div>
+<!-- Card 6: Thailand -->
+<div class="group relative aspect-[4/5] rounded-xl overflow-hidden editorial-shadow hover:-translate-y-2 transition-transform duration-300">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Iconic limestone karsts rising out of the emerald green waters of Phang Nga Bay, Thailand at midday" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBH_Cf4iS98I4TaoGdANR4mrGycKHKjq5DxDhmRqSSeR6cHyW2buMNvr_yAInsk-b0slKRLCsNkTjEiRHxXKqQmxe5ghiUzudr3nnvDA3EBkjXMDyj1Khj_Gq3r3W1B3PLgObZA9ErKco9WItbpRNdbdM-gI8mS_3goYul0HAL9Cviw5XMxaumkydfXOig_eyBW9M2lF7mR9v4vxnsSU5Qv39mvpat9hP3JAOfLhrNl8IGXo393A5I7_47CeUuK8G5Tu76ixeALrvU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 text-white">
+<span class="bg-sky-500/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold mb-2 inline-block">120+ yachts</span>
+<h3 class="font-display text-2xl mb-1">Thailand</h3>
+<p class="font-body text-sm opacity-80 italic">From EUR 1300/week</p>
+</div>
+</div>
+</div>
+</div>
 </section>
-
-<!-- ===== HOW IT WORKS ===== -->
-<section class="how-it-works">
-  <div class="container">
-    <h2>Your Voyage, Simplified</h2>
-    <p class="section-subtitle">From first search to first sunset on deck, we handle everything.</p>
-    <div class="steps-grid">
-      <div class="step">
-        <div class="step-icon">&#128269;</div>
-        <span class="step-number">1</span>
-        <h4>Discover</h4>
-        <p>Browse curated yachts by destination, type, or let our AI find your perfect match.</p>
-      </div>
-      <div class="step">
-        <div class="step-icon">&#9745;</div>
-        <span class="step-number">2</span>
-        <h4>Compare</h4>
-        <p>All-in pricing with no hidden fees. Compare yachts side by side with full transparency.</p>
-      </div>
-      <div class="step">
-        <div class="step-icon">&#128179;</div>
-        <span class="step-number">3</span>
-        <h4>Book</h4>
-        <p>Secure your yacht with flexible payment. Split payments and free cancellation available.</p>
-      </div>
-      <div class="step">
-        <div class="step-icon">&#9973;</div>
-        <span class="step-number">4</span>
-        <h4>Set Sail</h4>
-        <p>Board your yacht and enjoy. Your dedicated concierge handles every detail.</p>
-      </div>
-    </div>
-  </div>
+<!-- 3. HOW IT WORKS -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-6 text-center">
+<h2 class="font-display text-4xl md:text-5xl text-primary mb-16">Your Voyage, Our Masterpiece</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
+<!-- Step 1 -->
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 rounded-full border-2 border-primary-container flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined text-3xl">explore</span>
+</div>
+<h3 class="font-display text-2xl mb-4">1. Discover</h3>
+<p class="font-body text-on-surface-variant max-w-xs">Tell us your dream destination, dates and crew size to begin the journey.</p>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 rounded-full border-2 border-primary-container flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined text-3xl">pageview</span>
+</div>
+<h3 class="font-display text-2xl mb-4">2. Compare</h3>
+<p class="font-body text-on-surface-variant max-w-xs">Browse curated yachts with transparent, all-inclusive pricing tailored to you.</p>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 rounded-full border-2 border-primary-container flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined text-3xl">sailing</span>
+</div>
+<h3 class="font-display text-2xl mb-4">3. Set Sail</h3>
+<p class="font-body text-on-surface-variant max-w-xs">Book instantly or chat with our expert brokers to finalize every detail.</p>
+</div>
+</div>
+</div>
 </section>
-
-<!-- ===== YACHT SHOWCASE ===== -->
-<section class="yacht-showcase">
-  <div class="container">
-    <h2>Handpicked Yachts</h2>
-    <p class="section-subtitle">Every vessel in our fleet is personally inspected and verified.</p>
-    <div class="yacht-grid">
-      <!-- Yacht Card 1 -->
-      <a href="pages/yacht-detail.html" class="yacht-card">
-        <div class="yacht-card-img">
-          <img src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=600&q=80" alt="Lagoon 46">
-          <span class="yacht-card-badge">Popular</span>
-          <button class="yacht-card-save">&#9825;</button>
-        </div>
-        <div class="yacht-card-body">
-          <div class="yacht-card-type">Catamaran</div>
-          <h3>Lagoon 46 &mdash; Sea Breeze</h3>
-          <div class="yacht-card-location">&#128205; Split, Croatia</div>
-          <div class="yacht-card-specs">
-            <span>&#9875; 14m</span>
-            <span>&#128716; 4 cabins</span>
-            <span>&#128101; 10 guests</span>
-            <span>&#128197; 2023</span>
-          </div>
-          <div class="yacht-card-footer">
-            <div class="yacht-card-rating">
-              <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-              4.9 <span style="color:var(--soft-grey);font-weight:400">(47)</span>
-            </div>
-            <div class="yacht-card-price">
-              <div class="from">from</div>
-              <div class="amount">&euro;2,890</div>
-              <div class="period">/week all-in</div>
-            </div>
-          </div>
-        </div>
-      </a>
-      <!-- Yacht Card 2 -->
-      <a href="pages/yacht-detail.html" class="yacht-card">
-        <div class="yacht-card-img">
-          <img src="https://images.unsplash.com/photo-1605281317010-fe5ffe798166?w=600&q=80" alt="Bavaria C42">
-          <span class="yacht-card-badge" style="background:var(--deep-teal)">Instant Book</span>
-          <button class="yacht-card-save">&#9825;</button>
-        </div>
-        <div class="yacht-card-body">
-          <div class="yacht-card-type">Sailboat</div>
-          <h3>Bavaria C42 &mdash; Mistral</h3>
-          <div class="yacht-card-location">&#128205; Athens, Greece</div>
-          <div class="yacht-card-specs">
-            <span>&#9875; 13m</span>
-            <span>&#128716; 3 cabins</span>
-            <span>&#128101; 8 guests</span>
-            <span>&#128197; 2022</span>
-          </div>
-          <div class="yacht-card-footer">
-            <div class="yacht-card-rating">
-              <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
-              4.7 <span style="color:var(--soft-grey);font-weight:400">(31)</span>
-            </div>
-            <div class="yacht-card-price">
-              <div class="from">from</div>
-              <div class="amount">&euro;1,650</div>
-              <div class="period">/week all-in</div>
-            </div>
-          </div>
-        </div>
-      </a>
-      <!-- Yacht Card 3 -->
-      <a href="pages/yacht-detail.html" class="yacht-card">
-        <div class="yacht-card-img">
-          <img src="https://images.unsplash.com/photo-1540946485063-a40da27545f8?w=600&q=80" alt="Azimut 55">
-          <span class="yacht-card-badge" style="background:var(--warm-copper)">Premium</span>
-          <button class="yacht-card-save">&#9825;</button>
-        </div>
-        <div class="yacht-card-body">
-          <div class="yacht-card-type">Motor Yacht</div>
-          <h3>Azimut 55 &mdash; Dolce Vita</h3>
-          <div class="yacht-card-location">&#128205; Amalfi, Italy</div>
-          <div class="yacht-card-specs">
-            <span>&#9875; 17m</span>
-            <span>&#128716; 3 cabins</span>
-            <span>&#128101; 6 guests</span>
-            <span>&#128197; 2024</span>
-          </div>
-          <div class="yacht-card-footer">
-            <div class="yacht-card-rating">
-              <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-              5.0 <span style="color:var(--soft-grey);font-weight:400">(12)</span>
-            </div>
-            <div class="yacht-card-price">
-              <div class="from">from</div>
-              <div class="amount">&euro;8,500</div>
-              <div class="period">/week all-in</div>
-            </div>
-          </div>
-        </div>
-      </a>
-    </div>
-    <div style="text-align:center;margin-top:var(--space-xl)">
-      <a href="pages/search.html" class="btn btn-outline">View All Yachts</a>
-    </div>
-  </div>
+<!-- 4. POPULAR YACHTS -->
+<section class="py-24 bg-surface-container-lowest overflow-hidden">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="font-display text-4xl text-primary">Handpicked Yachts This Season</h2>
+<p class="font-body text-on-surface-variant mt-2">The most sought-after vessels across our global fleet.</p>
+</div>
+<div class="flex gap-4">
+<button class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center text-primary hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center text-primary hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="flex gap-8 overflow-x-auto pb-8 scrollbar-hide">
+<!-- Yacht Card 1 -->
+<div class="min-w-[320px] md:min-w-[400px] bg-white rounded-xl editorial-shadow overflow-hidden group">
+<div class="relative aspect-[4/3]">
+<img class="w-full h-full object-cover" data-alt="Modern luxury catamaran sailing yacht at anchor in a calm blue bay with clear water visibility" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZlvaeLeQ-qAcjgIRNboQrmURvoJ3D6424pn12dBluKZkTJKFFqTyT3dX1CWCntpEapfhdb3FncZc5omvo3SviQo31ya0gSVZDPvXShSYeC9bgXMos0QiQKCMHbKOKIUnxzkbVAUwKXmT0bkXeT6wjooEjZNReC9cbRoXMjtiDsirDFvkz3GQMPvZVnOTp2m4_4O68lZaCUntiwlQivVMHbm83SnaDMgZXJ91by2UjXlgFW7LJJ2TQDGKREJfqNm6LCa03i9MBY84"/>
+<button class="absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur-md rounded-full flex items-center justify-center text-primary hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-body font-semibold text-xl text-primary">Lagoon 46 Split</h3>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-yellow-500 scale-75" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-sm font-medium">4.8</span>
+</div>
+</div>
+<p class="text-on-surface-variant text-sm mb-4">Croatia • 10 Guests • 4 Cabins</p>
+<p class="font-display text-primary text-lg font-bold mb-6">EUR 2800<span class="text-sm font-normal text-on-surface-variant">/week all-inclusive</span></p>
+<button class="w-full py-3 rounded-lg border border-primary/20 text-primary font-medium hover:bg-primary hover:text-white transition-all">
+                            View Details
+                        </button>
+</div>
+</div>
+<!-- Yacht Card 2 -->
+<div class="min-w-[320px] md:min-w-[400px] bg-white rounded-xl editorial-shadow overflow-hidden group">
+<div class="relative aspect-[4/3]">
+<img class="w-full h-full object-cover" data-alt="Elegant classic monohull wooden sailboat with tall masts docked at a Mediterranean marina at twilight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpRr7xt606CP0CE2OEyItK3w_digdYu2tQUi271xzzWlk9fGIdaAJPfL3A84s8IxX_BLify5fGuGTJsvIjlqKK1Mjst9prt0JWMDrHGvqJNHfW-v3F_f5XqLZNsyggPbt9fe2ACCNhl4uLnlhY-8q_V_BULwHuZEbh2LyEVYuImaDLDE-711F21IQT4kfZ-a6bcD_iBdidFUIawVMLeEbjfYCvpiW-sOIu0BprGyGx4BnJEJZivesGj2f2Qv7tlcsa3ovniGzihqY"/>
+<button class="absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur-md rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-body font-semibold text-xl text-primary">Oceanis 51.1 Athens</h3>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-yellow-500 scale-75" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-sm font-medium">4.9</span>
+</div>
+</div>
+<p class="text-on-surface-variant text-sm mb-4">Greece • 12 Guests • 5 Cabins</p>
+<p class="font-display text-primary text-lg font-bold mb-6">EUR 3500<span class="text-sm font-normal text-on-surface-variant">/week all-inclusive</span></p>
+<button class="w-full py-3 rounded-lg border border-primary/20 text-primary font-medium hover:bg-primary hover:text-white transition-all">
+                            View Details
+                        </button>
+</div>
+</div>
+<!-- Yacht Card 3 -->
+<div class="min-w-[320px] md:min-w-[400px] bg-white rounded-xl editorial-shadow overflow-hidden group">
+<div class="relative aspect-[4/3]">
+<img class="w-full h-full object-cover" data-alt="Spacious sun deck of a motor yacht featuring plush white seating and a clear view of the open ocean" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBscoCuhp1J7rZmStLTp0eIiPKcpbQUccUzpuGW1DT-BXhryMAAWDrgvIECvmkcrJosSSfPMJmS_fUfFYPkHeWEAp67pPqyul-fA6Iho4cXM-VCgAfs410j8o8MAAIP7DCk2x-Unci0D6e6RknwF3OkooE6s5WXjt93zJbjghbpNBXZEKl6nehj0RPXqqRIL2QkUNokyhaqIQG-jRUF_k9YrPWq58UORk8JNrvPhFtRs6vA0xv3g-5B-zBPcEgEvYk_Ia1He3dnXMI"/>
+<button class="absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur-md rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-body font-semibold text-xl text-primary">Sunseeker Manhattan</h3>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-yellow-500 scale-75" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-sm font-medium">4.7</span>
+</div>
+</div>
+<p class="text-on-surface-variant text-sm mb-4">Italy • 8 Guests • 3 Cabins</p>
+<p class="font-display text-primary text-lg font-bold mb-6">EUR 5200<span class="text-sm font-normal text-on-surface-variant">/week all-inclusive</span></p>
+<button class="w-full py-3 rounded-lg border border-primary/20 text-primary font-medium hover:bg-primary hover:text-white transition-all">
+                            View Details
+                        </button>
+</div>
+</div>
+</div>
+</div>
 </section>
-
-<!-- ===== AI TRIP PLANNER CTA ===== -->
-<section class="ai-cta">
-  <div class="container">
-    <h2>Not Sure Where to Start?</h2>
-    <p>Tell our AI concierge about your dream voyage, and we'll craft a personalised itinerary in seconds.</p>
-    <a href="pages/ai-planner.html" class="btn btn-white">Start Planning with AI</a>
-    <div class="ai-chat-preview">
-      <div class="ai-chat-msg">
-        <div class="ai-avatar">&#128100;</div>
-        <div class="ai-chat-bubble user">We're 6 friends looking for a week in Greece, mid-July, around &euro;3k total. Love snorkelling!</div>
-      </div>
-      <div class="ai-chat-msg">
-        <div class="ai-avatar">&#9973;</div>
-        <div class="ai-chat-bubble">I'd suggest the Saronic Gulf! Here are 3 catamarans perfect for your group, all with snorkelling gear included...</div>
-      </div>
-    </div>
-  </div>
+<!-- 5. AI TRIP PLANNER PROMO -->
+<section class="bg-primary py-24 px-6">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
+<div class="md:w-1/2">
+<h2 class="font-display text-4xl md:text-6xl text-white mb-6 leading-tight">Let AI Plan Your Perfect Voyage</h2>
+<p class="font-body text-sky-100 text-lg mb-10 leading-relaxed max-w-xl">
+                    Our intelligent concierge crafts bespoke itineraries based on your personality. From hidden coves in the Cyclades to the best seafood in Amalfi, discover a journey uniquely yours.
+                </p>
+<button class="bg-surface-container-lowest text-primary px-8 py-4 rounded-lg font-bold editorial-shadow hover:scale-105 transition-transform">
+                    Try the AI Planner
+                </button>
+</div>
+<div class="md:w-1/2 w-full">
+<div class="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20 editorial-shadow">
+<div class="flex items-center gap-4 mb-8">
+<div class="w-10 h-10 rounded-full bg-sky-200 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">smart_toy</span>
+</div>
+<div>
+<p class="text-white font-semibold">Marencello AI</p>
+<p class="text-sky-300 text-xs">Ready to plot your course</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="bg-white/10 rounded-lg p-3 max-w-[80%] text-white text-sm">
+                            I want a quiet 7-day cruise starting from Split, away from the crowds.
+                        </div>
+<div class="bg-primary-container rounded-lg p-3 max-w-[80%] ml-auto text-white text-sm">
+                            Certainly! I recommend the 'Vis-Lastovo loop'. These islands are far less crowded and offer incredible crystal-clear bays...
+                        </div>
+<div class="bg-white/10 rounded-lg p-3 max-w-[80%] text-white text-sm">
+                            Show me yachts for that route.
+                        </div>
+</div>
+<div class="mt-8 flex items-center bg-white/5 rounded-lg p-2 gap-2">
+<input class="bg-transparent border-none focus:ring-0 text-white placeholder-sky-200 text-sm flex-1" placeholder="Tell me your dream..." type="text"/>
+<button class="p-2 bg-sky-400 rounded-md text-primary">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</div>
+</div>
+</div>
 </section>
-
-<!-- ===== TRUST INDICATORS ===== -->
-<section class="trust">
-  <div class="container">
-    <h2>Trusted by Sailors Worldwide</h2>
-    <div class="trust-stats">
-      <div class="trust-stat">
-        <div class="number">12,000+</div>
-        <div class="label">Happy sailors</div>
-      </div>
-      <div class="trust-stat">
-        <div class="number">2,400+</div>
-        <div class="label">Verified yachts</div>
-      </div>
-      <div class="trust-stat">
-        <div class="number">4.8</div>
-        <div class="label">Average rating</div>
-      </div>
-      <div class="trust-stat">
-        <div class="number">35+</div>
-        <div class="label">Destinations</div>
-      </div>
-    </div>
-    <div class="trust-badges">
-      <div class="trust-badge">
-        <div class="trust-badge-icon">&#128274;</div>
-        <span>Secure Payments</span>
-      </div>
-      <div class="trust-badge">
-        <div class="trust-badge-icon">&#9989;</div>
-        <span>Verified Yachts</span>
-      </div>
-      <div class="trust-badge">
-        <div class="trust-badge-icon">&#128176;</div>
-        <span>All-In Pricing</span>
-      </div>
-      <div class="trust-badge">
-        <div class="trust-badge-icon">&#127775;</div>
-        <span>Trustpilot 4.8</span>
-      </div>
-      <div class="trust-badge">
-        <div class="trust-badge-icon">&#128737;</div>
-        <span>Insured by Allianz</span>
-      </div>
-    </div>
-  </div>
+<!-- 6. TRUST AND SOCIAL PROOF -->
+<section class="py-24 bg-surface-container-low px-6">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-display text-4xl text-primary mb-4">Trusted by 5000+ Sailors</h2>
+<div class="flex flex-wrap justify-center gap-12 mt-12">
+<div class="text-center">
+<p class="font-display text-4xl text-primary font-bold">4.8</p>
+<div class="flex justify-center text-yellow-500 mb-1">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star_half</span>
+</div>
+<p class="text-on-surface-variant text-sm uppercase tracking-widest">Average Rating</p>
+</div>
+<div class="text-center">
+<p class="font-display text-4xl text-primary font-bold">12,000+</p>
+<p class="text-on-surface-variant text-sm uppercase tracking-widest mt-2">Verified Reviews</p>
+</div>
+<div class="text-center">
+<p class="font-display text-4xl text-primary font-bold">98%</p>
+<p class="text-on-surface-variant text-sm uppercase tracking-widest mt-2">Satisfaction Rate</p>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+<!-- Testimonial 1 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl editorial-shadow">
+<div class="flex gap-1 text-yellow-500 mb-4">
+<span class="material-symbols-outlined scale-75" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined scale-75" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined scale-75" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined scale-75" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined scale-75" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body italic text-on-surface-variant mb-6">"The attention to detail was beyond anything we expected. The AI suggested a tiny cove in Greece that became our favorite spot."</p>
+<div class="flex items-center gap-4">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="Portrait of a smiling professional man in a linen shirt with a nautical background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBL-jyAswUbX1QOl_cmQr4c4s4C6u30v_oKQIgfz-Evtc_B6nvlDakFtNOggRi4zDuUI8jKe-4PLDUba1J8wCKuIR3enCKq7TN4y6znV01n2_fFXJrNBGyNOPncYKe_3uAyGQpNNxEGyQEUadQRDzH_wQNVxbIFJmCa_3nGiva08BmMVZG8Vg7mCkI1NZ8ba1Vorl5ZB4J5gfyQhfk7r0ZPhYDmnicohAds3w_3ft-qGKcEa2uiYNPuE6zvihKxydqF8yB2DNMRfXE"/>
+<div>
+<p class="font-semibold text-primary">Julian Marek</p>
+<p class="text-xs text-on-surface-variant">Sailed Greece • June 2024</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl editorial-shadow">
+<div class="flex gap-1 text-yellow-500 mb-4">
+<span class="material-symbols-outlined scale-75" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined scale-75" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined scale-75" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined scale-75" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined scale-75" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body italic text-on-surface-variant mb-6">"Booking was seamless. The transparent pricing meant no surprises, just pure relaxation on the deck of a stunning catamaran."</p>
+<div class="flex items-center gap-4">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="Portrait of a young woman with sunglasses on her head looking out over the sea" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtyYBiVPjxyzSp4cQcjFyj-eBEufemjp6pNzLZ5Nab7xWuEvNYlJhaQ7ypYRDZ0BEVPWetEKQOFBbnQxD97GUtTUiZQnDAquWvuac-wMEq8U6Un8exzRl8h5glwYZR7g3VHijEJeMsDIWEpAIXYCqU3zXsySlytdVoY5GDkuKcJ7wfKDfkWmVniMCLLnudpmZW63Ed_oOH_Q0UY0zWjyJuraYhbt5s-XpTTG5ORJEjMAIHPLWe_t8wQkcNkH2DBomk_AfjOZ9UDNw"/>
+<div>
+<p class="font-semibold text-primary">Elena Rossi</p>
+<p class="text-xs text-on-surface-variant">Sailed Italy • August 2024</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl editorial-shadow">
+<div class="flex gap-1 text-yellow-500 mb-4">
+<span class="material-symbols-outlined scale-75" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined scale-75" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined scale-75" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined scale-75" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined scale-75" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body italic text-on-surface-variant mb-6">"Marencello redefined yachting for us. The expertise of the brokers ensured we had the perfect crew for our family trip."</p>
+<div class="flex items-center gap-4">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="Middle aged man in a navy polo shirt smiling broadly against a marina background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfZyL02TVMBPoPcmuN8daH5ch3dcbuMMgcmCcwVYQt52osIu51Y3LmtzTe5sEY1JC999sPsdXaQTrbA3gt0UNsBRJJKGRkbIaBUZF7h36mMIqFmjK2TNYgI3kxMHrJvzDmji69H6UPgjB1_ye_HzUjOAbEYXl9QxixEvtJ4gNfYrCZUjdARGAAEejTIrVod4D9JxPF0VDmXWIZ3tw7x6T6LnpgACECpRwLZGTg-ZmeE9Pq2vPUZl1jwUbOoag81AOVKqhaVpFoCz4"/>
+<div>
+<p class="font-semibold text-primary">Thomas Wright</p>
+<p class="text-xs text-on-surface-variant">Sailed Croatia • Sept 2024</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Trust Badges -->
+<div class="flex flex-wrap justify-center items-center gap-12 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+<span class="font-display text-2xl font-bold tracking-widest">NAUTIC</span>
+<span class="font-headline text-2xl italic">Sailors Trust</span>
+<span class="font-body text-xl font-black uppercase">Yacht.ai</span>
+<span class="font-display text-2xl">MARINA</span>
+<span class="font-headline text-2xl font-bold tracking-tighter">BlueCharter</span>
+</div>
+</div>
 </section>
-
-<!-- ===== REVIEWS ===== -->
-<section class="reviews">
-  <div class="container">
-    <h2>What Our Sailors Say</h2>
-    <p class="section-subtitle">Real stories from real voyages.</p>
-    <div class="reviews-grid">
-      <div class="review-card">
-        <div class="review-header">
-          <div class="review-author">
-            <div class="review-avatar">MK</div>
-            <div><div class="review-name">Martin K.</div><div class="review-trip">Croatia, Aug 2025</div></div>
-          </div>
-          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        </div>
-        <p class="review-text">The all-in pricing was a game changer. No surprises at the marina, everything was exactly as described. The Lagoon 46 was immaculate and the crew were fantastic.</p>
-        <div class="review-yacht">Lagoon 46 &mdash; Sea Breeze</div>
-      </div>
-      <div class="review-card">
-        <div class="review-header">
-          <div class="review-author">
-            <div class="review-avatar">SL</div>
-            <div><div class="review-name">Sophie L.</div><div class="review-trip">Greece, Jun 2025</div></div>
-          </div>
-          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        </div>
-        <p class="review-text">The AI planner suggested a route we never would have found ourselves. Hidden coves, local tavernas, perfect anchorages. It felt like having a local friend.</p>
-        <div class="review-yacht">Bavaria C42 &mdash; Mistral</div>
-      </div>
-      <div class="review-card">
-        <div class="review-header">
-          <div class="review-author">
-            <div class="review-avatar">JR</div>
-            <div><div class="review-name">James R.</div><div class="review-trip">Italy, Sep 2025</div></div>
-          </div>
-          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
-        </div>
-        <p class="review-text">Second time booking through Marencello. The comparison tool made choosing between three yachts easy, and the split payment option was perfect for our group.</p>
-        <div class="review-yacht">Azimut 55 &mdash; Dolce Vita</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== FOOTER ===== -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="footer-logo">Marencello</div>
-        <div class="footer-tagline">Boat Art Meets the Sea</div>
-        <p>Premium yacht charter, transparently priced and expertly guided. Your voyage, our masterpiece.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Destinations</h4>
-        <a href="pages/destinations.html">Croatia</a>
-        <a href="pages/destinations.html">Greece</a>
-        <a href="pages/destinations.html">Italy</a>
-        <a href="pages/destinations.html">Caribbean</a>
-        <a href="pages/destinations.html">Turkey</a>
-      </div>
-      <div class="footer-col">
-        <h4>Yachts</h4>
-        <a href="pages/search.html">Sailboats</a>
-        <a href="pages/search.html">Catamarans</a>
-        <a href="pages/search.html">Motor Yachts</a>
-        <a href="pages/search.html">Gulets</a>
-        <a href="pages/search.html">Luxury Crewed</a>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <a href="#">About Us</a>
-        <a href="#">Contact</a>
-        <a href="#">Careers</a>
-        <a href="#">Press</a>
-        <a href="#">List Your Yacht</a>
-      </div>
-      <div class="footer-col">
-        <h4>Support</h4>
-        <a href="#">FAQ</a>
-        <a href="#">How It Works</a>
-        <a href="#">Cancellation Policy</a>
-        <a href="#">Terms of Service</a>
-        <a href="#">Privacy Policy</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>&copy; 2026 Marencello. All rights reserved.</span>
-      <div class="footer-social">
-        <a href="#" title="Instagram">&#128247;</a>
-        <a href="#" title="Facebook">f</a>
-        <a href="#" title="YouTube">&#9654;</a>
-        <a href="#" title="LinkedIn">in</a>
-      </div>
-    </div>
-  </div>
+<!-- 7. FOOTER -->
+<footer class="bg-primary pt-16 pb-8 text-white">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-8 max-w-7xl mx-auto text-left">
+<!-- Col 1 -->
+<div>
+<span class="text-3xl font-headline font-bold text-white mb-4 block">Marencello</span>
+<p class="text-sky-200/70 font-body text-sm leading-relaxed mb-6">
+                    Boat Art Meets the Sea. Curating the world's most exceptional maritime experiences with modern precision and timeless elegance.
+                </p>
+<div class="flex gap-4">
+<a class="text-white hover:text-sky-200 transition-colors" href="#"><span class="material-symbols-outlined">social_leaderboard</span></a>
+<a class="text-white hover:text-sky-200 transition-colors" href="#"><span class="material-symbols-outlined">photo_camera</span></a>
+<a class="text-white hover:text-sky-200 transition-colors" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+</div>
+</div>
+<!-- Col 2 -->
+<div>
+<h4 class="font-display text-lg mb-6">Destinations</h4>
+<ul class="space-y-3 font-body text-sm">
+<li><a class="text-sky-200/70 hover:text-white transition-colors" href="#">Croatia</a></li>
+<li><a class="text-sky-200/70 hover:text-white transition-colors" href="#">Greece</a></li>
+<li><a class="text-sky-200/70 hover:text-white transition-colors" href="#">Italy</a></li>
+<li><a class="text-sky-200/70 hover:text-white transition-colors" href="#">Caribbean</a></li>
+</ul>
+</div>
+<!-- Col 3 -->
+<div>
+<h4 class="font-display text-lg mb-6">Company</h4>
+<ul class="space-y-3 font-body text-sm">
+<li><a class="text-sky-200/70 hover:text-white transition-colors" href="#">About Marencello</a></li>
+<li><a class="text-sky-200/70 hover:text-white transition-colors" href="#">Our Fleet</a></li>
+<li><a class="text-sky-200/70 hover:text-white transition-colors" href="#">Blog</a></li>
+<li><a class="text-sky-200/70 hover:text-white transition-colors" href="#">AI Planner</a></li>
+</ul>
+</div>
+<!-- Col 4 -->
+<div>
+<h4 class="font-display text-lg mb-6">Support</h4>
+<ul class="space-y-3 font-body text-sm">
+<li><a class="text-sky-200/70 hover:text-white transition-colors" href="#">Help Centre</a></li>
+<li><a class="text-sky-200/70 hover:text-white transition-colors" href="#">Cancellation Policy</a></li>
+<li><a class="text-sky-200/70 hover:text-white transition-colors" href="#">Safety Guidelines</a></li>
+<li><a class="text-sky-200/70 hover:text-white transition-colors" href="#">Contact Us</a></li>
+</ul>
+</div>
+</div>
+<!-- Bottom Bar -->
+<div class="max-w-7xl mx-auto px-8 mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-sky-200/50 text-xs font-body">© 2024 Marencello. All rights reserved.</p>
+<div class="flex gap-6 items-center">
+<span class="material-symbols-outlined text-sky-200/30">credit_card</span>
+<span class="material-symbols-outlined text-sky-200/30">payments</span>
+<span class="material-symbols-outlined text-sky-200/30">account_balance</span>
+</div>
+<div class="flex gap-6 font-body text-xs text-sky-200/50">
+<a class="hover:text-white" href="#">Privacy Policy</a>
+<a class="hover:text-white" href="#">Terms of Service</a>
+</div>
+</div>
 </footer>
-
-<script src="js/main.js"></script>
-</body>
-</html>
+</body></html>
