@@ -1,140 +1,332 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="scroll-smooth" lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Destinations — Marencello</title>
-  <link rel="stylesheet" href="../css/styles.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Marencello | Sailing Destinations</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-dim": "#d6dae2",
+              "on-primary-fixed-variant": "#00497c",
+              "surface-bright": "#f7f9ff",
+              "on-surface": "#171c22",
+              "surface-container-high": "#e4e8f0",
+              "on-error": "#ffffff",
+              "background": "#f7f9ff",
+              "on-primary-container": "#a2ccff",
+              "error": "#ba1a1a",
+              "on-surface-variant": "#414750",
+              "surface-variant": "#dee3ea",
+              "on-error-container": "#93000a",
+              "surface-tint": "#19619d",
+              "outline": "#717781",
+              "on-tertiary-container": "#a0cdff",
+              "on-secondary-fixed-variant": "#164973",
+              "on-primary-fixed": "#001d36",
+              "on-tertiary": "#ffffff",
+              "tertiary": "#00406a",
+              "surface-container": "#eaeef6",
+              "outline-variant": "#c1c7d1",
+              "tertiary-container": "#00588f",
+              "on-secondary-container": "#285782",
+              "tertiary-fixed": "#d0e4ff",
+              "inverse-primary": "#9dcaff",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-fixed-dim": "#9acbff",
+              "secondary-container": "#a1cdfe",
+              "inverse-surface": "#2c3137",
+              "primary-container": "#005792",
+              "primary": "#003f6c",
+              "surface-container-highest": "#dee3ea",
+              "error-container": "#ffdad6",
+              "secondary": "#34618c",
+              "primary-fixed-dim": "#9dcaff",
+              "surface": "#f7f9ff",
+              "on-background": "#171c22",
+              "primary-fixed": "#d1e4ff",
+              "on-tertiary-fixed": "#001d34",
+              "on-secondary": "#ffffff",
+              "on-tertiary-fixed-variant": "#004a79",
+              "on-primary": "#ffffff",
+              "inverse-on-surface": "#edf1f9",
+              "surface-container-low": "#eff4fc",
+              "on-secondary-fixed": "#001d34",
+              "secondary-fixed": "#d0e4ff",
+              "secondary-fixed-dim": "#9fcafb"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "display": ["Playfair Display"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-nav {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(12px);
+      }
+      .editorial-shadow {
+        box-shadow: 0 12px 40px rgba(0, 63, 108, 0.06);
+      }
+    </style>
 </head>
-<body>
+<body class="bg-surface font-body text-on-surface antialiased">
 
-<!-- Navigation -->
-<nav class="nav scrolled" id="nav">
-  <div class="container">
-    <a href="../index.html" class="nav-logo">Marencello</a>
-    <div class="nav-links">
-      <a href="destinations.html" style="color:var(--marencello-blue)">Destinations</a>
-      <a href="search.html">Yachts</a>
-      <a href="#">Deals</a>
-      <a href="#">Guides</a>
-      <a href="ai-planner.html" class="nav-cta">AI Trip Planner</a>
-    </div>
-    <div class="nav-right">
-      <a href="#" class="nav-icon" title="Saved">&#9825;</a>
-      <a href="#" class="nav-icon" title="Account">&#9786;</a>
-      <button class="mobile-menu-toggle" aria-label="Menu">&#9776;</button>
-    </div>
-  </div>
+<!-- NAVIGATION -->
+<nav class="fixed top-0 w-full z-50 glass-nav shadow-[0_12px_40px_rgba(0,63,108,0.06)]">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<a href="../index.html" class="text-2xl font-bold tracking-tighter text-sky-900 font-headline">Marencello</a>
+<div class="hidden md:flex items-center space-x-10">
+<a class="text-sky-700 font-semibold border-b-2 border-sky-700 pb-1 font-label" href="destinations.html">Destinations</a>
+<a class="text-slate-600 hover:text-sky-900 transition-colors font-label" href="search.html">Yachts</a>
+<a class="text-slate-600 hover:text-sky-900 transition-colors font-label" href="../index.html#how-it-works">How it Works</a>
+<a class="text-slate-600 hover:text-sky-900 transition-colors font-label" href="ai-planner.html">AI Planner</a>
+</div>
+<button class="bg-primary hover:bg-primary-container text-white px-6 py-2 rounded-lg font-medium transition-all scale-95 active:scale-90">
+            Sign In
+        </button>
+</div>
 </nav>
 
-<!-- Page Header -->
-<div class="page-header">
-  <div class="container">
-    <div class="breadcrumb"><a href="../index.html">Home</a> / Destinations</div>
-    <h1>Sailing Destinations</h1>
-    <p>Discover the world's most beautiful charter grounds, from the Adriatic to the Aegean.</p>
-  </div>
+<!-- 1. HERO HEADER -->
+<section class="relative pt-32 pb-20 bg-primary overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-primary via-primary-container/40 to-tertiary/30 opacity-80"></div>
+<div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+<h1 class="font-display text-5xl md:text-7xl text-white drop-shadow-lg mb-6 tracking-tight">
+            Sailing Destinations
+        </h1>
+<p class="font-body text-sky-100 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed opacity-90">
+            From the sun-drenched Adriatic to the turquoise Caribbean, explore the world's finest sailing grounds curated by our maritime experts.
+        </p>
 </div>
+</section>
 
-<!-- Destination Grid -->
-<div class="container">
-  <div class="dest-page-grid">
-    <!-- Featured: Mediterranean -->
-    <a href="#" class="dest-region-card featured">
-      <img src="https://images.unsplash.com/photo-1534008897995-27a23e859048?w=1200&q=80" alt="Mediterranean">
-      <div class="dest-region-info">
-        <h3 style="font-size:28px">Mediterranean</h3>
-        <div class="dest-meta">
-          <span>8 countries</span>
-          <span>1,200+ yachts</span>
-          <span>Season: Apr&ndash;Oct</span>
-        </div>
-      </div>
-    </a>
+<!-- 2. DESTINATION GRID -->
+<section class="py-24 px-6 md:px-12 bg-surface">
+<div class="max-w-7xl mx-auto">
+<h2 class="font-display text-4xl md:text-5xl text-primary mb-4">Explore by Region</h2>
+<p class="font-body text-on-surface-variant mb-12 text-lg">Choose your sailing ground and discover the fleet waiting for you.</p>
 
-    <a href="#" class="dest-region-card">
-      <img src="https://images.unsplash.com/photo-1530841377377-3ff06c0ca713?w=600&q=80" alt="Greece">
-      <div class="dest-region-info">
-        <h3>Greece</h3>
-        <div class="dest-meta"><span>518 yachts</span></div>
-      </div>
-    </a>
-    <a href="#" class="dest-region-card">
-      <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=600&q=80" alt="Italy">
-      <div class="dest-region-info">
-        <h3>Italy</h3>
-        <div class="dest-meta"><span>189 yachts</span></div>
-      </div>
-    </a>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-    <a href="#" class="dest-region-card">
-      <img src="https://images.unsplash.com/photo-1499678329028-101435549a4e?w=600&q=80" alt="Caribbean">
-      <div class="dest-region-info">
-        <h3>Caribbean</h3>
-        <div class="dest-meta"><span>276 yachts</span><span>Season: Nov&ndash;May</span></div>
-      </div>
-    </a>
-    <a href="#" class="dest-region-card">
-      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80" alt="Turkey">
-      <div class="dest-region-info">
-        <h3>Turkey</h3>
-        <div class="dest-meta"><span>156 yachts</span></div>
-      </div>
-    </a>
-    <a href="#" class="dest-region-card">
-      <img src="https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=600&q=80" alt="Thailand">
-      <div class="dest-region-info">
-        <h3>Thailand</h3>
-        <div class="dest-meta"><span>84 yachts</span><span>Season: Nov&ndash;Apr</span></div>
-      </div>
-    </a>
-
-    <a href="#" class="dest-region-card">
-      <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&q=80" alt="French Riviera">
-      <div class="dest-region-info">
-        <h3>French Riviera</h3>
-        <div class="dest-meta"><span>142 yachts</span></div>
-      </div>
-    </a>
-    <a href="#" class="dest-region-card">
-      <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=600&q=80" alt="Maldives">
-      <div class="dest-region-info">
-        <h3>Maldives</h3>
-        <div class="dest-meta"><span>32 yachts</span><span>Season: Jan&ndash;Apr</span></div>
-      </div>
-    </a>
-    <a href="#" class="dest-region-card">
-      <img src="https://images.unsplash.com/photo-1548574505-5e239809ee19?w=600&q=80" alt="Spain">
-      <div class="dest-region-info">
-        <h3>Spain</h3>
-        <div class="dest-meta"><span>198 yachts</span></div>
-      </div>
-    </a>
-  </div>
+<!-- Card 1: Croatia (Featured - spans 2 cols) -->
+<a href="search.html?destination=croatia" class="group relative md:col-span-2 aspect-[2/1] rounded-xl overflow-hidden editorial-shadow hover:-translate-y-2 transition-transform duration-300 block">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Sun-drenched coastal town of Dubrovnik, Croatia with terracotta roofs against deep blue Adriatic sea" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXXxxdp9wkZ-k-Q1rUzOlWvpbityoNn5Vp6v4WlZzQnQt9SIUX_tZ4k006DSWKZpV7Qvrv3XHAAZ6X8eJLQ6ObV1DGrfQOdjRUap8Lk5FD-8ct9rK_jQ3-DLQ-SgydJ5c6GJcfMS4xPtnV9RHQ8P0R-vEW_1kzUnox-f2SqnfhpcJ3ZoLG5yzvJE52WSU1X7sKNkoQ0oM8ityQ8wqbvrx2f8FiQo8wc2zrpf9RQYAegUX7yVMHMl9R7HD59QVuw8hn-JeEsFYngsM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 text-white">
+<span class="bg-sky-500/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold mb-2 inline-block">320+ yachts</span>
+<h3 class="font-display text-3xl mb-1">Croatia</h3>
+<p class="font-body text-sm opacity-80 italic">From EUR 1,200/week</p>
 </div>
+</a>
 
-<!-- Footer -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="footer-logo">Marencello</div>
-        <div class="footer-tagline">Boat Art Meets the Sea</div>
-        <p>Premium yacht charter, transparently priced and expertly guided.</p>
-      </div>
-      <div class="footer-col"><h4>Destinations</h4><a href="#">Croatia</a><a href="#">Greece</a><a href="#">Italy</a><a href="#">Caribbean</a></div>
-      <div class="footer-col"><h4>Yachts</h4><a href="search.html">Sailboats</a><a href="search.html">Catamarans</a><a href="search.html">Motor Yachts</a></div>
-      <div class="footer-col"><h4>Company</h4><a href="#">About</a><a href="#">Contact</a><a href="#">Careers</a></div>
-      <div class="footer-col"><h4>Support</h4><a href="#">FAQ</a><a href="#">Terms</a><a href="#">Privacy</a></div>
-    </div>
-    <div class="footer-bottom">
-      <span>&copy; 2026 Marencello. All rights reserved.</span>
-      <div class="footer-social"><a href="#">&#128247;</a><a href="#">f</a><a href="#">&#9654;</a></div>
-    </div>
-  </div>
+<!-- Card 2: Greece -->
+<a href="search.html?destination=greece" class="group relative aspect-[4/5] rounded-xl overflow-hidden editorial-shadow hover:-translate-y-2 transition-transform duration-300 block">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="White-washed villas of Santorini Greece overlooking the caldera at sunset" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIVJ_bFemAyfHIohwgU-6pRTVhET8jRab7xqhcc2RidpI5JsoY1OQNuDNfWUnt-aSSpbJhN_dIvfwr626lzxu6Md5KfvQZd83VLUowIhiA1t5taWbe_NyM0Xrps657sS7nU1WANOouBuXPDjjaPXnE8PmZYyKiKlatmzGJtzH68-WsMjVl3Z9zTAoORX_CizfQIenIVpGE30TI1ntLS1ImVvRI3NkaC4nj8kwepPtDu9zCJiCLJf924u_T5nJfYP88d4XY4RXqmNY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 text-white">
+<span class="bg-sky-500/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold mb-2 inline-block">450+ yachts</span>
+<h3 class="font-display text-2xl mb-1">Greece</h3>
+<p class="font-body text-sm opacity-80 italic">From EUR 1,450/week</p>
+</div>
+</a>
+
+<!-- Card 3: Italy -->
+<a href="search.html?destination=italy" class="group relative aspect-[4/5] rounded-xl overflow-hidden editorial-shadow hover:-translate-y-2 transition-transform duration-300 block">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Colorful buildings of Positano, Amalfi Coast Italy clinging to cliffs above azure water" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjZdK85_HgUO3SmLmTyew6as03LH472afLuP8OMKYG19eFByaTiHq-x9LFs8PdqkBMuM4_RWpzCwTTlwAi1CCM3zYo07Y3EmijybPU6sVFX7RBkyzsZz-OQVIi_5gR8HmJygie9Zk3IpZIujdqAW4E6YSKGWw1XtxENR9F3cu36PT-brQaccINhQnpoYul6MeR-65LeX5qPTgT6z2LOzDRcVQWy72UAwU2oxPX_rYsVzdohTWkkTVJrCV6AQkTYfvuJwXoGX6XIKc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 text-white">
+<span class="bg-sky-500/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold mb-2 inline-block">280+ yachts</span>
+<h3 class="font-display text-2xl mb-1">Italy</h3>
+<p class="font-body text-sm opacity-80 italic">From EUR 1,800/week</p>
+</div>
+</a>
+
+<!-- Card 4: Turkey -->
+<a href="search.html?destination=turkey" class="group relative aspect-[4/5] rounded-xl overflow-hidden editorial-shadow hover:-translate-y-2 transition-transform duration-300 block">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Traditional Turkish Gulet boat anchored in a secluded turquoise bay surrounded by pine forests" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDH5FgmuaE4tjTjCeM9pn73_rri-5rl7ctoS-ErDj3eFDNDOqHfeeG5Fb9rMA8n8ANeccY2pudpXl9H5ka83NA1H3mrZqe02RYVXEhqiniJnIHtGuhetCtfpbVCRFkLnhc1tTuAGoKIlGUSKoblIN3vT2XJHfFdEyO__Bs9ePeWNiNQ6nJW8iEbFKAmiUCOWQXsuNplz_4uswjUi2JWdWsgIaMor7XugNFbmAOAj6-MLnNnEDALrrvOygZoDv_Sxe2O_tMh29JbvkA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 text-white">
+<span class="bg-sky-500/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold mb-2 inline-block">190+ yachts</span>
+<h3 class="font-display text-2xl mb-1">Turkey</h3>
+<p class="font-body text-sm opacity-80 italic">From EUR 1,100/week</p>
+</div>
+</a>
+
+<!-- Card 5: Caribbean -->
+<a href="search.html?destination=caribbean" class="group relative aspect-[4/5] rounded-xl overflow-hidden editorial-shadow hover:-translate-y-2 transition-transform duration-300 block">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Palm trees leaning over a white sand beach with crystal clear turquoise water in the Caribbean" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCk_-a_cZBss_fO_B1p5c8sM1NLWP2-oWb3Qy0AnB4-3WN7WarnBox2PgWd-Vkt3KTY8LPjYpjP-SEx4l92lFbJAvo8UEeZDMpr9utldxDg--4K6miwSOwIreIYWcLkpGAnr8knxc6JpDu5SMyBQhPuN3O8mZMFOKivr_kSzx__-ae8cHKk01loYDJzR2mddjvDphHp35k6BroDtJXFZSAYhpTciGLNuN9L2gWFXxlGCENTt9f05xLh9kjF4v_wYxuJ4coOOu3rGE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 text-white">
+<span class="bg-sky-500/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold mb-2 inline-block">500+ yachts</span>
+<h3 class="font-display text-2xl mb-1">Caribbean</h3>
+<p class="font-body text-sm opacity-80 italic">From EUR 2,200/week</p>
+</div>
+</a>
+
+<!-- Card 6: Thailand -->
+<a href="search.html?destination=thailand" class="group relative aspect-[4/5] rounded-xl overflow-hidden editorial-shadow hover:-translate-y-2 transition-transform duration-300 block">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Iconic limestone karsts rising out of emerald green waters of Phang Nga Bay, Thailand" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBH_Cf4iS98I4TaoGdANR4mrGycKHKjq5DxDhmRqSSeR6cHyW2buMNvr_yAInsk-b0slKRLCsNkTjEiRHxXKqQmxe5ghiUzudr3nnvDA3EBkjXMDyj1Khj_Gq3r3W1B3PLgObZA9ErKco9WItbpRNdbdM-gI8mS_3goYul0HAL9Cviw5XMxaumkydfXOig_eyBW9M2lF7mR9v4vxnsSU5Qv39mvpat9hP3JAOfLhrNl8IGXo393A5I7_47CeUuK8G5Tu76ixeALrvU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 text-white">
+<span class="bg-sky-500/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold mb-2 inline-block">120+ yachts</span>
+<h3 class="font-display text-2xl mb-1">Thailand</h3>
+<p class="font-body text-sm opacity-80 italic">From EUR 1,300/week</p>
+</div>
+</a>
+
+</div>
+</div>
+</section>
+
+<!-- 3. POPULAR ROUTES -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-6">
+<h2 class="font-display text-4xl md:text-5xl text-primary mb-4">Popular Routes</h2>
+<p class="font-body text-on-surface-variant mb-12 text-lg">Proven itineraries loved by thousands of sailors before you.</p>
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+<!-- Route 1 -->
+<a href="search.html?route=split-dubrovnik" class="bg-surface-container-lowest rounded-xl editorial-shadow p-8 hover:-translate-y-2 transition-transform duration-300 block group">
+<div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-primary text-3xl">route</span>
+</div>
+<h3 class="font-display text-2xl text-primary mb-3">Split to Dubrovnik</h3>
+<p class="font-body text-on-surface-variant text-sm leading-relaxed mb-6">
+    The classic Dalmatian Coast route. Island-hop through Hvar, Korcula, and Mljet before arriving at the pearl of the Adriatic.
+</p>
+<div class="flex items-center gap-6 text-sm text-on-surface-variant mb-6">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-base">schedule</span> 7 days</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-base">straighten</span> 175 nm</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-base">flag</span> Croatia</span>
+</div>
+<span class="text-primary font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+    View yachts for this route
+    <span class="material-symbols-outlined text-base">arrow_forward</span>
+</span>
+</a>
+
+<!-- Route 2 -->
+<a href="search.html?route=athens-cyclades" class="bg-surface-container-lowest rounded-xl editorial-shadow p-8 hover:-translate-y-2 transition-transform duration-300 block group">
+<div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-primary text-3xl">route</span>
+</div>
+<h3 class="font-display text-2xl text-primary mb-3">Athens to Cyclades</h3>
+<p class="font-body text-on-surface-variant text-sm leading-relaxed mb-6">
+    Sail from Athens through the iconic Cyclades archipelago. Visit Mykonos, Paros, Naxos, and the legendary caldera of Santorini.
+</p>
+<div class="flex items-center gap-6 text-sm text-on-surface-variant mb-6">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-base">schedule</span> 10 days</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-base">straighten</span> 220 nm</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-base">flag</span> Greece</span>
+</div>
+<span class="text-primary font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+    View yachts for this route
+    <span class="material-symbols-outlined text-base">arrow_forward</span>
+</span>
+</a>
+
+<!-- Route 3 -->
+<a href="search.html?route=naples-amalfi" class="bg-surface-container-lowest rounded-xl editorial-shadow p-8 hover:-translate-y-2 transition-transform duration-300 block group">
+<div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-primary text-3xl">route</span>
+</div>
+<h3 class="font-display text-2xl text-primary mb-3">Naples to Amalfi Coast</h3>
+<p class="font-body text-on-surface-variant text-sm leading-relaxed mb-6">
+    Cruise past Capri, Positano, and Ravello on this unforgettable Italian riviera route. Perfect for gastronomy and culture lovers.
+</p>
+<div class="flex items-center gap-6 text-sm text-on-surface-variant mb-6">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-base">schedule</span> 7 days</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-base">straighten</span> 120 nm</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-base">flag</span> Italy</span>
+</div>
+<span class="text-primary font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+    View yachts for this route
+    <span class="material-symbols-outlined text-base">arrow_forward</span>
+</span>
+</a>
+
+</div>
+</div>
+</section>
+
+<!-- 4. FOOTER -->
+<footer class="bg-primary pt-16 pb-8 text-white">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-8 max-w-7xl mx-auto text-left">
+<!-- Col 1 -->
+<div>
+<a href="../index.html" class="text-3xl font-headline font-bold text-white mb-4 block">Marencello</a>
+<p class="text-sky-200/70 font-body text-sm leading-relaxed mb-6">
+            Boat Art Meets the Sea. Curating the world's most exceptional maritime experiences with modern precision and timeless elegance.
+        </p>
+<div class="flex gap-4">
+<a class="text-white hover:text-sky-200 transition-colors" href="#"><span class="material-symbols-outlined">social_leaderboard</span></a>
+<a class="text-white hover:text-sky-200 transition-colors" href="#"><span class="material-symbols-outlined">photo_camera</span></a>
+<a class="text-white hover:text-sky-200 transition-colors" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+</div>
+</div>
+<!-- Col 2 -->
+<div>
+<h4 class="font-display text-lg mb-6">Destinations</h4>
+<ul class="space-y-3 font-body text-sm">
+<li><a class="text-sky-200/70 hover:text-white transition-colors" href="destinations.html">Croatia</a></li>
+<li><a class="text-sky-200/70 hover:text-white transition-colors" href="destinations.html">Greece</a></li>
+<li><a class="text-sky-200/70 hover:text-white transition-colors" href="destinations.html">Italy</a></li>
+<li><a class="text-sky-200/70 hover:text-white transition-colors" href="destinations.html">Caribbean</a></li>
+</ul>
+</div>
+<!-- Col 3 -->
+<div>
+<h4 class="font-display text-lg mb-6">Company</h4>
+<ul class="space-y-3 font-body text-sm">
+<li><a class="text-sky-200/70 hover:text-white transition-colors" href="#">About Marencello</a></li>
+<li><a class="text-sky-200/70 hover:text-white transition-colors" href="search.html">Our Fleet</a></li>
+<li><a class="text-sky-200/70 hover:text-white transition-colors" href="#">Blog</a></li>
+<li><a class="text-sky-200/70 hover:text-white transition-colors" href="ai-planner.html">AI Planner</a></li>
+</ul>
+</div>
+<!-- Col 4 -->
+<div>
+<h4 class="font-display text-lg mb-6">Support</h4>
+<ul class="space-y-3 font-body text-sm">
+<li><a class="text-sky-200/70 hover:text-white transition-colors" href="#">Help Centre</a></li>
+<li><a class="text-sky-200/70 hover:text-white transition-colors" href="#">Cancellation Policy</a></li>
+<li><a class="text-sky-200/70 hover:text-white transition-colors" href="#">Safety Guidelines</a></li>
+<li><a class="text-sky-200/70 hover:text-white transition-colors" href="#">Contact Us</a></li>
+</ul>
+</div>
+</div>
+<!-- Bottom Bar -->
+<div class="max-w-7xl mx-auto px-8 mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-sky-200/50 text-xs font-body">&copy; 2024 Marencello. All rights reserved.</p>
+<div class="flex gap-6 items-center">
+<span class="material-symbols-outlined text-sky-200/30">credit_card</span>
+<span class="material-symbols-outlined text-sky-200/30">payments</span>
+<span class="material-symbols-outlined text-sky-200/30">account_balance</span>
+</div>
+<div class="flex gap-6 font-body text-xs text-sky-200/50">
+<a class="hover:text-white" href="#">Privacy Policy</a>
+<a class="hover:text-white" href="#">Terms of Service</a>
+</div>
+</div>
 </footer>
 
-<script src="../js/main.js"></script>
 <!-- Firebase Auth SDK -->
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>

@@ -1,240 +1,348 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="scroll-smooth" lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Trip Planner — Marencello</title>
-  <link rel="stylesheet" href="../css/styles.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Trip Planner — Marencello</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-dim": "#d6dae2",
+              "on-primary-fixed-variant": "#00497c",
+              "surface-bright": "#f7f9ff",
+              "on-surface": "#171c22",
+              "surface-container-high": "#e4e8f0",
+              "on-error": "#ffffff",
+              "background": "#f7f9ff",
+              "on-primary-container": "#a2ccff",
+              "error": "#ba1a1a",
+              "on-surface-variant": "#414750",
+              "surface-variant": "#dee3ea",
+              "on-error-container": "#93000a",
+              "surface-tint": "#19619d",
+              "outline": "#717781",
+              "on-tertiary-container": "#a0cdff",
+              "on-secondary-fixed-variant": "#164973",
+              "on-primary-fixed": "#001d36",
+              "on-tertiary": "#ffffff",
+              "tertiary": "#00406a",
+              "surface-container": "#eaeef6",
+              "outline-variant": "#c1c7d1",
+              "tertiary-container": "#00588f",
+              "on-secondary-container": "#285782",
+              "tertiary-fixed": "#d0e4ff",
+              "inverse-primary": "#9dcaff",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-fixed-dim": "#9acbff",
+              "secondary-container": "#a1cdfe",
+              "inverse-surface": "#2c3137",
+              "primary-container": "#005792",
+              "primary": "#003f6c",
+              "surface-container-highest": "#dee3ea",
+              "error-container": "#ffdad6",
+              "secondary": "#34618c",
+              "primary-fixed-dim": "#9dcaff",
+              "surface": "#f7f9ff",
+              "on-background": "#171c22",
+              "primary-fixed": "#d1e4ff",
+              "on-tertiary-fixed": "#001d34",
+              "on-secondary": "#ffffff",
+              "on-tertiary-fixed-variant": "#004a79",
+              "on-primary": "#ffffff",
+              "inverse-on-surface": "#edf1f9",
+              "surface-container-low": "#eff4fc",
+              "on-secondary-fixed": "#001d34",
+              "secondary-fixed": "#d0e4ff",
+              "secondary-fixed-dim": "#9fcafb"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "display": ["Playfair Display"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-nav {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(12px);
+      }
+      .editorial-shadow {
+        box-shadow: 0 12px 40px rgba(0, 63, 108, 0.06);
+      }
+      /* Hide scrollbar but keep scroll */
+      .chat-scroll::-webkit-scrollbar { width: 6px; }
+      .chat-scroll::-webkit-scrollbar-track { background: transparent; }
+      .chat-scroll::-webkit-scrollbar-thumb { background: #c1c7d1; border-radius: 9999px; }
+      .itinerary-scroll::-webkit-scrollbar { width: 6px; }
+      .itinerary-scroll::-webkit-scrollbar-track { background: transparent; }
+      .itinerary-scroll::-webkit-scrollbar-thumb { background: #c1c7d1; border-radius: 9999px; }
+      .yacht-carousel::-webkit-scrollbar { height: 4px; }
+      .yacht-carousel::-webkit-scrollbar-track { background: transparent; }
+      .yacht-carousel::-webkit-scrollbar-thumb { background: #c1c7d1; border-radius: 9999px; }
+    </style>
 </head>
-<body>
+<body class="bg-surface font-body text-on-surface antialiased overflow-hidden">
 
 <!-- Navigation -->
-<nav class="nav scrolled" id="nav">
-  <div class="container">
-    <a href="../index.html" class="nav-logo">Marencello</a>
-    <div class="nav-links">
-      <a href="destinations.html">Destinations</a>
-      <a href="search.html">Yachts</a>
-      <a href="#">Deals</a>
-      <a href="#">Guides</a>
-      <a href="ai-planner.html" class="nav-cta" style="background:var(--marencello-blue) !important;border-color:var(--marencello-blue) !important">AI Trip Planner</a>
+<nav class="fixed top-0 w-full z-50 glass-nav shadow-[0_12px_40px_rgba(0,63,108,0.06)]">
+  <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+    <a href="../index.html" class="text-2xl font-bold tracking-tighter text-sky-900 font-headline no-underline">Marencello</a>
+    <div class="hidden md:flex items-center space-x-10">
+      <a class="text-slate-600 hover:text-sky-900 transition-colors font-label" href="destinations.html">Destinations</a>
+      <a class="text-slate-600 hover:text-sky-900 transition-colors font-label" href="search.html">Yachts</a>
+      <a class="text-slate-600 hover:text-sky-900 transition-colors font-label" href="../index.html#how-it-works">How it Works</a>
+      <a class="border-b-2 border-sky-700 text-sky-700 font-semibold font-label pb-0.5" href="ai-planner.html">AI Planner</a>
     </div>
-    <div class="nav-right">
-      <a href="#" class="nav-icon" title="Saved">&#9825;</a>
-      <a href="#" class="nav-icon" title="Account">&#9786;</a>
-      <button class="mobile-menu-toggle" aria-label="Menu">&#9776;</button>
-    </div>
+    <button class="bg-primary hover:bg-primary-container text-white px-6 py-2 rounded-lg font-medium transition-all scale-95 active:scale-90">
+      Sign In
+    </button>
   </div>
 </nav>
 
-<!-- AI Planner Layout -->
-<div style="padding-top:64px">
-  <div class="ai-planner-layout" style="height:calc(100vh - 64px)">
+<!-- Main Split Layout -->
+<div class="grid grid-cols-1 md:grid-cols-2 h-screen pt-[72px]">
 
-    <!-- Left: Chat Panel -->
-    <div class="ai-chat-panel">
-      <div class="ai-chat-messages">
+  <!-- LEFT PANEL: Chat -->
+  <div class="border-r border-outline-variant/20 flex flex-col">
 
-        <!-- Welcome -->
-        <div class="ai-message assistant">
-          <div class="ai-msg-avatar">&#9973;</div>
-          <div>
-            <div class="ai-msg-content">
-              <strong>Welcome to Marencello AI Trip Planner!</strong><br><br>
-              I'm your personal sailing concierge. Tell me about your dream voyage and I'll find the perfect yacht, suggest routes, and help you plan every detail.<br><br>
-              Try asking me something like:
-            </div>
-            <div class="ai-suggested-prompts">
-              <button onclick="this.closest('.ai-chat-messages').querySelector('.demo-response').style.display='flex'">"6 friends, Greece, mid-July, ~&euro;3k"</button>
-              <button>"Family of 4, first time sailing, Croatia"</button>
-              <button>"Luxury motor yacht, Amalfi Coast, August"</button>
-              <button>"Best last-minute deals this month"</button>
-            </div>
+    <!-- Chat Messages Area -->
+    <div class="flex-1 overflow-y-auto p-8 space-y-6 bg-surface chat-scroll">
+
+      <!-- AI Welcome Message -->
+      <div class="flex gap-3 items-start">
+        <div class="w-9 h-9 rounded-full bg-sky-200 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-primary" style="font-size:20px">smart_toy</span>
+        </div>
+        <div class="space-y-1 max-w-[85%]">
+          <span class="text-xs font-semibold text-primary font-label">Marencello AI</span>
+          <div class="bg-surface-container-low rounded-2xl rounded-tl-md px-5 py-3.5 text-sm leading-relaxed text-on-surface">
+            Welcome! I'm your personal sailing concierge. Tell me about your dream voyage &mdash; where you'd like to sail, when, how many guests, your budget, and what experiences matter most. I'll craft the perfect itinerary for you.
           </div>
         </div>
-
-        <!-- User Message -->
-        <div class="ai-message user">
-          <div class="ai-msg-avatar">&#128100;</div>
-          <div class="ai-msg-content">
-            We're 6 friends looking for a week in Greece, mid-July, around &euro;3,000 total. We love snorkelling and want to visit some hidden beaches. A couple of us have basic sailing experience.
-          </div>
-        </div>
-
-        <!-- AI Response -->
-        <div class="ai-message assistant demo-response">
-          <div class="ai-msg-avatar">&#9973;</div>
-          <div>
-            <div class="ai-msg-content">
-              Great choice! Mid-July in Greece is perfect for sailing. For 6 friends with some experience, I'd recommend the <strong>Saronic Gulf</strong> &mdash; it's sheltered, has short sailing distances between islands, and incredible snorkelling spots.<br><br>
-
-              Here are 3 catamarans that fit your budget and group size, all with snorkelling gear included:
-            </div>
-
-            <!-- Yacht Card Carousel -->
-            <div class="ai-yacht-cards">
-              <a href="yacht-detail.html" class="ai-yacht-mini">
-                <img src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=400&q=80" alt="Lagoon 40">
-                <div class="ai-yacht-mini-body">
-                  <h4>Lagoon 40 &mdash; Zephyr</h4>
-                  <div style="font-size:12px;color:var(--soft-grey)">Athens &middot; 3 cab &middot; 8 guests</div>
-                  <div class="price">&euro;2,680/week all-in</div>
-                </div>
-              </a>
-              <a href="yacht-detail.html" class="ai-yacht-mini">
-                <img src="https://images.unsplash.com/photo-1605281317010-fe5ffe798166?w=400&q=80" alt="Bali 4.2">
-                <div class="ai-yacht-mini-body">
-                  <h4>Bali 4.2 &mdash; Calypso</h4>
-                  <div style="font-size:12px;color:var(--soft-grey)">Athens &middot; 4 cab &middot; 10 guests</div>
-                  <div class="price">&euro;2,950/week all-in</div>
-                </div>
-              </a>
-              <a href="yacht-detail.html" class="ai-yacht-mini">
-                <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&q=80" alt="Excess 11">
-                <div class="ai-yacht-mini-body">
-                  <h4>Excess 11 &mdash; Poseidon</h4>
-                  <div style="font-size:12px;color:var(--soft-grey)">Lavrion &middot; 3 cab &middot; 8 guests</div>
-                  <div class="price">&euro;2,490/week all-in</div>
-                </div>
-              </a>
-            </div>
-
-            <div class="ai-msg-content" style="margin-top:var(--space-sm)">
-              I've also mapped out a suggested 7-day route through the Saronic with the best snorkelling stops. You can see it on the right. &#128073;<br><br>
-              Want me to refine the search, show you different dates, or add a skipper to the package?
-            </div>
-
-            <div class="ai-suggested-prompts">
-              <button>"Show me the route day by day"</button>
-              <button>"How much would a skipper add?"</button>
-              <button>"Compare Zephyr and Calypso"</button>
-              <button>"Any options closer to &euro;2,500?"</button>
-            </div>
-          </div>
-        </div>
-
       </div>
 
-      <!-- Chat Input -->
-      <div class="ai-chat-input-area">
-        <input type="text" placeholder="Tell me about your dream sailing trip...">
-        <button>Send</button>
+      <!-- Suggested Prompt Pills -->
+      <div class="flex flex-wrap gap-2 pl-12">
+        <button class="rounded-full border border-outline-variant/20 hover:border-primary px-4 py-1.5 text-sm text-on-surface-variant hover:text-primary transition-colors font-label">
+          <span class="material-symbols-outlined align-middle mr-1" style="font-size:16px">sailing</span>Greek islands for a week
+        </button>
+        <button class="rounded-full border border-outline-variant/20 hover:border-primary px-4 py-1.5 text-sm text-on-surface-variant hover:text-primary transition-colors font-label">
+          <span class="material-symbols-outlined align-middle mr-1" style="font-size:16px">family_restroom</span>Family trip in Croatia
+        </button>
+        <button class="rounded-full border border-outline-variant/20 hover:border-primary px-4 py-1.5 text-sm text-on-surface-variant hover:text-primary transition-colors font-label">
+          <span class="material-symbols-outlined align-middle mr-1" style="font-size:16px">celebration</span>Birthday celebration at sea
+        </button>
+        <button class="rounded-full border border-outline-variant/20 hover:border-primary px-4 py-1.5 text-sm text-on-surface-variant hover:text-primary transition-colors font-label">
+          <span class="material-symbols-outlined align-middle mr-1" style="font-size:16px">scuba_diving</span>Best snorkelling spots
+        </button>
+      </div>
+
+      <!-- User Message -->
+      <div class="flex justify-end">
+        <div class="bg-primary text-white rounded-2xl rounded-tr-md px-5 py-3.5 text-sm leading-relaxed max-w-[85%]">
+          We're 6 friends looking for a week in Greece, mid-July, around EUR 3,000 total. We love snorkelling and want easy sailing &mdash; some of us are beginners.
+        </div>
+      </div>
+
+      <!-- AI Response with Yacht Cards -->
+      <div class="flex gap-3 items-start">
+        <div class="w-9 h-9 rounded-full bg-sky-200 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-primary" style="font-size:20px">smart_toy</span>
+        </div>
+        <div class="space-y-4 max-w-[85%]">
+          <span class="text-xs font-semibold text-primary font-label">Marencello AI</span>
+          <div class="bg-surface-container-low rounded-2xl rounded-tl-md px-5 py-3.5 text-sm leading-relaxed text-on-surface">
+            Great choice! Mid-July in Greece is perfect for sailing &mdash; calm winds and warm, crystal-clear water ideal for snorkelling. I'd recommend the <strong>Saronic Gulf</strong>: it's sheltered, beginner-friendly, and packed with stunning coves. Here are three yachts that fit your group and budget:
+          </div>
+
+          <!-- Yacht Card Carousel -->
+          <div class="flex gap-3 overflow-x-auto pb-2 yacht-carousel">
+            <!-- Yacht Card 1 -->
+            <a href="yacht-detail.html" class="inline-flex flex-col min-w-[200px] max-w-[200px] bg-surface-container-lowest editorial-shadow rounded-xl overflow-hidden hover:scale-[1.02] transition-transform no-underline text-on-surface">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZlvaeLeQ-qAcjgIRNboQrmURvoJ3D6424pn12dBluKZkTJKFFqTyT3dX1CWCntpEapfhdb3FncZc5omvo3SviQo31ya0gSVZDPvXShSYeC9bgXMos0QiQKCMHbKOKIUnxzkbVAUwKXmT0bkXeT6wjooEjZNReC9cbRoXMjtiDsirDFvkz3GQMPvZVnOTp2m4_4O68lZaCUntiwlQivVMHbm83SnaDMgZXJ91by2UjXlgFW7LJJ2TQDGKREJfqNm6LCa03i9MBY84" alt="Beneteau Oceanis 46" class="w-full h-28 object-cover"/>
+              <div class="p-3">
+                <p class="text-xs text-on-surface-variant font-label">Sailboat &middot; 2022</p>
+                <p class="text-sm font-semibold font-body truncate">Beneteau Oceanis 46</p>
+                <p class="text-xs text-secondary font-semibold mt-1">&euro;2,800 / week</p>
+              </div>
+            </a>
+            <!-- Yacht Card 2 -->
+            <a href="yacht-detail.html" class="inline-flex flex-col min-w-[200px] max-w-[200px] bg-surface-container-lowest editorial-shadow rounded-xl overflow-hidden hover:scale-[1.02] transition-transform no-underline text-on-surface">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpRr7xt606CP0CE2OEyItK3w_digdYu2tQUi271xzzWlk9fGIdaAJPfL3A84s8IxX_BLify5fGuGTJsvIjlqKK1Mjst9prt0JWMDrHGvqJNHfW-v3F_f5XqLZNsyggPbt9fe2ACCNhl4uLnlhY-8q_V_BULwHuZEbh2LyEVYuImaDLDE-711F21IQT4kfZ-a6bcD_iBdidFUIawVMLeEbjfYCvpiW-sOIu0BprGyGx4BnJEJZivesGj2f2Qv7tlcsa3ovniGzihqY" alt="Jeanneau Sun Odyssey 440" class="w-full h-28 object-cover"/>
+              <div class="p-3">
+                <p class="text-xs text-on-surface-variant font-label">Sailboat &middot; 2023</p>
+                <p class="text-sm font-semibold font-body truncate">Jeanneau Sun Odyssey 440</p>
+                <p class="text-xs text-secondary font-semibold mt-1">&euro;3,100 / week</p>
+              </div>
+            </a>
+            <!-- Yacht Card 3 -->
+            <a href="yacht-detail.html" class="inline-flex flex-col min-w-[200px] max-w-[200px] bg-surface-container-lowest editorial-shadow rounded-xl overflow-hidden hover:scale-[1.02] transition-transform no-underline text-on-surface">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBscoCuhp1J7rZmStLTp0eIiPKcpbQUccUzpuGW1DT-BXhryMAAWDrgvIECvmkcrJosSSfPMJmS_fUfFYPkHeWEAp67pPqyul-fA6Iho4cXM-VCgAfs410j8o8MAAIP7DCk2x-Unci0D6e6RknwF3OkooE6s5WXjt93zJbjghbpNBXZEKl6nehj0RPXqqRIL2QkUNokyhaqIQG-jRUF_k9YrPWq58UORk8JNrvPhFtRs6vA0xv3g-5B-zBPcEgEvYk_Ia1He3dnXMI" alt="Bavaria C42" class="w-full h-28 object-cover"/>
+              <div class="p-3">
+                <p class="text-xs text-on-surface-variant font-label">Sailboat &middot; 2021</p>
+                <p class="text-sm font-semibold font-body truncate">Bavaria C42</p>
+                <p class="text-xs text-secondary font-semibold mt-1">&euro;2,600 / week</p>
+              </div>
+            </a>
+          </div>
+
+          <!-- Follow-up Prompt Pills -->
+          <div class="flex flex-wrap gap-2">
+            <button class="rounded-full border border-outline-variant/20 hover:border-primary px-4 py-1.5 text-sm text-on-surface-variant hover:text-primary transition-colors font-label">Show me the route on a map</button>
+            <button class="rounded-full border border-outline-variant/20 hover:border-primary px-4 py-1.5 text-sm text-on-surface-variant hover:text-primary transition-colors font-label">What about catamarans?</button>
+            <button class="rounded-full border border-outline-variant/20 hover:border-primary px-4 py-1.5 text-sm text-on-surface-variant hover:text-primary transition-colors font-label">Tell me more about snorkelling spots</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Chat Input Area -->
+    <div class="p-6 bg-surface-container-low">
+      <div class="flex gap-3 items-center">
+        <input type="text" placeholder="Ask about destinations, yachts, routes..." class="flex-1 bg-surface-container-lowest border border-outline-variant/20 focus:border-primary focus:ring-1 focus:ring-primary/20 rounded-lg px-4 py-3 text-sm font-body text-on-surface placeholder:text-on-surface-variant/50 outline-none transition-colors"/>
+        <button class="bg-primary hover:bg-primary-container text-white rounded-lg p-3 transition-colors flex items-center justify-center">
+          <span class="material-symbols-outlined" style="font-size:20px">send</span>
+        </button>
       </div>
     </div>
 
-    <!-- Right: Results/Map Panel -->
-    <div class="ai-results-panel">
-      <!-- Suggested Route Map -->
-      <div>
-        <h3 style="margin-bottom:var(--space-md)">Suggested Route: Saronic Gulf</h3>
-        <div class="ai-map-placeholder">
-          <div style="text-align:center">
-            <div style="font-size:48px;margin-bottom:var(--space-md)">&#127758;</div>
-            <div style="font-weight:600;color:var(--ocean-navy)">Interactive Route Map</div>
-            <div>Mapbox GL JS with nautical chart overlay</div>
+  </div>
+
+  <!-- RIGHT PANEL: Route & Itinerary -->
+  <div class="bg-surface-container-low p-8 overflow-y-auto space-y-8 itinerary-scroll hidden md:block">
+
+    <!-- Route Heading -->
+    <div>
+      <h2 class="font-display text-2xl text-primary tracking-tight">Suggested Route: Saronic Gulf</h2>
+      <p class="text-sm text-on-surface-variant mt-1 font-body">7 days &middot; 6 islands &middot; Beginner-friendly</p>
+    </div>
+
+    <!-- Map Placeholder -->
+    <div class="bg-surface-container-high rounded-2xl h-[300px] flex flex-col items-center justify-center gap-2">
+      <span class="material-symbols-outlined text-on-surface-variant/40" style="font-size:56px">map</span>
+      <span class="text-sm text-on-surface-variant/50 font-label">Interactive map loading...</span>
+    </div>
+
+    <!-- 7-Day Itinerary -->
+    <div>
+      <h3 class="font-display text-lg text-primary mb-4">7-Day Itinerary</h3>
+      <div class="space-y-3">
+
+        <!-- Day 1 -->
+        <div class="bg-surface-container-lowest rounded-xl editorial-shadow p-5 flex gap-4">
+          <div class="w-10 h-10 rounded-full bg-primary text-white font-bold flex items-center justify-center flex-shrink-0 text-sm">1</div>
+          <div class="min-w-0">
+            <p class="font-body font-semibold text-primary">Athens Marina &rarr; Aegina</p>
+            <p class="text-on-surface-variant text-sm mt-0.5">17 nm &middot; ~3h sailing &middot; Easy</p>
+            <p class="text-sm text-on-surface mt-2 leading-relaxed">Depart from Alimos Marina and sail south to the charming island of Aegina. Explore the ancient Temple of Aphaia and enjoy fresh pistachios at the harbour tavernas.</p>
           </div>
         </div>
-      </div>
 
-      <!-- Day-by-Day Itinerary -->
-      <div>
-        <h3 style="margin-bottom:var(--space-md)">7-Day Itinerary</h3>
-        <div style="display:flex;flex-direction:column;gap:var(--space-md)">
-
-          <div style="background:var(--white);border-radius:var(--radius-sm);padding:var(--space-md);box-shadow:var(--shadow-sm);display:flex;gap:var(--space-md)">
-            <div style="width:40px;height:40px;border-radius:var(--radius-full);background:var(--marencello-blue);color:white;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0">1</div>
-            <div>
-              <div style="font-weight:600;color:var(--ocean-navy)">Athens Marina &rarr; Aegina</div>
-              <div style="font-size:13px;color:var(--soft-grey)">17 nm &middot; ~3h sailing &middot; Easy</div>
-              <div style="font-size:13px;margin-top:4px">Board & provisions. Afternoon sail to Aegina. Swim at Moni Island (great snorkelling!).</div>
-            </div>
+        <!-- Day 2 -->
+        <div class="bg-surface-container-lowest rounded-xl editorial-shadow p-5 flex gap-4">
+          <div class="w-10 h-10 rounded-full bg-primary text-white font-bold flex items-center justify-center flex-shrink-0 text-sm">2</div>
+          <div class="min-w-0">
+            <p class="font-body font-semibold text-primary">Aegina &rarr; Agistri</p>
+            <p class="text-on-surface-variant text-sm mt-0.5">6 nm &middot; ~1h sailing &middot; Easy</p>
+            <p class="text-sm text-on-surface mt-2 leading-relaxed">A short hop to tiny Agistri &mdash; perfect for snorkelling in the turquoise waters of Aponisos beach. Pine forests meet the sea here.</p>
           </div>
-
-          <div style="background:var(--white);border-radius:var(--radius-sm);padding:var(--space-md);box-shadow:var(--shadow-sm);display:flex;gap:var(--space-md)">
-            <div style="width:40px;height:40px;border-radius:var(--radius-full);background:var(--marencello-blue);color:white;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0">2</div>
-            <div>
-              <div style="font-weight:600;color:var(--ocean-navy)">Aegina &rarr; Agistri</div>
-              <div style="font-size:13px;color:var(--soft-grey)">6 nm &middot; ~1h sailing &middot; Easy</div>
-              <div style="font-size:13px;margin-top:4px">Short hop to the hidden gem of Agistri. Crystal-clear Aponisos beach for snorkelling.</div>
-            </div>
-          </div>
-
-          <div style="background:var(--white);border-radius:var(--radius-sm);padding:var(--space-md);box-shadow:var(--shadow-sm);display:flex;gap:var(--space-md)">
-            <div style="width:40px;height:40px;border-radius:var(--radius-full);background:var(--marencello-blue);color:white;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0">3</div>
-            <div>
-              <div style="font-weight:600;color:var(--ocean-navy)">Agistri &rarr; Poros</div>
-              <div style="font-size:13px;color:var(--soft-grey)">15 nm &middot; ~2.5h sailing &middot; Easy</div>
-              <div style="font-size:13px;margin-top:4px">Sail to charming Poros Town. Evening taverna dinner along the waterfront.</div>
-            </div>
-          </div>
-
-          <div style="background:var(--white);border-radius:var(--radius-sm);padding:var(--space-md);box-shadow:var(--shadow-sm);display:flex;gap:var(--space-md)">
-            <div style="width:40px;height:40px;border-radius:var(--radius-full);background:var(--marencello-blue);color:white;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0">4</div>
-            <div>
-              <div style="font-weight:600;color:var(--ocean-navy)">Poros &rarr; Hydra</div>
-              <div style="font-size:13px;color:var(--soft-grey)">12 nm &middot; ~2h sailing &middot; Easy</div>
-              <div style="font-size:13px;margin-top:4px">Car-free Hydra island. Anchor at Bisti Bay for the best snorkelling of the trip.</div>
-            </div>
-          </div>
-
-          <div style="background:var(--white);border-radius:var(--radius-sm);padding:var(--space-md);box-shadow:var(--shadow-sm);display:flex;gap:var(--space-md)">
-            <div style="width:40px;height:40px;border-radius:var(--radius-full);background:var(--marencello-blue);color:white;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0">5</div>
-            <div>
-              <div style="font-weight:600;color:var(--ocean-navy)">Hydra &rarr; Spetses</div>
-              <div style="font-size:13px;color:var(--soft-grey)">11 nm &middot; ~2h sailing &middot; Easy</div>
-              <div style="font-size:13px;margin-top:4px">Pine-covered Spetses. Visit Agioi Anargyroi beach, explore the old harbour town.</div>
-            </div>
-          </div>
-
-          <div style="background:var(--white);border-radius:var(--radius-sm);padding:var(--space-md);box-shadow:var(--shadow-sm);display:flex;gap:var(--space-md)">
-            <div style="width:40px;height:40px;border-radius:var(--radius-full);background:var(--marencello-blue);color:white;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0">6</div>
-            <div>
-              <div style="font-weight:600;color:var(--ocean-navy)">Spetses &rarr; Aegina (via Dokos)</div>
-              <div style="font-size:13px;color:var(--soft-grey)">25 nm &middot; ~4h sailing &middot; Moderate</div>
-              <div style="font-size:13px;margin-top:4px">Longest day. Stop at uninhabited Dokos for a wild swim, then overnight at Aegina.</div>
-            </div>
-          </div>
-
-          <div style="background:var(--white);border-radius:var(--radius-sm);padding:var(--space-md);box-shadow:var(--shadow-sm);display:flex;gap:var(--space-md)">
-            <div style="width:40px;height:40px;border-radius:var(--radius-full);background:var(--marencello-blue);color:white;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0">7</div>
-            <div>
-              <div style="font-weight:600;color:var(--ocean-navy)">Aegina &rarr; Athens Marina</div>
-              <div style="font-size:13px;color:var(--soft-grey)">17 nm &middot; ~3h sailing &middot; Easy</div>
-              <div style="font-size:13px;margin-top:4px">Morning swim, leisurely sail back to Athens. Check-out by 09:00 Saturday.</div>
-            </div>
-          </div>
-
         </div>
-      </div>
 
-      <!-- Route Stats -->
-      <div style="background:var(--white);border-radius:var(--radius-sm);padding:var(--space-lg);box-shadow:var(--shadow-sm)">
-        <h4 style="font-family:'Inter',sans-serif;font-size:14px;font-weight:700;margin-bottom:var(--space-md)">Route Summary</h4>
-        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-md);text-align:center">
-          <div>
-            <div style="font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--ocean-navy)">103</div>
-            <div style="font-size:12px;color:var(--soft-grey)">Total nm</div>
+        <!-- Day 3 -->
+        <div class="bg-surface-container-lowest rounded-xl editorial-shadow p-5 flex gap-4">
+          <div class="w-10 h-10 rounded-full bg-primary text-white font-bold flex items-center justify-center flex-shrink-0 text-sm">3</div>
+          <div class="min-w-0">
+            <p class="font-body font-semibold text-primary">Agistri &rarr; Poros</p>
+            <p class="text-on-surface-variant text-sm mt-0.5">15 nm &middot; ~2.5h sailing &middot; Easy</p>
+            <p class="text-sm text-on-surface mt-2 leading-relaxed">Sail to Poros and anchor in the scenic strait between the island and the Peloponnese. The clock tower hike offers stunning sunset views.</p>
           </div>
-          <div>
-            <div style="font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--ocean-navy)">~17h</div>
-            <div style="font-size:12px;color:var(--soft-grey)">Sailing time</div>
+        </div>
+
+        <!-- Day 4 -->
+        <div class="bg-surface-container-lowest rounded-xl editorial-shadow p-5 flex gap-4">
+          <div class="w-10 h-10 rounded-full bg-primary text-white font-bold flex items-center justify-center flex-shrink-0 text-sm">4</div>
+          <div class="min-w-0">
+            <p class="font-body font-semibold text-primary">Poros &rarr; Hydra</p>
+            <p class="text-on-surface-variant text-sm mt-0.5">12 nm &middot; ~2h sailing &middot; Easy</p>
+            <p class="text-sm text-on-surface mt-2 leading-relaxed">The jewel of the Saronic &mdash; Hydra is car-free with stone mansions cascading down to the harbour. Snorkel at Bisti Bay on the south coast.</p>
           </div>
-          <div>
-            <div style="font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--deep-teal)">Easy</div>
-            <div style="font-size:12px;color:var(--soft-grey)">Difficulty</div>
+        </div>
+
+        <!-- Day 5 -->
+        <div class="bg-surface-container-lowest rounded-xl editorial-shadow p-5 flex gap-4">
+          <div class="w-10 h-10 rounded-full bg-primary text-white font-bold flex items-center justify-center flex-shrink-0 text-sm">5</div>
+          <div class="min-w-0">
+            <p class="font-body font-semibold text-primary">Hydra &rarr; Spetses</p>
+            <p class="text-on-surface-variant text-sm mt-0.5">11 nm &middot; ~2h sailing &middot; Easy</p>
+            <p class="text-sm text-on-surface mt-2 leading-relaxed">Sail to the elegant island of Spetses. Rent bikes to explore, swim at Zogeria beach, and dine at the Old Harbour as the sun sets.</p>
           </div>
-          <div>
-            <div style="font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--ocean-navy)">6</div>
-            <div style="font-size:12px;color:var(--soft-grey)">Islands</div>
+        </div>
+
+        <!-- Day 6 -->
+        <div class="bg-surface-container-lowest rounded-xl editorial-shadow p-5 flex gap-4">
+          <div class="w-10 h-10 rounded-full bg-primary text-white font-bold flex items-center justify-center flex-shrink-0 text-sm">6</div>
+          <div class="min-w-0">
+            <p class="font-body font-semibold text-primary">Spetses &rarr; Aegina via Dokos</p>
+            <p class="text-on-surface-variant text-sm mt-0.5">25 nm &middot; ~4h sailing &middot; Moderate</p>
+            <p class="text-sm text-on-surface mt-2 leading-relaxed">The longest leg &mdash; stop at uninhabited Dokos for a swim in Skintos Bay (one of the best snorkelling spots in the Gulf), then continue to Aegina.</p>
           </div>
+        </div>
+
+        <!-- Day 7 -->
+        <div class="bg-surface-container-lowest rounded-xl editorial-shadow p-5 flex gap-4">
+          <div class="w-10 h-10 rounded-full bg-primary text-white font-bold flex items-center justify-center flex-shrink-0 text-sm">7</div>
+          <div class="min-w-0">
+            <p class="font-body font-semibold text-primary">Aegina &rarr; Athens Marina</p>
+            <p class="text-on-surface-variant text-sm mt-0.5">17 nm &middot; ~3h sailing &middot; Easy</p>
+            <p class="text-sm text-on-surface mt-2 leading-relaxed">A relaxed final sail back to Athens. Arrive by early afternoon to allow time for provisioning return and an evening in the city.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Route Summary Stats -->
+    <div class="bg-surface-container-lowest rounded-xl editorial-shadow p-6">
+      <h3 class="font-display text-lg text-primary mb-4">Route Summary</h3>
+      <div class="grid grid-cols-4 gap-4 text-center">
+        <div>
+          <p class="font-display text-2xl text-primary">103</p>
+          <p class="text-xs text-on-surface-variant font-label mt-1">Total nm</p>
+        </div>
+        <div>
+          <p class="font-display text-2xl text-primary">~17h</p>
+          <p class="text-xs text-on-surface-variant font-label mt-1">Sailing</p>
+        </div>
+        <div>
+          <p class="font-display text-2xl text-primary">Easy</p>
+          <p class="text-xs text-on-surface-variant font-label mt-1">Difficulty</p>
+        </div>
+        <div>
+          <p class="font-display text-2xl text-primary">6</p>
+          <p class="text-xs text-on-surface-variant font-label mt-1">Islands</p>
         </div>
       </div>
     </div>
 
   </div>
+
 </div>
 
-<script src="../js/main.js"></script>
 <!-- Firebase Auth SDK -->
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>

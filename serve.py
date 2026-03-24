@@ -1,3 +1,3 @@
 import http.server, os
-os.chdir(os.path.dirname(os.path.abspath(__file__)))
+os.chdir('/Users/jakubpetrina-macmini/marencello-landing')
 http.server.test(HandlerClass=http.server.SimpleHTTPRequestHandler, port=3456)
