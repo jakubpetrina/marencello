@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Yachts — Marencello</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="nav scrolled" id="nav">
+  <div class="container">
+    <a href="../index.html" class="nav-logo">Marencello</a>
+    <div class="nav-links">
+      <a href="destinations.html">Destinations</a>
+      <a href="search.html" style="color:var(--marencello-blue)">Yachts</a>
+      <a href="#">Deals</a>
+      <a href="#">Guides</a>
+      <a href="ai-planner.html" class="nav-cta">AI Trip Planner</a>
+    </div>
+    <div class="nav-right">
+      <a href="#" class="nav-icon" title="Saved">&#9825;</a>
+      <a href="#" class="nav-icon" title="Account">&#9786;</a>
+      <button class="mobile-menu-toggle" aria-label="Menu">&#9776;</button>
+    </div>
+  </div>
+</nav>
+
+<!-- Search Layout -->
+<div style="padding-top:64px">
+  <div class="search-page">
+    <!-- Filter Sidebar -->
+    <aside class="search-sidebar">
+      <h3 style="font-size:18px;margin-bottom:var(--space-xl)">Filters</h3>
+
+      <div class="filter-group">
+        <h4>Price Range (per week)</h4>
+        <div class="price-range">
+          <input type="text" placeholder="&euro; Min" value="&euro;1,000">
+          <span>&ndash;</span>
+          <input type="text" placeholder="&euro; Max" value="&euro;10,000">
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <h4>Boat Type</h4>
+        <label><input type="checkbox" checked> Sailboat</label>
+        <label><input type="checkbox" checked> Catamaran</label>
+        <label><input type="checkbox"> Motor Yacht</label>
+        <label><input type="checkbox"> Gulet</label>
+      </div>
+
+      <div class="filter-group">
+        <h4>Cabins</h4>
+        <label><input type="checkbox"> 2 cabins</label>
+        <label><input type="checkbox" checked> 3 cabins</label>
+        <label><input type="checkbox" checked> 4 cabins</label>
+        <label><input type="checkbox"> 5+ cabins</label>
+      </div>
+
+      <div class="filter-group">
+        <h4>Year Built</h4>
+        <label><input type="checkbox" checked> 2020 or newer</label>
+        <label><input type="checkbox"> 2015&ndash;2019</label>
+        <label><input type="checkbox"> 2010&ndash;2014</label>
+      </div>
+
+      <div class="filter-group">
+        <h4>Features</h4>
+        <label><input type="checkbox"> Air conditioning</label>
+        <label><input type="checkbox"> Watermaker</label>
+        <label><input type="checkbox"> SUP / Kayak</label>
+        <label><input type="checkbox"> Snorkelling gear</label>
+        <label><input type="checkbox"> Generator</label>
+      </div>
+
+      <div class="filter-group">
+        <h4>Rating</h4>
+        <label><input type="checkbox" checked> 4.5+ stars</label>
+        <label><input type="checkbox"> 4.0+ stars</label>
+      </div>
+
+      <button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:var(--space-md)">Apply Filters</button>
+    </aside>
+
+    <!-- Results Area -->
+    <div class="search-results-area">
+      <div class="search-toolbar">
+        <span class="result-count"><strong>127 yachts</strong> in Croatia &middot; Jul 12&ndash;19, 2026</span>
+        <div style="display:flex;gap:var(--space-md);align-items:center">
+          <select>
+            <option>Sort: Relevance</option>
+            <option>Price: Low to High</option>
+            <option>Price: High to Low</option>
+            <option>Rating: Highest</option>
+            <option>Newest First</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="search-content">
+        <div class="search-list">
+          <!-- Result 1 -->
+          <a href="yacht-detail.html" class="search-result-card">
+            <div class="search-result-img">
+              <img src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=500&q=80" alt="Lagoon 46">
+              <span class="yacht-card-badge">Popular</span>
+            </div>
+            <div class="search-result-body">
+              <div class="yacht-card-type">Catamaran</div>
+              <h3>Lagoon 46 &mdash; Sea Breeze</h3>
+              <div class="search-result-meta">&#128205; Split, Croatia &middot; Built 2023</div>
+              <div class="search-result-specs">
+                <span>&#9875; 14m</span>
+                <span>&#128716; 4 cabins</span>
+                <span>&#128101; 10 guests</span>
+                <span>&#9733; 4.9 (47 reviews)</span>
+              </div>
+              <div class="search-result-footer">
+                <div style="display:flex;gap:var(--space-md)">
+                  <button class="btn btn-outline" style="padding:8px 16px;font-size:13px">Compare</button>
+                  <button class="btn btn-outline" style="padding:8px 16px;font-size:13px">&#9825; Save</button>
+                </div>
+                <div class="yacht-card-price">
+                  <div class="from">from</div>
+                  <div class="amount">&euro;2,890</div>
+                  <div class="period">/week all-in</div>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <!-- Result 2 -->
+          <a href="yacht-detail.html" class="search-result-card">
+            <div class="search-result-img">
+              <img src="https://images.unsplash.com/photo-1605281317010-fe5ffe798166?w=500&q=80" alt="Bavaria C42">
+              <span class="yacht-card-badge" style="background:var(--deep-teal)">Instant Book</span>
+            </div>
+            <div class="search-result-body">
+              <div class="yacht-card-type">Sailboat</div>
+              <h3>Bavaria C42 &mdash; Adriatic Wind</h3>
+              <div class="search-result-meta">&#128205; Trogir, Croatia &middot; Built 2022</div>
+              <div class="search-result-specs">
+                <span>&#9875; 13m</span>
+                <span>&#128716; 3 cabins</span>
+                <span>&#128101; 8 guests</span>
+                <span>&#9733; 4.7 (31 reviews)</span>
+              </div>
+              <div class="search-result-footer">
+                <div style="display:flex;gap:var(--space-md)">
+                  <button class="btn btn-outline" style="padding:8px 16px;font-size:13px">Compare</button>
+                  <button class="btn btn-outline" style="padding:8px 16px;font-size:13px">&#9825; Save</button>
+                </div>
+                <div class="yacht-card-price">
+                  <div class="from">from</div>
+                  <div class="amount">&euro;1,650</div>
+                  <div class="period">/week all-in</div>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <!-- Result 3 -->
+          <a href="yacht-detail.html" class="search-result-card">
+            <div class="search-result-img">
+              <img src="https://images.unsplash.com/photo-1540946485063-a40da27545f8?w=500&q=80" alt="Dufour 470">
+            </div>
+            <div class="search-result-body">
+              <div class="yacht-card-type">Sailboat</div>
+              <h3>Dufour 470 &mdash; Maestral</h3>
+              <div class="search-result-meta">&#128205; Dubrovnik, Croatia &middot; Built 2024</div>
+              <div class="search-result-specs">
+                <span>&#9875; 14.3m</span>
+                <span>&#128716; 4 cabins</span>
+                <span>&#128101; 10 guests</span>
+                <span>&#9733; 4.8 (18 reviews)</span>
+              </div>
+              <div class="search-result-footer">
+                <div style="display:flex;gap:var(--space-md)">
+                  <button class="btn btn-outline" style="padding:8px 16px;font-size:13px">Compare</button>
+                  <button class="btn btn-outline" style="padding:8px 16px;font-size:13px">&#9825; Save</button>
+                </div>
+                <div class="yacht-card-price">
+                  <div class="from">from</div>
+                  <div class="amount">&euro;2,340</div>
+                  <div class="period">/week all-in</div>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <!-- Result 4 -->
+          <a href="yacht-detail.html" class="search-result-card">
+            <div class="search-result-img">
+              <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=500&q=80" alt="Fountaine Pajot">
+              <span class="yacht-card-badge" style="background:var(--warm-copper)">Premium</span>
+            </div>
+            <div class="search-result-body">
+              <div class="yacht-card-type">Catamaran</div>
+              <h3>Fountaine Pajot Elba 45 &mdash; Luna</h3>
+              <div class="search-result-meta">&#128205; Split, Croatia &middot; Built 2024</div>
+              <div class="search-result-specs">
+                <span>&#9875; 13.4m</span>
+                <span>&#128716; 4 cabins</span>
+                <span>&#128101; 12 guests</span>
+                <span>&#9733; 5.0 (8 reviews)</span>
+              </div>
+              <div class="search-result-footer">
+                <div style="display:flex;gap:var(--space-md)">
+                  <button class="btn btn-outline" style="padding:8px 16px;font-size:13px">Compare</button>
+                  <button class="btn btn-outline" style="padding:8px 16px;font-size:13px">&#9825; Save</button>
+                </div>
+                <div class="yacht-card-price">
+                  <div class="from">from</div>
+                  <div class="amount">&euro;3,450</div>
+                  <div class="period">/week all-in</div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Map Panel -->
+        <div class="search-map">
+          <div style="text-align:center">
+            <div style="font-size:48px;margin-bottom:var(--space-md)">&#127758;</div>
+            <div style="font-weight:600;color:var(--ocean-navy);margin-bottom:4px">Interactive Map</div>
+            <div>Mapbox GL JS with clustered yacht markers</div>
+            <div style="margin-top:var(--space-md);font-size:13px;color:var(--soft-grey)">Hover for preview cards &middot; Click to view details</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
